@@ -1,64 +1,110 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
+
+import StatsBox from './stats-box/stats-box';
 
 function UserProfile({name, profilePicture, location, followers, following, posts, likes, about}) {
 	return (
 		<ScrollView>
-		<Layout>
-
-			<TopNavigation
-				title='User Profile'
-				alignment='center'
-			/>
 			<Layout>
-				<Avatar 
-					shape='round' 
-					style={{width: 160, height: 160, margin: 16, alignSelf: 'center'}}
-					source={{uri: profilePicture}}
-
+				<TopNavigation
+					title='User Profile'
+					alignment='center'
 				/>
-				<Text category="h5" style={{textAlign: 'center'}}>{name}</Text>
-				<Layout style={{flexDirection: 'row', justifyContent: 'center'}}>
-					<Icon name='pin-outline' style={{marginTop: 5}} width={15} height={15} />
-					<Text category="s1">{location}</Text>
-				</Layout>
-				<Layout style={{flexDirection: 'row', marginVertical: 32, justifyContent: 'center'}}>
-					<Button appearance='filled' icon={style => <Icon {...style} name='person-add'/>}>FOLLOW</Button>
-					<Button appearance='outline' style={{marginLeft: 16, backgroundColor: "white",borderWidth: 0}} icon={style => <Icon {...style} name='message-circle'/>}>MESSAGE</Button>
+
+				<Layout>
+					<Image source={{uri: 'https://www.xda-developers.com/files/2019/11/default_wallpaper.jpg'}} style={[StyleSheet.absoluteFill]} />
+					
+					<Avatar 
+						shape='round' 
+						style={style.avatar}
+						source={{uri: profilePicture}}
+					/>
+					
+					<Text category="h5" style={style.name}>{name}</Text>
+
+					<Layout style={style.locationGroup}>
+						<Icon name='pin-outline' style={style.icon} fill="white" width={16} height={16} />
+						<Text category="s1" style={style.location}>{location}</Text>
+					</Layout>
+
+					<Layout style={style.buttonGroup}>
+						<Button appearance='filled' icon={style => <Icon {...style} name='person-add'/>}>FOLLOW</Button>
+						<Button appearance='outline' icon={style => <Icon {...style} name='message-circle'/>} style={style.messageBtn}>MESSAGE</Button>
+					</Layout>
+
+					<Layout style={style.stats}>
+						<StatsBox name="Followers" value={followers}/>
+						<StatsBox name="Following" value={following}/>
+						<StatsBox name="Posts" value={posts}/>
+						<StatsBox name="Likes" value={likes}/>
+					</Layout>
 				</Layout>
 
-				<Layout style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-					<Layout style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-						<Text>{followers}</Text>
-						<Text>Followers</Text>
-					</Layout>
-					<Layout style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-						<Text>{following}</Text>
-						<Text>Following</Text>
-					</Layout>
-					<Layout style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-						<Text>{posts}</Text>
-						<Text>Posts</Text>
-					</Layout>
-					<Layout style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-						<Text>{likes}</Text>
-						<Text>Likes</Text>
-					</Layout>
+				<Layout style={{paddingHorizontal: 16, paddingTop: 16}}>
+					<Text category="s1">About</Text>
+					<Text category="p2" style={style.about}>{about}</Text>
+				</Layout>
+
+				<Layout style={style.section}>
+					<Text category="s1">Posts</Text>
+					<Text category="p2" style={style.about}>posts</Text>
 				</Layout>
 			</Layout>
-			<Layout style={{paddingHorizontal: 16, paddingTop: 16}}>
-				<Text category="s1">About</Text>
-				<Text category="p2" style={{opacity: 0.6, marginTop: 8}}>{about}</Text>
-			</Layout>
-			<Layout style={{paddingHorizontal: 16, paddingTop: 16}}>
-				<Text category="s1">Posts</Text>
-				<Text category="p2" style={{opacity: 0.6, marginTop: 8}}>posts</Text>
-			</Layout>
-		</Layout>
 		</ScrollView>
 	);
 };
+
+const style = StyleSheet.create({
+	avatar: {
+		width: 160,
+		height: 160,
+		margin: 16,
+		alignSelf: 'center'
+	},
+	name: {
+		textAlign: 'center',
+		color: 'white'
+	},
+	locationGroup: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		backgroundColor: 'transparent'
+	},
+	icon: {
+		marginTop: 4,
+		marginRight: 3
+	},
+	location: {
+		color: 'white'
+	},
+	messageBtn: {
+		marginLeft: 16,
+		backgroundColor: "white",
+		borderWidth: 0
+	},
+	stats: {
+		marginVertical: 16,
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		backgroundColor: 'transparent'
+	},
+	buttonGroup: {
+		flexDirection: 'row',
+		marginVertical: 16,
+		justifyContent: 'center',
+		backgroundColor: 'transparent'		
+	},
+	section: {
+		paddingHorizontal: 16,
+		paddingTop: 16		
+	},
+	about: {
+		opacity: 0.6,
+		marginTop: 8
+	}
+});
 
 UserProfile.defaultProps = {
 	name: 'Donald Trump',
