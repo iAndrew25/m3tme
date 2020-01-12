@@ -12,28 +12,39 @@ function ProfileContent({about, isEditMode}) {
 
 	function renderAboutSection() {
 		if(isEditMode) {
-			return isTextInputVisible ? 
-				<TextInput 
-					autoFocus
-					multiline
-					value={aboutText}
-					style={style.aboutText}
-					onChangeText={setAboutText}
-					onBlur={toggleTextInputVisibility}
-				/> :
-				<TouchableOpacity onPress={toggleTextInputVisibility}>
-					<Text category="p2" style={style.about}>{aboutText ? aboutText : 'Add your description'}</Text>
-				</TouchableOpacity>
+			return (
+				<Section title="About">
+					{isTextInputVisible ? 
+						<TextInput 
+							autoFocus
+							multiline
+							value={aboutText}
+							style={style.aboutText}
+							onChangeText={setAboutText}
+							onBlur={toggleTextInputVisibility}
+						/> :
+						<TouchableOpacity onPress={toggleTextInputVisibility}>
+							<Text category="p2" style={style.about}>{aboutText ? aboutText : 'Add your description'}</Text>
+						</TouchableOpacity>
+					}
+				</Section>
+			);
 		} else {
-			return <Text category="p2" style={style.about}>{aboutText}</Text>
+			if(aboutText) {
+				return (
+					<Section title="About">
+						<Text category="p2" style={style.about}>{aboutText}</Text>
+					</Section>
+				);
+			} else {
+				return null;
+			}
 		}
 	}
 
 	return (
 		<Layout style={style.wrapper}>
-			<Section title="About">
-				{renderAboutSection()}
-			</Section>
+			{renderAboutSection()}
 			<Section title="Posts">
 				<Posts />
 			</Section>
