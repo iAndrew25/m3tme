@@ -7,6 +7,7 @@ import { TabBar, Tab, Layout, Text, Icon } from '@ui-kitten/components';
 import Messages from '../messages/messages';
 import People from '../people/people';
 import UserProfile from '../user-profile/user-profile';
+import ProfileSettings from '../profile-settings/profile-settings';
 
 function TabBarComponent({navigation}) {
 	const onSelect = index => {
@@ -26,9 +27,10 @@ function TabBarComponent({navigation}) {
 };
 
 export default createAppContainer(createBottomTabNavigator({
+	ProfileSettings,
+	UserProfile,
 	Messages,
 	People,
-	UserProfile
 }, {
 	tabBarComponent: TabBarComponent,
 }));

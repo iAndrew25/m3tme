@@ -4,6 +4,8 @@ import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@u
 
 import StatsBox from './stats-box/stats-box';
 
+import ProfileContent from '../../commons/components/profile-content/profile-content';
+
 function UserProfile({name, profilePicture, location, followers, following, posts, likes, about}) {
 	return (
 		<ScrollView>
@@ -42,15 +44,7 @@ function UserProfile({name, profilePicture, location, followers, following, post
 					</Layout>
 				</Layout>
 
-				<Layout style={{paddingHorizontal: 16, paddingTop: 16}}>
-					<Text category="s1">About</Text>
-					<Text category="p2" style={style.about}>{about}</Text>
-				</Layout>
-
-				<Layout style={style.section}>
-					<Text category="s1">Posts</Text>
-					<Text category="p2" style={style.about}>posts</Text>
-				</Layout>
+				<ProfileContent />
 			</Layout>
 		</ScrollView>
 	);
@@ -95,14 +89,6 @@ const style = StyleSheet.create({
 		marginVertical: 16,
 		justifyContent: 'center',
 		backgroundColor: 'transparent'		
-	},
-	section: {
-		paddingHorizontal: 16,
-		paddingTop: 16		
-	},
-	about: {
-		opacity: 0.6,
-		marginTop: 8
 	}
 });
 
