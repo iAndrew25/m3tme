@@ -21,7 +21,7 @@ function Post({type, imageUri, videoUri, text, onPress}) {
 	
 	if(type === 'TEXT') {
 		return (
-			<Text category="p2" style={{padding: 8}} numberOfLines={5} ellipsizeMode="tail" >{text}</Text>
+			<Text category="p2" style={{padding: 8}} numberOfLines={5} ellipsizeMode="tail">{text}</Text>
 		);
 	}
 

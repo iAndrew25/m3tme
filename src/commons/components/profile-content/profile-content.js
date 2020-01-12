@@ -6,7 +6,7 @@ import Section from '../section/section';
 import Posts from '../posts/posts';
 
 function ProfileContent({about, isEditMode}) {
-	const [aboutText, setAboutText] = useState(about);
+	const [userAbout, setUserAbout] = useState(about);
 	const [isTextInputVisible, setIsTextInputVisible] = useState(false);
 	const toggleTextInputVisibility = () => setIsTextInputVisible(isVisible => !isVisible);
 
@@ -18,22 +18,22 @@ function ProfileContent({about, isEditMode}) {
 						<TextInput 
 							autoFocus
 							multiline
-							value={aboutText}
-							style={style.aboutText}
-							onChangeText={setAboutText}
+							value={userAbout}
+							style={style.userAbout}
+							onChangeText={setUserAbout}
 							onBlur={toggleTextInputVisibility}
 						/> :
 						<TouchableOpacity onPress={toggleTextInputVisibility}>
-							<Text category="p2" style={style.about}>{aboutText ? aboutText : 'Add your description'}</Text>
+							<Text category="p2" style={style.about}>{userAbout ? userAbout : 'Add your description'}</Text>
 						</TouchableOpacity>
 					}
 				</Section>
 			);
 		} else {
-			if(aboutText) {
+			if(userAbout) {
 				return (
 					<Section title="About">
-						<Text category="p2" style={style.about}>{aboutText}</Text>
+						<Text category="p2" style={style.about}>{userAbout}</Text>
 					</Section>
 				);
 			} else {
@@ -46,7 +46,7 @@ function ProfileContent({about, isEditMode}) {
 		<Layout style={style.wrapper}>
 			{renderAboutSection()}
 			<Section title="Posts">
-				<Posts />
+				<Posts isEditMode={isEditMode} />
 			</Section>
 		</Layout>
 	);
@@ -59,7 +59,7 @@ const style = StyleSheet.create({
 	about: {
 		opacity: 0.6,
 	},
-	aboutText: {
+	userAbout: {
 		color: 'white'
 	}
 });

@@ -1,21 +1,23 @@
-import React from 'react';
-import {ScrollView, Image, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import Post from './post/post';
 
-function Posts({posts, hasAddButton = false}) {
+function Posts({posts, isEditMode}) {
+	const [userPosts, setUserPosts] = useState(posts); //temp
+
 	return (
 		<Layout style={style.wrapper}>
-			{posts.map(post => (
+			{userPosts.map(post => (
 				<Layout style={style.postWrapper}>
 					<Post {...post} />
 				</Layout>
 			))}
-			{hasAddButton && <Layout style={style.postWrapper}>
+			{isEditMode && <TouchableOpacity onPress={() => setUserPosts(pos => [...pos, {type: 'TEXT', text: 't1'}])}><Layout style={style.postWrapper}>
 				<Icon name='plus' style={style.icon} fill="white" width={48} height={48} />
-			</Layout>}
-			{posts.length % 3 === 1 && <Layout style={[style.postWrapper, style.placeholder]}></Layout>}
+			</Layout></TouchableOpacity>}
+			{userPosts.length % 3 === 1 && <Layout style={[style.postWrapper, style.placeholder]}></Layout>}
 		</Layout>
 	); 
 
