@@ -23,7 +23,7 @@ function ProfileSettings({profilePicture, name, about}) {
 
 				<Text category="h5" style={style.name}>{name}</Text>
 
-				<ProfileContent />
+				<ProfileContent isEditMode />
 			</Layout>
 		</ScrollView>
 	);
