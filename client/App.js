@@ -1,20 +1,27 @@
 import React from 'react';
-import {SafeAreaView, Platform, StatusBar} from 'react-native';
+import {SafeAreaView, Platform, StatusBar, StyleSheet} from 'react-native';
 import { ApplicationProvider, IconRegistry, Layout, Text } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, light, dark} from '@eva-design/eva';
 
 import Dashboard from './src/screens/dashboard/dashboard';
 
-import Carousel from './src/commons/components/posts/carousel/carousel';
+import PostsCarousel from './src/commons/components/posts/posts-carousel/posts-carousel';
 
 const App = () => (
-	<SafeAreaView style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight}}>
+	<SafeAreaView style={style.wrapper}>
 		<ApplicationProvider mapping={mapping} theme={dark}>
 			<IconRegistry icons={EvaIconsPack} />
-			<Carousel />
+			<PostsCarousel />
 		</ApplicationProvider>
 	</SafeAreaView>
 );
+
+const style = StyleSheet.create({
+	wrapper: {
+		flex: 1,
+		paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+	}
+});
 
 export default App;

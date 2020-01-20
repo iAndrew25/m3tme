@@ -2,8 +2,9 @@ import React from 'react';
 import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
-function Post({type, sourceUri, text, onPress, isPreview}) {
+import {INNER_MARGIN} from '../../../utils/sizes';
 
+function Post({type, sourceUri, text, onPress, isPreview}) {
 	if(type === 'IMAGE') {
 		return (
 			<Image 
@@ -15,7 +16,7 @@ function Post({type, sourceUri, text, onPress, isPreview}) {
 
 	if(type === 'TEXT') {
 		return (
-			<Text category="p2" numberOfLines={5} ellipsizeMode="tail">{text}</Text>
+			<Text category="p2" style={style.textStyle} numberOfLines={5} ellipsizeMode="tail">{text}</Text>
 		);
 	}
 
@@ -28,10 +29,11 @@ const style = StyleSheet.create({
 		height: '100%'
 	},
 	previewTextStyle: {
-		padding: 8
+		padding: INNER_MARGIN
 	},
 	textStyle: {
-		padding: 24
+		color: 'black',
+		textAlign: 'center'
 	}
 });
 

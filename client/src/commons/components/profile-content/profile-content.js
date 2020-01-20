@@ -4,6 +4,7 @@ import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@u
 
 import Section from '../section/section';
 import Posts from '../posts/posts';
+import {OUTER_MARGIN} from '../../utils/sizes';
 
 function ProfileContent({about, isEditMode}) {
 	const [userAbout, setUserAbout] = useState(about);
@@ -54,7 +55,7 @@ function ProfileContent({about, isEditMode}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		padding: 16
+		padding: OUTER_MARGIN
 	},
 	about: {
 		opacity: 0.6,

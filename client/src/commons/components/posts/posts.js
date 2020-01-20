@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import {ScrollView, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import Post from './post/post';
+import {INNER_MARGIN, THREE_COLUMNS_SIZE} from '../../utils/sizes';
+
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 function Posts({posts, isEditMode}) {
 	const [userPosts, setUserPosts] = useState(posts); //temp
@@ -25,26 +28,34 @@ function Posts({posts, isEditMode}) {
 
 Posts.defaultProps = {
 	posts: [{
+		type: 'TEXT',
+		text: 'Beautiful and dramatic Antelope Canyon',
+		sourceUri: 'https://i.imgur.com/UYiroysl.jpg'
+	},
+	{
 		type: 'IMAGE',
-		sourceUri: 'https://via.placeholder.com/150'
-	}, {
+		text: 'Earlier this morning, NYC',
+		sourceUri: 'https://i.imgur.com/UPrs1EWl.jpg'
+	},
+	{
+		type: 'TEXT',
+		text: 'White Pocket Sunset',
+		sourceUri: 'https://i.imgur.com/MABUbpDl.jpg'
+	},
+	{
 		type: 'IMAGE',
-		sourceUri: 'https://via.placeholder.com/150'
-	}, {
+		text: 'Acrocorinth, Greece',
+		sourceUri: 'https://i.imgur.com/KZsmUi2l.jpg'
+	},
+	{
 		type: 'TEXT',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi doloribus voluptate magni labore corporis ex exercitationem, illum odio quibusdam, dignissimos culpa voluptatum amet, minima ea. Voluptatum tempora voluptas hic quas.'
-	}, {
-		type: 'TEXT',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus illo nesciunt, molestiae, cumque iure ullam non, officiis vero, repellendus numquam ad modi eum temporibus minus assumenda unde eius ipsa. ipsum dolor sit amet, consectetur adipisicing elit. Quasi doloribus voluptate magni labore corporis ex exercitationem, illum odio quibusdam, dignissimos culpa voluptatum amet, minima ea. Voluptatum tempora voluptas hic quas.'
-	}, {
-		type: 'TEXT',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus illo nesciunt, molestiae, cumque iure ullam non, officiis vero, repellendus numquam ad modi eum temporibus minus assumenda unde eius ipsa. ipsum dolor sit amet, consectetur adipisicing elit. Quasi doloribus voluptate magni labore corporis ex exercitationem, illum odio quibusdam, dignissimos culpa voluptatum amet, minima ea. Voluptatum tempora voluptas hic quas.'
-	}, {
-		type: 'TEXT',
-		sourceUri: 'asfa video'
-	}, {
-		type: 'TEXT',
-		sourceUri: 'asfa video'
+		text: 'The lone tree, majestic landscape of New Zealand',
+		sourceUri: 'https://i.imgur.com/2nCt3Sbl.jpg'
+	},
+	{
+		type: 'IMAGE',
+		text: 'Middle Earth, Germany',
+		sourceUri: 'https://i.imgur.com/lceHsT6l.jpg'
 	}]
 }
 
@@ -58,9 +69,9 @@ const style = StyleSheet.create({
 		backgroundColor: '#111',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: 100,
-		height: 100,
-		marginBottom: 12,
+		width: THREE_COLUMNS_SIZE,
+		height: THREE_COLUMNS_SIZE,
+		marginBottom: INNER_MARGIN,
 		borderRadius: 4,
 		overflow: 'hidden'
 	},
