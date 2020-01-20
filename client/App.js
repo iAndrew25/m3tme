@@ -6,11 +6,13 @@ import { mapping, light, dark} from '@eva-design/eva';
 
 import Dashboard from './src/screens/dashboard/dashboard';
 
+import Carousel from './src/commons/components/posts/carousel/carousel';
+
 const App = () => (
 	<SafeAreaView style={{flex: 1, paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight}}>
 		<ApplicationProvider mapping={mapping} theme={dark}>
 			<IconRegistry icons={EvaIconsPack} />
-			<Dashboard />
+			<Carousel />
 		</ApplicationProvider>
 	</SafeAreaView>
 );

@@ -26,10 +26,10 @@ function Posts({posts, isEditMode}) {
 Posts.defaultProps = {
 	posts: [{
 		type: 'IMAGE',
-		imageUri: 'https://via.placeholder.com/150'
+		sourceUri: 'https://via.placeholder.com/150'
 	}, {
 		type: 'IMAGE',
-		imageUri: 'https://via.placeholder.com/150'
+		sourceUri: 'https://via.placeholder.com/150'
 	}, {
 		type: 'TEXT',
 		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi doloribus voluptate magni labore corporis ex exercitationem, illum odio quibusdam, dignissimos culpa voluptatum amet, minima ea. Voluptatum tempora voluptas hic quas.'
@@ -40,11 +40,11 @@ Posts.defaultProps = {
 		type: 'TEXT',
 		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus illo nesciunt, molestiae, cumque iure ullam non, officiis vero, repellendus numquam ad modi eum temporibus minus assumenda unde eius ipsa. ipsum dolor sit amet, consectetur adipisicing elit. Quasi doloribus voluptate magni labore corporis ex exercitationem, illum odio quibusdam, dignissimos culpa voluptatum amet, minima ea. Voluptatum tempora voluptas hic quas.'
 	}, {
-		type: 'VIDEO',
-		videoUri: 'asfa video'
+		type: 'TEXT',
+		sourceUri: 'asfa video'
 	}, {
-		type: 'VIDEO',
-		videoUri: 'asfa video'
+		type: 'TEXT',
+		sourceUri: 'asfa video'
 	}]
 }
 

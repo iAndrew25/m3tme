@@ -13,7 +13,7 @@ function Section({title, children}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		paddingBottom: 16		
+		paddingBottom: 16
 	},
 	title: {
 		marginBottom: 8
