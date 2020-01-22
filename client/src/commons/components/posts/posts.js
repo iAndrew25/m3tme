@@ -66,14 +66,7 @@ const style = StyleSheet.create({
 		justifyContent: 'space-between'
 	},
 	postWrapper: {
-		backgroundColor: '#111',
-		justifyContent: 'center',
-		alignItems: 'center',
-		width: THREE_COLUMNS_SIZE,
-		height: THREE_COLUMNS_SIZE,
-		marginBottom: INNER_MARGIN,
-		borderRadius: 4,
-		overflow: 'hidden'
+
 	},
 	icon: {
 		justifyContent: 'center',

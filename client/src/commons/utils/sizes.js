@@ -5,6 +5,8 @@ const { width, height } = Dimensions.get('window');
 export const INNER_MARGIN = 8;
 export const OUTER_MARGIN = 16;
 
+export const BORDER_RADIUS = 8;
+
 export const THREE_COLUMNS_SIZE = (width - (2 * INNER_MARGIN) - (2 * OUTER_MARGIN)) / 3;
 
 export const WIDTH_VIEWPORT = width - (OUTER_MARGIN * 2);
