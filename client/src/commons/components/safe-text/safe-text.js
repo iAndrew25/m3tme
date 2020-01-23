@@ -2,8 +2,8 @@ import React, {Fragment, useState, useRef} from 'react';
 import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
-function SafeText({text, maxNoOfLines}) {
-	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(maxNoOfLines);
+function SafeText({text, numberOfLines}) {
+	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(numberOfLines);
 	const [maxNumberOfLines, setMaxNumberOfLines] = useState();
 
 	const handleOnTextLayout = ({nativeEvent}) => setMaxNumberOfLines(nativeEvent.lines.length);
@@ -37,7 +37,7 @@ const style = StyleSheet.create({
 });
 
 SafeText.defaultProps = {
-	maxNoOfLines: 5
+	numberOfLines: 5
 }
 
 export default SafeText;
