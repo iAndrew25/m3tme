@@ -35,7 +35,8 @@ function Post({type, sourceUri, text, onPress, isPreview}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		paddingBottom: OUTER_MARGIN
+		paddingBottom: OUTER_MARGIN,
+		flexGrow: 1
 	},
 	imageStyle: {
 		width: '100%',

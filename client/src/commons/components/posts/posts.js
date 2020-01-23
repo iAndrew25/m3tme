@@ -8,19 +8,13 @@ import {INNER_MARGIN, THREE_COLUMNS_SIZE} from '../../utils/sizes';
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 function Posts({posts, isEditMode}) {
-	const [userPosts, setUserPosts] = useState(posts); //temp
-
 	return (
 		<Layout style={style.wrapper}>
-			{userPosts.map(post => (
+			{posts.map(post => (
 				<Layout style={style.postWrapper}>
 					<Post {...post} />
 				</Layout>
 			))}
-			{isEditMode && <TouchableOpacity onPress={() => setUserPosts(pos => [...pos, {type: 'TEXT', text: 't1'}])}><Layout style={style.postWrapper}>
-				<Icon name='plus' style={style.icon} fill="white" width={48} height={48} />
-			</Layout></TouchableOpacity>}
-			{userPosts.length % 3 === 1 && <Layout style={[style.postWrapper, style.placeholder]}></Layout>}
 		</Layout>
 	); 
 
@@ -61,19 +55,14 @@ Posts.defaultProps = {
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		justifyContent: 'space-between'
+		flex: 1
 	},
 	postWrapper: {
-
+		flexGrow: 1
 	},
 	icon: {
 		justifyContent: 'center',
 		alignSelf: 'center'		
-	},
-	placeholder: {
-		backgroundColor: 'transparent'
 	}
 });
 
