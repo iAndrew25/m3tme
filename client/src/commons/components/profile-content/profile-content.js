@@ -55,6 +55,7 @@ function ProfileContent({about, isEditMode}) {
 
 const style = StyleSheet.create({
 	wrapper: {
+		flexGrow: 1,
 		padding: OUTER_MARGIN
 	},
 	about: {

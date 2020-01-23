@@ -6,8 +6,8 @@ import ProfileContent from '../../commons/components/profile-content/profile-con
 
 function ProfileSettings({profilePicture, name, about}) {
 	return (
-		<ScrollView>
-			<Layout>
+		<ScrollView style={{flex: 1}}>
+			<Layout style={{flexGrow: 1}}>
 				<TopNavigation
 					title='Profile Settings'
 					alignment='center'

@@ -10,11 +10,7 @@ const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window'
 function Posts({posts, isEditMode}) {
 	return (
 		<Layout style={style.wrapper}>
-			{posts.map(post => (
-				<Layout style={style.postWrapper}>
-					<Post {...post} />
-				</Layout>
-			))}
+			{posts.map(post => <Post {...post} />)}
 		</Layout>
 	); 
 
@@ -22,47 +18,40 @@ function Posts({posts, isEditMode}) {
 
 Posts.defaultProps = {
 	posts: [{
-		type: 'TEXT',
+		type: 'IMAGE',
 		text: 'Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/UYiroysl.jpg'
 	},
 	{
-		type: 'IMAGE',
-		text: 'Earlier this morning, NYC',
+		type: 'TEXT',
+		text: 'Earlier this morning, NYC Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/UPrs1EWl.jpg'
 	},
 	{
-		type: 'TEXT',
-		text: 'White Pocket Sunset',
+		type: 'IMAGE',
+		text: 'White Pocket Sunset Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/MABUbpDl.jpg'
 	},
 	{
-		type: 'IMAGE',
-		text: 'Acrocorinth, Greece',
+		type: 'TEXT',
+		text: 'Acrocorinth, Greece Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/KZsmUi2l.jpg'
 	},
 	{
-		type: 'TEXT',
-		text: 'The lone tree, majestic landscape of New Zealand',
+		type: 'IMAGE',
+		text: 'The lone tree, majestic landscape of New Zealand Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/2nCt3Sbl.jpg'
 	},
 	{
-		type: 'IMAGE',
-		text: 'Middle Earth, Germany',
+		type: 'TEXT',
+		text: 'Middle Earth, Germany Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/lceHsT6l.jpg'
 	}]
 }
 
 const style = StyleSheet.create({
 	wrapper: {
-		flex: 1
-	},
-	postWrapper: {
-		flexGrow: 1
-	},
-	icon: {
-		justifyContent: 'center',
-		alignSelf: 'center'		
+		flex: 1,
 	}
 });
 

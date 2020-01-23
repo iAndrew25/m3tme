@@ -16,13 +16,11 @@ function TabBarComponent({navigation}) {
 	};
 
 	return (
-		<SafeAreaView>
-			<TabBar selectedIndex={navigation.state.index} onSelect={onSelect}>
-				<Tab icon={(style) => <Icon {...style} name='message-circle-outline'/>} />
-				<Tab icon={(style) => <Icon {...style} name='people-outline'/>} />
-				<Tab icon={(style) => <Icon {...style} name='settings-outline'/>} />
-			</TabBar>
-		</SafeAreaView>
+		<TabBar selectedIndex={navigation.state.index} onSelect={onSelect}>
+			<Tab icon={(style) => <Icon {...style} name='message-circle-outline'/>} />
+			<Tab icon={(style) => <Icon {...style} name='people-outline'/>} />
+			<Tab icon={(style) => <Icon {...style} name='settings-outline'/>} />
+		</TabBar>
 	);
 };
 

@@ -8,8 +8,8 @@ import ProfileContent from '../../commons/components/profile-content/profile-con
 
 function UserProfile({name, profilePicture, location, followers, following, posts, likes, about}) {
 	return (
-		<ScrollView>
-			<Layout>
+		<ScrollView style={{flexGrow: 1}}>
+			<Layout style={{flexGrow: 1}}>
 				<TopNavigation
 					title='User Profile'
 					alignment='center'
