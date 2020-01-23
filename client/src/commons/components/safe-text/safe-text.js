@@ -5,9 +5,9 @@ import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@u
 function SafeText({text, maxNoOfLines}) {
 	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(maxNoOfLines);
 	const [maxNumberOfLines, setMaxNumberOfLines] = useState();
-	
+
 	const handleOnTextLayout = ({nativeEvent}) => setMaxNumberOfLines(nativeEvent.lines.length);
-	const handleLoadMore = () => setNumberOfLinesDisplayed(maxNumberOfLines.current);
+	const handleLoadMore = () => setNumberOfLinesDisplayed(maxNumberOfLines);
 
 	const renderLoadMore = () => {
 		if(maxNumberOfLines > numberOfLinesDisplayed) {
