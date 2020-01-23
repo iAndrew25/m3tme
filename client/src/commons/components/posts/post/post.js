@@ -2,6 +2,8 @@ import React from 'react';
 import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
+import SafeText from '../../safe-text/safe-text';
+
 import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
 import PostHeader from './post-header/post-header';
 
@@ -18,7 +20,7 @@ function Post({type, sourceUri, text, onPress, isPreview}) {
 
 		if(type === 'TEXT') {
 			return (
-				<Text category="p2" style={style.textStyle} numberOfLines={5} ellipsizeMode="tail">{text}</Text>
+				<SafeText text={text} />
 			);
 		}
 
@@ -42,11 +44,8 @@ const style = StyleSheet.create({
 		width: '100%',
 		height: '100%'
 	},
-	previewTextStyle: {
-		padding: INNER_MARGIN
-	},
 	textStyle: {
-		color: 'white',
+		color: 'white'
 	}
 });
 

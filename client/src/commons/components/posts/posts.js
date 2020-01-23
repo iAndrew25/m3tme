@@ -23,7 +23,7 @@ function Posts({posts, isEditMode}) {
 Posts.defaultProps = {
 	posts: [{
 		type: 'TEXT',
-		text: 'Beautiful and dramatic Antelope Canyon',
+		text: 'Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
 		sourceUri: 'https://i.imgur.com/UYiroysl.jpg'
 	},
 	{
