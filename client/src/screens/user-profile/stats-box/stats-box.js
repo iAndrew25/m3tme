@@ -1,13 +1,13 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Text, Layout} from '@ui-kitten/components';
 
 function StatsBox({value, name}) {
 	return (
-		<Layout style={style.wraper}>
+		<View style={style.wraper}>
 			<Text style={style.text}>{value}</Text>
 			<Text style={style.text}>{name}</Text>
-		</Layout>	
+		</View>	
 	);
 };
 

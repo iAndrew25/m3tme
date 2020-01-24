@@ -1,23 +1,25 @@
 import React from 'react';
-import {ScrollView, Image, StyleSheet} from 'react-native';
+import {ScrollView, View, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
 
 import HeaderNames from '../../header-names/header-names';
 
+import getColor from '../../../utils/colors';
+
 function PostHeader({pictureUrl, name, username, timestamp}) {
 	return (
-		<Layout style={style.wrapper}>
+		<View style={style.wrapper}>
 			<Avatar shape='round' size="small" source={{uri: pictureUrl}}/>
-			<Layout style={style.text}>
+			<View style={style.text}>
 				<HeaderNames fluidText={name} fixedText={username} />
-				<Text category="c2">{timestamp}</Text>
-			</Layout>
-			<Layout style={style.more}>
+				<Text category="c2" style={style.timestamp}>{timestamp}</Text>
+			</View>
+			<View style={style.more}>
 				<Icon name='more-vertical-outline' width={16} height={16} fill='white'/>				
-			</Layout>
-		</Layout>
+			</View>
+		</View>
 	);
 }
 
@@ -35,6 +37,9 @@ const style = StyleSheet.create({
 	},
 	more: {
 		flexGrow: 0,
+	},
+	timestamp: {
+		color: getColor('subtitle')
 	}
 });
 

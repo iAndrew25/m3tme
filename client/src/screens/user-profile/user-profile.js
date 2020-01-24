@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, Image, StyleSheet} from 'react-native';
+import {ScrollView, Image, View, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import StatsBox from './stats-box/stats-box';
@@ -9,13 +9,13 @@ import ProfileContent from '../../commons/components/profile-content/profile-con
 function UserProfile({name, profilePicture, location, followers, following, posts, likes, about}) {
 	return (
 		<ScrollView style={{flexGrow: 1}}>
-			<Layout style={{flexGrow: 1}}>
+			<View style={{flexGrow: 1}}>
 				<TopNavigation
 					title='User Profile'
 					alignment='center'
 				/>
 
-				<Layout>
+				<View>
 					<Image source={{uri: 'https://www.xda-developers.com/files/2019/11/default_wallpaper.jpg'}} style={[StyleSheet.absoluteFill]} />
 					
 					<Avatar 
@@ -26,26 +26,26 @@ function UserProfile({name, profilePicture, location, followers, following, post
 					
 					<Text category="h5" style={style.name}>{name}</Text>
 
-					<Layout style={style.locationGroup}>
+					<View style={style.locationGroup}>
 						<Icon name='pin-outline' style={style.icon} fill="white" width={16} height={16} />
 						<Text category="s1" style={style.location}>{location}</Text>
-					</Layout>
+					</View>
 
-					<Layout style={style.buttonGroup}>
+					<View style={style.buttonGroup}>
 						<Button appearance='filled' icon={style => <Icon {...style} name='person-add'/>}>FOLLOW</Button>
 						<Button appearance='outline' icon={style => <Icon {...style} name='message-circle'/>} style={style.messageBtn}>MESSAGE</Button>
-					</Layout>
+					</View>
 
-					<Layout style={style.stats}>
+					<View style={style.stats}>
 						<StatsBox name="Followers" value={followers}/>
 						<StatsBox name="Following" value={following}/>
 						<StatsBox name="Posts" value={posts}/>
 						<StatsBox name="Likes" value={likes}/>
-					</Layout>
-				</Layout>
+					</View>
+				</View>
 
 				<ProfileContent />
-			</Layout>
+			</View>
 		</ScrollView>
 	);
 };

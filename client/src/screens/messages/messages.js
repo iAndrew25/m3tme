@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {Avatar, Text, Layout, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import patternMock from 'pattern-mock';
@@ -14,13 +14,13 @@ const data = patternMock({
 
 const ListItem = ({name, message, picture}) => (
 	<TouchableOpacity onPress={() => console.log('click')} activeOpacity={0.6}>
-		<Layout style={{flexDirection: 'row', padding: 16, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#eee'}}>
+		<View style={{flexDirection: 'row', padding: 16, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#eee'}}>
 			<Avatar shape='round' source={{uri: picture}} />
-			<Layout style={{flexDirection: 'column', flex: 1, marginLeft: 16, justifyContent: 'center'}}>
+			<View style={{flexDirection: 'column', flex: 1, marginLeft: 16, justifyContent: 'center'}}>
 				<Text category="p1" numberOfLines={1} ellipsizeMode="tail">{name}</Text>
 				<Text category="c2" numberOfLines={1} ellipsizeMode="tail" style={{opacity: 0.6, marginTop: 5}}>{message}</Text>			
-			</Layout>
-		</Layout>
+			</View>
+		</View>
 	</TouchableOpacity>
 );
 
@@ -28,7 +28,7 @@ function Messages() {
   const renderItem = ({item}) => <ListItem {...item} />;
 
 	return (
-		<Layout style={{flex: 1}}>
+		<View style={{flex: 1}}>
 			<TopNavigation
 				title='Messages'
 				alignment='center'
@@ -37,7 +37,7 @@ function Messages() {
 				data={data.messages}
 				renderItem={renderItem}
 			/>
-		</Layout>
+		</View>
 	);
 };
 

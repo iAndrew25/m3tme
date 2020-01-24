@@ -11,10 +11,10 @@ function Comment({pictureUrl, name, username, timestamp, comment, handleOnLongPr
 	return (
 		<TouchableOpacity style={style.wrapper} onLongPress={handleOnLongPress} activeOpacity={0.7}>
 			<Avatar shape='round' size="tiny" source={{uri: pictureUrl}} />
-			<Layout style={style.header}>
+			<View style={style.header}>
 				<HeaderNames fluidText={name} fixedText={username} leftText={timestamp} />
 				<SafeText text={comment} />
-			</Layout>
+			</View>
 		</TouchableOpacity>
 	);
 }
@@ -26,15 +26,9 @@ const style = StyleSheet.create({
 		paddingBottom: INNER_MARGIN
 	},
 	header: {
-		// backgroundColor: '#eee',
-		// opacity: 0.6,
 		flexShrink: 1,
 		paddingLeft: INNER_MARGIN,
-		// paddingBottom: INNER_MARGIN,
-		//flex: 1,
-		// paddingBottom: INNER_MARGIN,
 		flexDirection: 'column',
-		alignItems: 'center',
 	},
 	button: {
 		//padding: INNER_MARGIN

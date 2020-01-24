@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, Image, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {ScrollView, Image, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import Section from '../section/section';
@@ -44,12 +44,12 @@ function ProfileContent({about, isEditMode}) {
 	}
 
 	return (
-		<Layout style={style.wrapper}>
+		<View style={style.wrapper}>
 			{renderAboutSection()}
 			<Section title="Posts">
 				<Feed />
 			</Section>
-		</Layout>
+		</View>
 	);
 }
 

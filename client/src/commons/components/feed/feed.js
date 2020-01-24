@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
+import {ScrollView, Image, View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import FullWidthImage from 'react-native-fullwidth-image'
@@ -7,6 +7,8 @@ import SafeText from '../safe-text/safe-text';
 import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import PostHeader from './post-header/post-header';
 import PostFooter from './post-footer/post-footer';
+
+import getColor from '../../utils/colors';
 
 function Feed({posts}) {
 
@@ -30,15 +32,15 @@ function Feed({posts}) {
 	}
 
 	return (
-		<Layout style={style.wrapper}>
+		<View style={style.wrapper}>
 			{posts.map(post => 
-				<Layout style={style.postWrapper}>
+				<View style={style.postWrapper}>
 					<PostHeader />
 					{getPost(post)}
 					<PostFooter />
-				</Layout>
+				</View>
 			)}
-		</Layout>
+		</View>
 	); 
 }
 
@@ -80,9 +82,10 @@ const style = StyleSheet.create({
 		flex: 1,
 	},
 	postWrapper: {
+		elevation: 3,
 		flexGrow: 1,
 		borderRadius: 8,
-		backgroundColor: '#888',
+		backgroundColor: getColor('white'),
 		padding: INNER_MARGIN,
 		marginBottom: INNER_MARGIN
 	},

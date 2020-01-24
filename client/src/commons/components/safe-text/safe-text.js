@@ -2,6 +2,8 @@ import React, {Fragment, useState, useRef} from 'react';
 import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
+import getColor from '../../utils/colors';
+
 function SafeText({text, numberOfLines}) {
 	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(numberOfLines);
 	const [maxNumberOfLines, setMaxNumberOfLines] = useState();
@@ -21,7 +23,7 @@ function SafeText({text, numberOfLines}) {
 
 	return (
 		<Fragment>
-			<Text numberOfLines={numberOfLinesDisplayed} category="c2" onTextLayout={handleOnTextLayout}>
+			<Text numberOfLines={numberOfLinesDisplayed} category="c2" style={style.text} onTextLayout={handleOnTextLayout}>
 				{text}
 			</Text>
 			{renderLoadMore()}
@@ -31,8 +33,12 @@ function SafeText({text, numberOfLines}) {
 
 const style = StyleSheet.create({
 	loadMore: {
+		color: getColor('subtitle'),
 		textAlign: 'center',
 		marginTop: 8		
+	},
+	text: {
+		color: getColor('primary')
 	}
 });
 

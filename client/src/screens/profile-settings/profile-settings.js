@@ -1,35 +1,41 @@
 import React from 'react';
-import {ScrollView, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {ScrollView, View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import { Layout, TopNavigation, Avatar, Button, Icon, Input,Text } from '@ui-kitten/components';
 
 import ProfileContent from '../../commons/components/profile-content/profile-content';
 
+import getColor from '../../commons/utils/colors';
+
 function ProfileSettings({profilePicture, name, about}) {
 	return (
-		<ScrollView style={{flex: 1}}>
-			<Layout style={{flexGrow: 1}}>
+		<ScrollView style={style.wrapper}>
+			<View style={{flexGrow: 1}}>
 				<TopNavigation
 					title='Profile Settings'
 					alignment='center'
 				/>
 
-				<Layout style={style.avatarWrapper}>
+				<View style={style.avatarWrapper}>
 					<Image 
 						style={style.avatar}
 						source={{uri: profilePicture}}
 					/>
 					<Button icon={styles => <Icon {...styles} name='camera' fill="white" />} style={style.button} appearance='ghost' />
-				</Layout>
+				</View>
 
 				<Text category="h5" style={style.name}>{name}</Text>
 
 				<ProfileContent isEditMode />
-			</Layout>
+			</View>
 		</ScrollView>
 	);
 };
 
 const style = StyleSheet.create({
+	wrapper: {
+		flex: 1,
+		backgroundColor: getColor('background')
+	},
 	avatar: {
 		width: 160,
 		height: 160,
