@@ -2,21 +2,47 @@ import React, {useState} from 'react';
 import {ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
-import Post from './post/post';
-import {INNER_MARGIN, THREE_COLUMNS_SIZE} from '../../utils/sizes';
+import FullWidthImage from 'react-native-fullwidth-image'
+import SafeText from '../safe-text/safe-text';
+import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
+import PostHeader from './post-header/post-header';
+import PostFooter from './post-footer/post-footer';
 
-const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+function Feed({posts}) {
 
-function Posts({posts, isEditMode}) {
+	const getPost = ({type, sourceUri, text}) => {
+		if(type === 'IMAGE') {
+			return (
+				<FullWidthImage 
+					style={style.imageStyle}
+					source={{uri: sourceUri}}
+				/>
+			);
+		}
+
+		if(type === 'TEXT') {
+			return (
+				<SafeText text={text} />
+			);
+		}
+
+		return null;
+	}
+
 	return (
 		<Layout style={style.wrapper}>
-			{posts.map(post => <Post {...post} />)}
+			{posts.map(post => 
+				<Layout style={style.postWrapper}>
+					<PostHeader />
+					{getPost(post)}
+					<PostFooter />
+				</Layout>
+			)}
 		</Layout>
 	); 
-
 }
 
-Posts.defaultProps = {
+Feed.defaultProps = {
 	posts: [{
 		type: 'IMAGE',
 		text: 'Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
@@ -52,7 +78,20 @@ Posts.defaultProps = {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+	},
+	postWrapper: {
+		flexGrow: 1,
+		borderRadius: 8,
+		backgroundColor: '#888',
+		padding: INNER_MARGIN,
+		marginBottom: INNER_MARGIN
+	},
+	imageStyle: {
+		borderRadius: 8
+	},
+	textStyle: {
+		color: 'white'
 	}
 });
 
-export default Posts;
+export default Feed;

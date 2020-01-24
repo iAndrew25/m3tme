@@ -3,8 +3,8 @@ import {ScrollView, Image, StyleSheet, TouchableOpacity, TextInput} from 'react-
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import Section from '../section/section';
-import Posts from '../posts/posts';
-import {OUTER_MARGIN} from '../../utils/sizes';
+import Feed from '../feed/feed';
+import {INNER_MARGIN} from '../../utils/sizes';
 
 function ProfileContent({about, isEditMode}) {
 	const [userAbout, setUserAbout] = useState(about);
@@ -47,7 +47,7 @@ function ProfileContent({about, isEditMode}) {
 		<Layout style={style.wrapper}>
 			{renderAboutSection()}
 			<Section title="Posts">
-				<Posts isEditMode={isEditMode} />
+				<Feed />
 			</Section>
 		</Layout>
 	);
@@ -56,7 +56,7 @@ function ProfileContent({about, isEditMode}) {
 const style = StyleSheet.create({
 	wrapper: {
 		flexGrow: 1,
-		padding: OUTER_MARGIN
+		padding: INNER_MARGIN
 	},
 	about: {
 		opacity: 0.6,

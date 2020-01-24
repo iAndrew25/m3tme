@@ -2,21 +2,16 @@ import React from 'react';
 import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
-import {INNER_MARGIN, OUTER_MARGIN} from '../../../../utils/sizes';
+import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
+
+import HeaderNames from '../../header-names/header-names';
 
 function PostHeader({pictureUrl, name, username, timestamp}) {
 	return (
 		<Layout style={style.wrapper}>
 			<Avatar shape='round' size="small" source={{uri: pictureUrl}}/>
 			<Layout style={style.text}>
-				<Layout style={style.namesRow}>
-					<Layout style={style.name}>
-						<Text category="c1" numberOfLines={1} ellipsizeMode='tail'>{name}</Text>						
-					</Layout>
-					<Layout style={style.username}>
-						<Text category="c1" numberOfLines={1}> &#183; @{username}</Text>						
-					</Layout>
-				</Layout>
+				<HeaderNames fluidText={name} fixedText={username} />
 				<Text category="c2">{timestamp}</Text>
 			</Layout>
 			<Layout style={style.more}>
@@ -37,15 +32,6 @@ const style = StyleSheet.create({
 		flexGrow: 1,
 		flexShrink: 1,
 		paddingLeft: INNER_MARGIN
-	},
-	namesRow: {
-		flexDirection: 'row'
-	},
-	name: {
-		flexShrink: 1
-	},
-	username: {
-		flexGrow: 1
 	},
 	more: {
 		flexGrow: 0,

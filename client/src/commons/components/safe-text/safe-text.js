@@ -21,7 +21,7 @@ function SafeText({text, numberOfLines}) {
 
 	return (
 		<Fragment>
-			<Text numberOfLines={numberOfLinesDisplayed} category="p2" onTextLayout={handleOnTextLayout}>
+			<Text numberOfLines={numberOfLinesDisplayed} category="c2" onTextLayout={handleOnTextLayout}>
 				{text}
 			</Text>
 			{renderLoadMore()}
