@@ -10,7 +10,7 @@ import PostFooter from './post-footer/post-footer';
 
 import getColor from '../../utils/colors';
 
-function Feed({posts}) {
+function Posts({posts}) {
 
 	const getPost = ({type, sourceUri, text}) => {
 		if(type === 'IMAGE') {
@@ -44,7 +44,7 @@ function Feed({posts}) {
 	); 
 }
 
-Feed.defaultProps = {
+Posts.defaultProps = {
 	posts: [{
 		type: 'IMAGE',
 		text: 'Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
@@ -97,4 +97,4 @@ const style = StyleSheet.create({
 	}
 });
 
-export default Feed;
+export default Posts;

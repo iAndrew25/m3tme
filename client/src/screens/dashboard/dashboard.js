@@ -4,6 +4,7 @@ import { createAppContainer, SafeAreaView } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { TabBar, Tab, Layout, Text, Icon } from '@ui-kitten/components';
 
+import Home from '../home/home';
 import Messages from '../messages/messages';
 import People from '../people/people';
 import UserProfile from '../user-profile/user-profile';
@@ -25,7 +26,8 @@ function TabBarComponent({navigation}) {
 };
 
 export default createAppContainer(createBottomTabNavigator({
-	ProfileSettings,
+	Home,
+	// ProfileSettings,
 	UserProfile,
 	Messages,
 	People,
