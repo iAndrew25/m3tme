@@ -6,7 +6,7 @@ import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
 
 import getColor from '../../utils/colors';
 
-function Button({children, text, theme, type, size, iconName, iconSize, textStyle, style: componentStyle, }) {
+function Button({children, text, theme, type, size, onPress, iconName, iconSize, textStyle, style: componentStyle, }) {
 
 	const buttonTheme = theme === 'dark' ? {
 		button: style.dark,
@@ -21,14 +21,14 @@ function Button({children, text, theme, type, size, iconName, iconSize, textStyl
 	switch(type) {
 		case 'icon-only':
 			return (
-				<TouchableOpacity style={[style.wrapper, style[size], buttonTheme.button, style.iconOnly, componentStyle]} activeOpacity={0.7}>
+				<TouchableOpacity onPress={onPress} style={[style.wrapper, style[size], buttonTheme.button, style.iconOnly, componentStyle]} activeOpacity={0.7}>
 					<Icon name={iconName} width={iconSize} height={iconSize} fill={buttonTheme.icon} />
 				</TouchableOpacity>
 			);
 
 		case 'icon-left':
 			return (
-				<TouchableOpacity style={[style.wrapper, style[size], style.wraperWithIcon, buttonTheme.button, componentStyle]} activeOpacity={0.7}>
+				<TouchableOpacity onPress={onPress} style={[style.wrapper, style[size], style.wraperWithIcon, buttonTheme.button, componentStyle]} activeOpacity={0.7}>
 					<Icon name={iconName} width={iconSize} height={iconSize} fill={buttonTheme.icon} style={style.iconLeft} />
 					<Text style={[style.text, buttonTheme.text, textStyle]}>{text}</Text>
 				</TouchableOpacity>
@@ -36,7 +36,7 @@ function Button({children, text, theme, type, size, iconName, iconSize, textStyl
 
 		case 'icon-right':
 			return (
-				<TouchableOpacity style={[style.wrapper, style[size], style.wraperWithIcon, buttonTheme.button, componentStyle]} activeOpacity={0.7}>
+				<TouchableOpacity onPress={onPress} style={[style.wrapper, style[size], style.wraperWithIcon, buttonTheme.button, componentStyle]} activeOpacity={0.7}>
 					<Text style={[style.text, buttonTheme.text, textStyle]}>{text}</Text>
 					<Icon name={iconName} width={iconSize} height={iconSize} fill={buttonTheme.icon} style={style.iconRight} />
 				</TouchableOpacity>
@@ -44,7 +44,7 @@ function Button({children, text, theme, type, size, iconName, iconSize, textStyl
 
 		default:
 			return (
-				<TouchableOpacity style={[style.wrapper, style[size], componentStyle]} activeOpacity={0.7}>
+				<TouchableOpacity onPress={onPress} style={[style.wrapper, style[size], componentStyle]} activeOpacity={0.7}>
 					{children}
 				</TouchableOpacity>
 			);

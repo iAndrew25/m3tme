@@ -59,7 +59,7 @@ function Home({avatarUrl}) {
 						<Text style={style.homeText}>Home</Text>
 					}
 					rightComponent={
-						<Button style={style.messageIcon} theme="dark" iconName="message-circle" type="icon-only" />
+						<Button style={style.messageIcon} theme="dark" iconName="more-vertical-outline" type="icon-only" />
 					}
 				/>
 			</View>
