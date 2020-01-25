@@ -42,7 +42,8 @@ function TabBarComponent({navigation}) {
 		<View style={style.wrapper}>
 			{tabs.map(({iconName, selectedIconName}, index) => <Button 
 				key={iconName}
-				theme="light" 
+				theme="flat"
+				style={style.tab}
 				onPress={() => onSelect(index)} 
 				iconName={navigation.state.index === index ? selectedIconName : iconName} 
 				type="icon-only" />
@@ -56,12 +57,10 @@ const style = StyleSheet.create({
 		elevation: 6,
 		height: 40,
 		flexDirection: 'row',
-		justifyContent: 'space-around',
-		//backgroundColor: getColor('primary')
+		justifyContent: 'space-around'
 	},
 	tab: {
-		backgroundColor: 'red',
-		// opacity: 1
+		flex: 1
 	}
 });
 

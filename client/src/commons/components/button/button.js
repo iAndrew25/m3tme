@@ -6,17 +6,33 @@ import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
 
 import getColor from '../../utils/colors';
 
-function Button({children, text, theme, type, size, onPress, iconName, iconSize, textStyle, style: componentStyle, }) {
+const getThemeStyle = theme => {
+	switch(theme) {
+		case 'dark':
+			return {
+				button: style.dark,
+				text: style.lightText,
+				icon: getColor('white')
+			};
 
-	const buttonTheme = theme === 'dark' ? {
-		button: style.dark,
-		text: style.lightText,
-		icon: getColor('white')
-	} : {
-		button: style.light,
-		text: style.darkText,
-		icon: getColor('primary')
-	};
+		case 'light':
+			return {
+				button: style.light,
+				text: style.darkText,
+				icon: getColor('primary')
+			};
+
+		case 'flat':
+			return {
+				button: {},
+				text: {},
+				icon: getColor('primary')
+			}
+	}
+};
+
+function Button({children, text, theme, type, size, onPress, iconName, iconSize, textStyle, style: componentStyle, }) {
+	const buttonTheme = getThemeStyle(theme);
 
 	switch(type) {
 		case 'icon-only':
