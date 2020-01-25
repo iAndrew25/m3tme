@@ -18,7 +18,7 @@ const App = () => (
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+		//paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
 	} 
 });
 

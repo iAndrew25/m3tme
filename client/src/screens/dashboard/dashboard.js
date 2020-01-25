@@ -13,24 +13,19 @@ import ProfileSettings from '../profile-settings/profile-settings';
 
 import getColor from '../../commons/utils/colors';
 
-const tabs = [
-	{
-		iconName: 'home-outline',
-		selectedIconName: 'home',
-	},
-	{
-		iconName: 'message-circle-outline',
-		selectedIconName: 'message-circle',
-	},
-	{
-		iconName: 'globe-2-outline',
-		selectedIconName: 'globe-2'
-	},
-	{
-		iconName: 'settings-outline',
-		selectedIconName: 'settings',
-	}
-];
+const tabs = [{
+	iconName: 'home-outline',
+	selectedIconName: 'home',
+}, {
+	iconName: 'message-circle-outline',
+	selectedIconName: 'message-circle',
+}, {
+	iconName: 'globe-2-outline',
+	selectedIconName: 'globe-2'
+}, {
+	iconName: 'settings-outline',
+	selectedIconName: 'settings',
+}];
 
 function TabBarComponent({navigation}) {
 	const onSelect = index => {
@@ -71,5 +66,5 @@ export default createAppContainer(createBottomTabNavigator({
 	Messages,
 	People,
 }, {
-	tabBarComponent: TabBarComponent,
+	tabBarComponent: TabBarComponent
 }));
