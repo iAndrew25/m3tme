@@ -7,7 +7,7 @@ import TabBar from '../commons/components/tab-bar/tab-bar';
 
 import Home from '../screens/home/home';
 import Messages from '../screens/messages/messages';
-import People from '../screens/people/people';
+import Discover from '../screens/discover/discover';
 import UserProfile from '../screens/user-profile/user-profile';
 import ProfileSettings from '../screens/profile-settings/profile-settings';
 
@@ -22,19 +22,15 @@ const tabs = [{
 }, {
 	iconName: 'globe-2-outline',
 	selectedIconName: 'globe-2'
-}, {
-	iconName: 'settings-outline',
-	selectedIconName: 'settings',
 }];
 
 export default createAppContainer(createStackNavigator({
 	FullPost,
 	MainNavigation: createBottomTabNavigator({
 		Home,
-		// ProfileSettings,
-		UserProfile,
-		Messages,
-		People,
+		ProfileSettings,
+		Discover,
+		UserProfile
 	}, {
 		tabBarComponent: props => <TabBar {...props} tabs={tabs} />
 	}),

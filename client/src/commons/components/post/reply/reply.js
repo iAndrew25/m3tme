@@ -7,7 +7,7 @@ import Button from '../../button/button';
 import getColor from '../../../utils/colors';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../../utils/sizes';
 
-function Reply({avatarUrl, canReply = true}) {
+function Reply({avatarUrl, canReply = false}) {
 
 	const renderTextInput = () => {
 		if(canReply) {

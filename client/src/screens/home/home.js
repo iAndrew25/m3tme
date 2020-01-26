@@ -11,6 +11,8 @@ import getColor from '../../commons/utils/colors';
 
 import Post from '../../commons/components/post/post';
 
+import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
+
 const posts = patternMock({
 	data: [{
 		id: 'COUNTER',
@@ -29,23 +31,11 @@ const posts = patternMock({
 });
 
 function Home({avatarUrl, navigation}) {
-	console.log('!home');
 	return (
 		<Fragment>
 			<Header 
 				leftComponent={
-					<Button style={style.avatar} onPress={() => {
-						navigation.navigate('FullPost')
-					}}>
-						<Avatar 
-							shape='round'
-							size='small'
-							source={{uri: avatarUrl}}
-						/>
-					</Button>
-				}
-				centerComponent={
-					<Text style={style.homeText}>Home</Text>
+					<Text style={style.homeText}>M3tme logo</Text>
 				}
 				rightComponent={
 					<Button style={style.messageIcon} theme="dark" iconName="more-vertical-outline" type="icon-only" />
@@ -53,12 +43,13 @@ function Home({avatarUrl, navigation}) {
 			/>
 			<FlatList
 				data={posts.data}
-				contentStyle={{padding: 16}}
 				renderItem={({ item }) => (
 					<Post {...item} />
 				)}
 				keyExtractor={item => item.id.toString()}
+				ListFooterComponent={<View style={style.footerComponent} />}
 			/>
+			<Button size="L" theme="dark" type="icon-only" iconName="plus-outline" style={style.addPost} />
 		</Fragment>
 	);
 };
@@ -74,15 +65,21 @@ const style = StyleSheet.create({
 		flexGrow: 0,
 		flexShrink: 1
 	},
+	addPost: {
+		width: 50, 
+		height: 50, 
+		borderRadius: 25, 
+		position: 'absolute',
+		bottom: OUTER_MARGIN,
+		right: OUTER_MARGIN
+	},
+	footerComponent: {
+		paddingBottom: 50 + OUTER_MARGIN + INNER_MARGIN
+	},
 	homeText: {
 		flex: 1,
+		paddingLeft: OUTER_MARGIN,
 		color: getColor('white')
-	},
-	avatar: {
-		width: 50,
-		height: 50,
-		justifyContent: 'center',
-		alignItems: 'center'
 	}
 })
 
