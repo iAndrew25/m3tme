@@ -3,14 +3,15 @@ import {SafeAreaView, Platform, StatusBar, StyleSheet} from 'react-native';
 import { ApplicationProvider, IconRegistry, Layout, Text } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, light, dark} from '@eva-design/eva';
+import 'react-native-gesture-handler';
 
-import Dashboard from './src/screens/dashboard/dashboard';
+import AppNavigation from './src/config/app-navigation';
 
 const App = () => (
 	<SafeAreaView style={style.wrapper}>
 		<ApplicationProvider mapping={mapping} theme={dark}>
 			<IconRegistry icons={EvaIconsPack} />
-			<Dashboard />
+			<AppNavigation />
 		</ApplicationProvider>
 	</SafeAreaView>
 );
@@ -18,7 +19,7 @@ const App = () => (
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+		//paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
 	} 
 });
 

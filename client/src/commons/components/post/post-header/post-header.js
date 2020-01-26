@@ -8,16 +8,18 @@ import HeaderNames from '../../header-names/header-names';
 
 import getColor from '../../../utils/colors';
 
-function PostHeader({pictureUrl, name, username, timestamp}) {
+function PostHeader({author, time}) {
+	const {avatarUrl, fullName, username} = author;
+
 	return (
 		<View style={style.wrapper}>
-			<Avatar shape='round' size="small" source={{uri: pictureUrl}}/>
+			<Avatar shape='round' size="small" source={{uri: avatarUrl}}/>
 			<View style={style.text}>
-				<HeaderNames fluidText={name} fixedText={username} />
-				<Text category="c2" style={style.timestamp}>{timestamp}</Text>
+				<HeaderNames fluidText={fullName} fixedText={username} />
+				<Text category="c2" style={style.time}>{time}</Text>
 			</View>
 			<View style={style.more}>
-				<Icon name='more-vertical-outline' width={16} height={16} fill='white'/>				
+				<Icon name='more-vertical-outline' width={16} height={16} fill={getColor('primary')}/>				
 			</View>
 		</View>
 	);
@@ -38,16 +40,9 @@ const style = StyleSheet.create({
 	more: {
 		flexGrow: 0,
 	},
-	timestamp: {
+	time: {
 		color: getColor('subtitle')
 	}
 });
-
-PostHeader.defaultProps = {
-	pictureUrl: 'https://akveo.github.io/react-native-ui-kitten/docs/assets/playground-build/static/media/icon.a78e4b51.png',
-	name: 'Donald Trump',
-	username: 'realDonaldTrump',
-	timestamp: '8h'
-}
 
 export default PostHeader;

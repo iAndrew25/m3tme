@@ -3,7 +3,7 @@ import {ScrollView, Image, View, StyleSheet, TouchableOpacity, TextInput} from '
 import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
 
 import Section from '../section/section';
-import Feed from '../feed/feed';
+// import Feed from '../feed/feed';
 import {INNER_MARGIN} from '../../utils/sizes';
 
 function ProfileContent({about, isEditMode}) {
@@ -46,9 +46,6 @@ function ProfileContent({about, isEditMode}) {
 	return (
 		<View style={style.wrapper}>
 			{renderAboutSection()}
-			<Section title="Posts">
-				<Feed />
-			</Section>
 		</View>
 	);
 }

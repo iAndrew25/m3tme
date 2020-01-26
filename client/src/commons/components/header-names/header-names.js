@@ -8,10 +8,10 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 	return (
 		<View style={style.wrapper}>
 			<View style={style.fluidContainer}>
-				<Text category="c1" numberOfLines={1} ellipsizeMode='tail' style={style.text}>{fluidText}</Text>
+				<Text category="c1" numberOfLines={1} ellipsizeMode='tail' style={style.text}>{fluidText}  &#183; </Text>
 			</View>
 			<View style={style.fixedContainer}>
-				<Text category="c1" numberOfLines={1} style={style.text}> &#183; @{fixedText}</Text>
+				<Text category="c1" numberOfLines={1} style={style.fixedText}>@{fixedText}</Text>
 				{leftText && <Text category="c1" numberOfLines={1} style={style.leftText}> &#183; {leftText}</Text>}
 			</View>
 		</View>
@@ -26,7 +26,12 @@ const style = StyleSheet.create({
 		flexShrink: 1
 	},
 	text: {
-		color: getColor('primary')
+		color: getColor('primary'),
+		fontWeight: 'bold'
+	},
+	fixedText: {
+		fontStyle: 'italic',
+		color: getColor('primary'),
 	},
 	leftText: {
 		color: getColor('subtitle')

@@ -4,7 +4,7 @@ import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@u
 
 import getColor from '../../utils/colors';
 
-function SafeText({text, numberOfLines}) {
+function SafeText({text, numberOfLines, style: componentStyle}) {
 	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(numberOfLines);
 	const [maxNumberOfLines, setMaxNumberOfLines] = useState();
 
@@ -23,7 +23,7 @@ function SafeText({text, numberOfLines}) {
 
 	return (
 		<Fragment>
-			<Text numberOfLines={numberOfLinesDisplayed} category="c2" style={style.text} onTextLayout={handleOnTextLayout}>
+			<Text numberOfLines={numberOfLinesDisplayed} category="c2" style={[style.text, componentStyle]} onTextLayout={handleOnTextLayout}>
 				{text}
 			</Text>
 			{renderLoadMore()}
@@ -43,7 +43,8 @@ const style = StyleSheet.create({
 });
 
 SafeText.defaultProps = {
-	numberOfLines: 5
+	numberOfLines: 5,
+	style: {}
 }
 
 export default SafeText;

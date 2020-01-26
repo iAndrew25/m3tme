@@ -1,0 +1,96 @@
+/login
+{
+	variables: {
+		username,
+		password
+	}
+}
+
+{
+	
+}
+
+/profile
+{
+	id,
+	username,
+	fullName,
+	location,
+	avatarUrl,
+	followersCount,
+	followingCount,
+	postsCount,
+	likesCount
+}
+
+/posts
+{
+	variables: {
+		userId
+	}
+}
+{
+	posts: [{
+		id,
+		time,
+		heartsCount,
+		commentsCount,
+		contentType, 'IMAGE' | 'TEXT',
+		content,
+		author: {
+			id,
+			avatarUrl,
+			fullName,
+			username
+		}
+	}]
+}
+
+/feed
+{
+	posts: [{
+		id,
+		time,
+		heartsCount,
+		commentsCount,
+		contentType, 'IMAGE' | 'TEXT',
+		content,
+		author: {
+			id,
+			avatarUrl,
+			fullName,
+			username
+		}
+	}]
+}
+
+/get-post
+variables: {
+	id
+}
+
+{
+	id,
+	time,
+	heartsCount,
+	commentsCount,
+	contentType, 'IMAGE' | 'TEXT',
+	content,
+	author: {
+		id,
+		avatarUrl,
+		fullName,
+		username
+	},
+	comments: [{
+		id,
+		author: {
+			id,
+			avatarUrl,
+			fullName,
+			username
+		},
+		content,
+		time
+	}]
+}
