@@ -41,13 +41,16 @@ const posts = [{
 	sourceUri: 'https://i.imgur.com/lceHsT6l.jpg'
 }];
 
-function Home({avatarUrl}) {
+function Home({avatarUrl, navigation}) {
 	return (
 		<Fragment>
 			<View style={{backgroundColor: 'red'}}>
 				<Header 
 					leftComponent={
-						<Button style={style.avatar}>
+						<Button style={style.avatar} onPress={() => {
+							console.log('press');
+							navigation.navigate('FullPost')
+						}}>
 							<Avatar 
 								shape='round'
 								size='small'
