@@ -7,7 +7,7 @@ import Button from '../../button/button';
 import getColor from '../../../utils/colors';
 import {OUTER_MARGIN} from '../../../utils/sizes';
 
-function BackHeader({title, onPress, testID, children}) {
+function BackHeader({title, onPress, children}) {
 	const renderChildren = () => {
 		if (children) return children;
 		if (title) return <Text style={style.titleStyle}>{title}</Text>;

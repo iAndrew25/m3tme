@@ -27,7 +27,6 @@ const posts = patternMock({
 		}		
 	}]
 });
-	// console.log("posts", posts);
 
 function Home({avatarUrl, navigation}) {
 	console.log('!home');
@@ -55,12 +54,9 @@ function Home({avatarUrl, navigation}) {
 			<FlatList
 				data={posts.data}
 				contentStyle={{padding: 16}}
-				renderItem={({ item }) => {
-					console.log('item', item);
-					return (
-						<Post {...item} />
-					)
-				}}
+				renderItem={({ item }) => (
+					<Post {...item} />
+				)}
 				keyExtractor={item => item.id.toString()}
 			/>
 		</Fragment>

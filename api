@@ -83,6 +83,7 @@ variables: {
 		username
 	},
 	comments: [{
+		id,
 		author: {
 			id,
 			avatarUrl,

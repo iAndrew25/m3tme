@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import {ScrollView, Image, View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
-import {Avatar, Text, Layout, Button, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
 
 import FullWidthImage from 'react-native-fullwidth-image'
 import SafeText from '../safe-text/safe-text';
@@ -41,11 +40,15 @@ function Post({id, time, heartsCount, commentsCount, contentType, content, autho
 	}
 
 	const renderComments = () => {
-		return (
-			<View style={style.comments}>
-				{comments.map(comment => <Comment {...comment} />)}
-			</View>
-		);		
+		if(comments.length) {
+			return (
+				<View style={style.comments}>
+					{comments.map(comment => <Comment key={comment.id} {...comment} />)}
+				</View>
+			);
+		} else {
+			return null;
+		}
 	}
 
 	return (
@@ -57,7 +60,7 @@ function Post({id, time, heartsCount, commentsCount, contentType, content, autho
 				commentsCount={commentsCount}
 				onHeartPress={handleOnHeartPress}
 				onCommentPress={handleOnCommentPress} />
-			{comments.length && renderComments()}
+			{renderComments()}
 		</View>
 	); 
 }

@@ -6,7 +6,7 @@ import ProfileContent from '../../commons/components/profile-content/profile-con
 
 import getColor from '../../commons/utils/colors';
 
-function ProfileSettings({profilePicture, name, about}) {
+function ProfileSettings({profilePicture, name}) {
 	return (
 		<ScrollView style={style.wrapper}>
 			<View style={{flexGrow: 1}}>
@@ -62,7 +62,6 @@ const style = StyleSheet.create({
 });
 
 ProfileSettings.defaultProps = {
-	about: 'sfa',
 	profilePicture: 'https://images.wsj.net/im-119693?width=620&size=1.5',
 	name: 'Donald Trump'
 };
