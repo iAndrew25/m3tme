@@ -16,7 +16,7 @@
 	username,
 	fullName,
 	location,
-	avatar,
+	avatarUrl,
 	followersCount,
 	followingCount,
 	postsCount,
@@ -39,7 +39,7 @@
 		content,
 		author: {
 			id,
-			avatar,
+			avatarUrl,
 			fullName,
 			username
 		}
@@ -57,7 +57,7 @@
 		content,
 		author: {
 			id,
-			avatar,
+			avatarUrl,
 			fullName,
 			username
 		}
@@ -78,14 +78,14 @@ variables: {
 	content,
 	author: {
 		id,
-		avatar,
+		avatarUrl,
 		fullName,
 		username
 	},
 	comments: [{
 		author: {
 			id,
-			avatar,
+			avatarUrl,
 			fullName,
 			username
 		},

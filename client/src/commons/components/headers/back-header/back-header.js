@@ -2,7 +2,6 @@ import React, {memo} from 'react';
 import {Text, StyleSheet} from 'react-native';
 
 import Header from '../header/header';
-
 import Button from '../../button/button';
 
 import getColor from '../../../utils/colors';
@@ -18,7 +17,12 @@ function BackHeader({title, onPress, testID, children}) {
 		<Header
 			style={style.header}
 			leftComponent={
-				<Button style={style.backIcon} theme="dark" iconName="arrow-back-outline" type="icon-only" />
+				<Button 
+					onPress={onPress} 
+					style={style.backIcon} 
+					theme="dark" 
+					iconName="arrow-back-outline" 
+					type="icon-only" />
 			}
 			centerComponent={renderChildren()}
 		/>

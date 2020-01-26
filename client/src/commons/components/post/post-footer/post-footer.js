@@ -8,11 +8,27 @@ import getColor from '../../../utils/colors';
 
 import Button from '../../button/button';
 
-function PostFooter({pictureUrl, name, username, timestamp}) {
+function PostFooter({onHeartPress, onCommentPress, heartsCount, commentsCount}) {
 	return (
 		<View style={style.wrapper}>
-			<Button textStyle={style.text} size="M" iconSize={14} theme="light" iconName="heart" type="icon-right" text="2" />
-			<Button textStyle={style.text} size="M" iconSize={14} theme="light" iconName="message-square" type="icon-right" text="6" />
+			<Button 
+				textStyle={style.text} 
+				onPress={onHeartPress} 
+				size="M" 
+				iconSize={14} 
+				theme="light" 
+				iconName="heart" 
+				type="icon-right" 
+				text={heartsCount || ''} />
+			<Button 
+				textStyle={style.text} 
+				onPress={onCommentPress} 
+				size="M" 
+				iconSize={14} 
+				theme="light" 
+				iconName="message-square" 
+				type="icon-right" 
+				text={commentsCount || ''} />
 		</View>
 	);
 }
@@ -29,9 +45,5 @@ const style = StyleSheet.create({
 		marginRight: -4
 	}
 });
-
-PostFooter.defaultProps = {
-
-}
 
 export default PostFooter;

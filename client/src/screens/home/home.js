@@ -1,3 +1,4 @@
+import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
 import {View, FlatList, Text, StyleSheet} from 'react-native';
 import {Avatar, Layout, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
@@ -10,75 +11,61 @@ import getColor from '../../commons/utils/colors';
 
 import Post from '../../commons/components/post/post';
 
-const posts = [{
-	type: 'IMAGE',
-	text: 'Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/UYiroysl.jpg'
-},
-{
-	type: 'TEXT',
-	text: 'Earlier this morning, NYC Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/UPrs1EWl.jpg'
-},
-{
-	type: 'IMAGE',
-	text: 'White Pocket Sunset Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/MABUbpDl.jpg'
-},
-{
-	type: 'TEXT',
-	text: 'Acrocorinth, Greece Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/KZsmUi2l.jpg'
-},
-{
-	type: 'IMAGE',
-	text: 'The lone tree, majestic landscape of New Zealand Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/2nCt3Sbl.jpg'
-},
-{
-	type: 'TEXT',
-	text: 'Middle Earth, Germany Beautiful and dramatic Antelope Canyon Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolores voluptatibus maxime modi corporis assumenda porro obcaecati quos quidem, quisquam beatae, odio dolorem ducimus mollitia similique harum pariatur hic sint! ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ea tempore sit eveniet maxime explicabo nihil suscipit, assumenda vero aliquam, mollitia esse quidem exercitationem, dolore sed sunt quo magni nesciunt?',
-	sourceUri: 'https://i.imgur.com/lceHsT6l.jpg'
-}];
+const posts = patternMock({
+	data: [{
+		id: 'COUNTER',
+		time: 'WORD',
+		heartsCount: 'CUSTOM_NUMBER_23-167',
+		commentsCount: 'CUSTOM_NUMBER_23-167',
+		contentType: 'TEXT',
+		content: 'PARAGRAPH',
+		author: {
+			id: 'COUNTER',
+			avatarUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+			fullName: 'FULL_NAME',
+			username: 'WORD'
+		}		
+	}]
+});
+	// console.log("posts", posts);
 
 function Home({avatarUrl, navigation}) {
+	console.log('!home');
 	return (
 		<Fragment>
-			<View style={{backgroundColor: 'red'}}>
-				<Header 
-					leftComponent={
-						<Button style={style.avatar} onPress={() => {
-							console.log('press');
-							navigation.navigate('FullPost')
-						}}>
-							<Avatar 
-								shape='round'
-								size='small'
-								source={{uri: avatarUrl}}
-							/>
-						</Button>
-					}
-					centerComponent={
-						<Text style={style.homeText}>Home</Text>
-					}
-					rightComponent={
-						<Button style={style.messageIcon} theme="dark" iconName="more-vertical-outline" type="icon-only" />
-					}
-				/>
-			</View>
+			<Header 
+				leftComponent={
+					<Button style={style.avatar} onPress={() => {
+						navigation.navigate('FullPost')
+					}}>
+						<Avatar 
+							shape='round'
+							size='small'
+							source={{uri: avatarUrl}}
+						/>
+					</Button>
+				}
+				centerComponent={
+					<Text style={style.homeText}>Home</Text>
+				}
+				rightComponent={
+					<Button style={style.messageIcon} theme="dark" iconName="more-vertical-outline" type="icon-only" />
+				}
+			/>
 			<FlatList
-				data={posts}
+				data={posts.data}
 				contentStyle={{padding: 16}}
-				renderItem={({ item }) => (
-					<Post {...item} />
-				)}
-				keyExtractor={item => item.sourceUri}
+				renderItem={({ item }) => {
+					console.log('item', item);
+					return (
+						<Post {...item} />
+					)
+				}}
+				keyExtractor={item => item.id.toString()}
 			/>
 		</Fragment>
 	);
 };
-
-
 
 Home.defaultProps = {
 	avatarUrl: 'https://images.wsj.net/im-119693?width=620&size=1.5'
