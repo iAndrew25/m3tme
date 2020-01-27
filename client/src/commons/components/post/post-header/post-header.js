@@ -1,16 +1,8 @@
 import React from 'react';
-import {ScrollView, View, Image, StyleSheet} from 'react-native';
-import {
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {View, StyleSheet} from 'react-native';
+import {Text, Icon} from '@ui-kitten/components';
 
-import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
+import {INNER_MARGIN} from '../../../utils/sizes';
 
 import Avatar from '../../avatar/avatar';
 import HeaderNames from '../../header-names/header-names';

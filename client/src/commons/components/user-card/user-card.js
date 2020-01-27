@@ -1,26 +1,16 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {Icon} from '@ui-kitten/components';
 
 import Avatar from '../avatar/avatar';
 
-import {TWO_COLUMNS_SIZE, INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
+import {TWO_COLUMNS_SIZE, INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function UserCard({avatarUrl, fullName, username, location, description}) {
 	return (
 		<View style={style.wrapper}>
-			<Avatar
-				size="XL"
-				avatarUrl={avatarUrl}
-			/>
+			<Avatar size="XL" avatarUrl={avatarUrl} />
 			<View style={style.text}>
 				<Text style={style.fullName}>{fullName}</Text>
 				<Text style={style.username}>@{username}</Text>

@@ -1,7 +1,6 @@
 import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
-import {View, Text, ScrollView} from 'react-native';
-import {Layout, TopNavigation} from '@ui-kitten/components';
+import {ScrollView} from 'react-native';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 import Post from '../../commons/components/post/post';

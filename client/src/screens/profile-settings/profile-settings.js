@@ -1,20 +1,6 @@
 import React from 'react';
-import {
-	ScrollView,
-	View,
-	Image,
-	StyleSheet,
-	TouchableOpacity,
-} from 'react-native';
-import {
-	Layout,
-	TopNavigation,
-	Avatar,
-	Button,
-	Icon,
-	Input,
-	Text,
-} from '@ui-kitten/components';
+import {ScrollView, View, Image, StyleSheet} from 'react-native';
+import {TopNavigation, Button, Icon, Text} from '@ui-kitten/components';
 
 import ProfileContent from '../../commons/components/profile-content/profile-content';
 

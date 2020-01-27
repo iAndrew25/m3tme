@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
+import {View, StyleSheet, ScrollView, TextInput} from 'react-native';
 
 import {Icon} from '@ui-kitten/components';
 

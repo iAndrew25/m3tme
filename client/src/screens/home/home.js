@@ -1,14 +1,6 @@
 import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
 import {View, FlatList, Text, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Layout,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
 
 import Button from '../../commons/components/button/button';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text, Layout} from '@ui-kitten/components';
+import {Text} from '@ui-kitten/components';
 
 import Avatar from '../avatar/avatar';
 import HeaderNames from '../header-names/header-names';
@@ -11,13 +11,15 @@ function MessageCard({person, lastMessage, time}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar
-				size="M"
-				avatarUrl={avatarUrl}
-			/>
+			<Avatar size="M" avatarUrl={avatarUrl} />
 			<View style={style.middle}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
-				<Text numberOfLines={1} ellipsisMode="tail" style={style.message}>{lastMessage}</Text>
+				<Text
+					numberOfLines={1}
+					ellipsisMode="tail"
+					style={style.message}>
+					{lastMessage}
+				</Text>
 			</View>
 			<View style={style.time}>
 				<Text style={style.timeText}>{time}</Text>
@@ -41,7 +43,7 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		flexDirection: 'column',
 		flexShrink: 1,
-		marginHorizontal: 16
+		marginHorizontal: 16,
 	},
 	time: {
 		flexShrink: 0,
@@ -55,8 +57,8 @@ const style = StyleSheet.create({
 	message: {
 		flexGrow: 1,
 		color: getColor('subtitle'),
-		fontSize: 11
-	}
+		fontSize: 11,
+	},
 });
 
 export default MessageCard;

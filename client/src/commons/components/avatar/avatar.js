@@ -1,5 +1,5 @@
 import React from 'react';
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
 
 import {AVATAR_SIZES} from '../../utils/sizes';
 
@@ -7,10 +7,10 @@ function Avatar({avatarUrl, size, style}) {
 	const avatarSize = AVATAR_SIZES[size];
 
 	return (
-		<FastImage 
+		<FastImage
 			style={[avatarSize, {borderRadius: avatarSize.width / 2}, style]}
 			source={{
-				uri: avatarUrl
+				uri: avatarUrl,
 			}}
 		/>
 	);
@@ -18,7 +18,7 @@ function Avatar({avatarUrl, size, style}) {
 
 Avatar.defaultProps = {
 	size: 'M',
-	style: {}
+	style: {},
 };
 
 export default Avatar;

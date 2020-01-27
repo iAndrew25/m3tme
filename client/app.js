@@ -1,13 +1,8 @@
 import React from 'react';
-import {SafeAreaView, Platform, StatusBar, StyleSheet} from 'react-native';
-import {
-	ApplicationProvider,
-	IconRegistry,
-	Layout,
-	Text,
-} from '@ui-kitten/components';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
-import {mapping, light, dark} from '@eva-design/eva';
+import {mapping, dark} from '@eva-design/eva';
 import 'react-native-gesture-handler';
 
 import AppNavigation from './src/config/app-navigation';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text, Layout} from '@ui-kitten/components';
+import {Text} from '@ui-kitten/components';
 
 import getColor from '../../utils/colors';
 

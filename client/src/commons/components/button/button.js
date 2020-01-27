@@ -1,15 +1,6 @@
-import React, {Fragment} from 'react';
-import {
-	ScrollView,
-	TouchableOpacity,
-	Image,
-	View,
-	StyleSheet,
-	Text
-} from 'react-native';
-import {
-	Icon,
-} from '@ui-kitten/components';
+import React from 'react';
+import {TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {Icon} from '@ui-kitten/components';
 
 import {INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
 

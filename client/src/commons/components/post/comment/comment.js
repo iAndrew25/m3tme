@@ -1,23 +1,7 @@
 import React from 'react';
-import {
-	ScrollView,
-	View,
-	Alert,
-	TouchableOpacity,
-	Image,
-	StyleSheet,
-} from 'react-native';
-import {
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {View, Alert, TouchableOpacity, StyleSheet} from 'react-native';
 
-import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
+import {INNER_MARGIN} from '../../../utils/sizes';
 
 import HeaderNames from '../../header-names/header-names';
 import SafeText from '../../safe-text/safe-text';

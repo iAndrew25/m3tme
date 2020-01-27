@@ -1,14 +1,6 @@
 import React from 'react';
 import {ScrollView, Image, View, StyleSheet} from 'react-native';
-import {
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {Text, Button, TopNavigation, Icon} from '@ui-kitten/components';
 
 import Avatar from '../../commons/components/avatar/avatar';
 import StatsBox from './stats-box/stats-box';
@@ -39,10 +31,7 @@ function UserProfile({
 						style={[StyleSheet.absoluteFill]}
 					/>
 
-					<Avatar
-						size="XXL"
-						avatarUrl={avatarUrl}
-					/>
+					<Avatar size="XXL" avatarUrl={avatarUrl} />
 
 					<Text category="h5" style={style.name}>
 						{name}

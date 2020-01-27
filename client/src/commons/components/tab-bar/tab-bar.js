@@ -27,7 +27,10 @@ function TabBar({navigation, tabs, children}) {
 				/>
 			))}
 			<Button style={style.tab} onPress={() => onSelect(3)}>
-				<Avatar size="S" avatarUrl="https://images.wsj.net/im-119693?width=620&size=1.5" />
+				<Avatar
+					size="S"
+					avatarUrl="https://images.wsj.net/im-119693?width=620&size=1.5"
+				/>
 			</Button>
 		</View>
 	);
@@ -37,11 +40,11 @@ const style = StyleSheet.create({
 	wrapper: {
 		height: 40,
 		flexDirection: 'row',
-		justifyContent: 'space-around'
+		justifyContent: 'space-around',
 	},
 	tab: {
-		flex: 1
-	}
+		flex: 1,
+	},
 });
 
 export default TabBar;

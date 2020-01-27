@@ -1,21 +1,6 @@
 import React, {useState} from 'react';
-import {
-	ScrollView,
-	Image,
-	View,
-	StyleSheet,
-	TouchableOpacity,
-	TextInput,
-} from 'react-native';
-import {
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {Text} from '@ui-kitten/components';
 
 import Section from '../section/section';
 // import Feed from '../feed/feed';

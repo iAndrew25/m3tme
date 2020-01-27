@@ -1,15 +1,6 @@
-import React, {Fragment, useState, useRef} from 'react';
-import {ScrollView, Image, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import React, {Fragment, useState} from 'react';
+import {StyleSheet} from 'react-native';
+import {Text} from '@ui-kitten/components';
 
 import getColor from '../../utils/colors';
 
