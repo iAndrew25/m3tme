@@ -1,11 +1,16 @@
-import React from 'react';
-import {ScrollView, Image, View, StyleSheet} from 'react-native';
-import {Text, Button, TopNavigation, Icon} from '@ui-kitten/components';
-
-import Avatar from '../../commons/components/avatar/avatar';
-import StatsBox from './stats-box/stats-box';
+import React, {Fragment} from 'react';
+import {ScrollView, Text, Image, View, StyleSheet} from 'react-native';
+import {Icon} from '@ui-kitten/components';
 
 import ProfileContent from '../../commons/components/profile-content/profile-content';
+import Header from '../../commons/components/headers/header/header';
+import Button from '../../commons/components/button/button';
+import Avatar from '../../commons/components/avatar/avatar';
+import StatsBox from './stats-box/stats-box';
+import ProfileData from './profile-data/profile-data';
+
+import {OUTER_MARGIN} from '../../commons/utils/sizes';
+import getColor from '../../commons/utils/colors';
 
 function UserProfile({
 	name,
@@ -18,71 +23,45 @@ function UserProfile({
 	about,
 }) {
 	return (
-		<ScrollView style={{flexGrow: 1}}>
-			<View style={{flexGrow: 1}}>
-				<TopNavigation title="User Profile" alignment="center" />
-
-				<View>
-					<Image
-						source={{
-							uri:
-								'https://www.xda-developers.com/files/2019/11/default_wallpaper.jpg',
-						}}
-						style={[StyleSheet.absoluteFill]}
+		<Fragment>
+			<Header
+				leftComponent={<Text style={style.title}>Profile</Text>}
+				rightComponent={
+					<Button
+						style={style.edit}
+						theme="dark"
+						iconName="edit"
+						type="icon-only"
 					/>
-
-					<Avatar size="XXL" avatarUrl={avatarUrl} />
-
-					<Text category="h5" style={style.name}>
-						{name}
-					</Text>
-
-					<View style={style.locationGroup}>
-						<Icon
-							name="pin-outline"
-							style={style.icon}
-							fill="white"
-							width={16}
-							height={16}
-						/>
-						<Text category="s1" style={style.location}>
-							{location}
-						</Text>
-					</View>
-
-					<View style={style.buttonGroup}>
-						<Button
-							appearance="filled"
-							icon={style => (
-								<Icon {...style} name="person-add" />
-							)}>
-							FOLLOW
-						</Button>
-						<Button
-							appearance="outline"
-							icon={style => (
-								<Icon {...style} name="message-circle" />
-							)}
-							style={style.messageBtn}>
-							MESSAGE
-						</Button>
-					</View>
-
-					<View style={style.stats}>
-						<StatsBox name="Followers" value={followers} />
-						<StatsBox name="Following" value={following} />
-						<StatsBox name="Posts" value={posts} />
-						<StatsBox name="Likes" value={likes} />
-					</View>
+				}
+			/>
+			<ScrollView style={style.wrapper}>
+				<View style={style.content}>
+					<ProfileData />
 				</View>
-
-				<ProfileContent />
-			</View>
-		</ScrollView>
+			</ScrollView>
+		</Fragment>
 	);
 }
 
 const style = StyleSheet.create({
+	wrapper: {
+		flexGrow: 1
+	},
+	content: {
+		padding: OUTER_MARGIN
+	},
+	title: {
+		flex: 1,
+		color: getColor('white'),
+		marginLeft: OUTER_MARGIN
+	},
+	edit: {
+		width: 50,
+		height: 50,
+		flexGrow: 0,
+		flexShrink: 1
+	},
 	name: {
 		textAlign: 'center',
 		color: 'white',
