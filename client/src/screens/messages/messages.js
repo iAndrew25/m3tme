@@ -10,7 +10,7 @@ import Header from '../../commons/components/headers/header/header';
 import MessageCard from '../../commons/components/message-card/message-card';
 
 import getColor from '../../commons/utils/colors';
-import {OUTER_MARGIN} from '../../commons/utils/sizes';
+import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
 
 const data = patternMock({
 	messages: [
@@ -47,7 +47,7 @@ function Messages() {
 				data={data.messages}
 				renderItem={({item}) => <MessageCard {...item} />}
 				keyExtractor={item => item.person.id.toString()}
-				//ListFooterComponent={<View style={style.footerComponent} />}
+				ListHeaderComponent={<View style={style.headerComponent} />}
 			/>
 		</View>
 	);
@@ -68,6 +68,9 @@ const style = StyleSheet.create({
 		paddingLeft: OUTER_MARGIN,
 		color: getColor('white'),
 	},
+	headerComponent: {
+		marginTop: INNER_MARGIN
+	}
 });
 
 export default Messages;
