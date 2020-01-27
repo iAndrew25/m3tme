@@ -8,6 +8,8 @@ import Button from '../../commons/components/button/button';
 import Avatar from '../../commons/components/avatar/avatar';
 import StatsBox from './stats-box/stats-box';
 import ProfileData from './profile-data/profile-data';
+import SafeText from '../../commons/components/safe-text/safe-text';
+import Section from '../../commons/components/section/section';
 
 import {OUTER_MARGIN} from '../../commons/utils/sizes';
 import getColor from '../../commons/utils/colors';
@@ -35,10 +37,16 @@ function UserProfile({
 					/>
 				}
 			/>
-			<ScrollView style={style.wrapper}>
-				<View style={style.content}>
-					<ProfileData />
-				</View>
+			<ScrollView contentContainerStyle={style.content}>
+				<ProfileData />
+
+				<Section title="About">
+					<SafeText text={about} numberOfLines={5} />
+				</Section>
+
+				<Section title="Posts">
+					<SafeText text="SOON" />
+				</Section>
 			</ScrollView>
 		</Fragment>
 	);

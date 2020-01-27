@@ -8,6 +8,9 @@ import Button from '../../../commons/components/button/button';
 import Avatar from '../../../commons/components/avatar/avatar';
 import StatsBox from '../stats-box/stats-box';
 
+import Section from '../../../commons/components/section/section'
+import SafeText from '../../../commons/components/safe-text/safe-text';
+
 import {OUTER_MARGIN} from '../../../commons/utils/sizes';
 import getColor from '../../../commons/utils/colors';
 
@@ -70,7 +73,6 @@ function UserProfile({
 				<StatsBox name="Posts" value={postsCount} />
 				<StatsBox name="Likes" value={likesCount} />
 			</View>
-
 		</View>
 	);
 }
@@ -81,6 +83,10 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'column',
+	},
+	content: {
+		flex: 1,
+		flexDirection: 'column'
 	},
 	fullName: {
 		textAlign: 'center',
