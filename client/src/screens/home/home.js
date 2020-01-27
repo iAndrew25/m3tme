@@ -49,7 +49,7 @@ function Home({avatarUrl, navigation}) {
 				leftComponent={<Text style={style.homeText}>M3tme logo</Text>}
 				rightComponent={
 					<Button
-						style={style.messageIcon}
+						style={style.more}
 						theme="dark"
 						iconName="more-vertical-outline"
 						type="icon-only"
@@ -83,7 +83,7 @@ Home.defaultProps = {
 };
 
 const style = StyleSheet.create({
-	messageIcon: {
+	more: {
 		width: 50,
 		height: 50,
 		flexGrow: 0,

@@ -35,9 +35,9 @@ export default createAppContainer(
 			MainNavigation: createBottomTabNavigator(
 				{
 					Home,
-					ProfileSettings,
+					Messages,
 					Discover,
-					UserProfile,
+					UserProfile
 				},
 				{
 					tabBarComponent: props => <TabBar {...props} tabs={tabs} />,

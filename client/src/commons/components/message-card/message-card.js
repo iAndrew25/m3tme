@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text, Layout, Avatar} from '@ui-kitten/components';
 
-
 import HeaderNames from '../header-names/header-names';
 import getColor from '../../utils/colors';
 
@@ -18,10 +17,10 @@ function MessageCard({person, lastMessage, time}) {
 			/>
 			<View style={style.middle}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
-				<Text numberOfLines={1} ellipsisMode="tail">{lastMessage}</Text>
+				<Text numberOfLines={1} ellipsisMode="tail" style={style.message}>{lastMessage}</Text>
 			</View>
 			<View style={style.time}>
-				<Text>{time}</Text>
+				<Text style={style.timeText}>{time}</Text>
 			</View>
 		</View>
 	);
@@ -29,16 +28,34 @@ function MessageCard({person, lastMessage, time}) {
 
 const style = StyleSheet.create({
 	wrapper: {
+		flex: 1,
 		flexDirection: 'row',
+		marginHorizontal: 8,
+		padding: 8,
+		borderBottomWidth: 1,
+		borderBottomColor: '#ddd',
 	},
 	middle: {
+		// backgroundColor: 'pink',
+		alignItems: 'center',
+		justifyContent: 'center',
 		flexDirection: 'column',
-		flexGrow: 1
+		flexShrink: 1,
+		marginHorizontal: 16
 	},
 	time: {
 		flexShrink: 0,
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+	},
+	timeText: {
+		color: getColor('subtitle'),
+		fontSize: 10
+	},
+	message: {
+		flexGrow: 1,
+		color: getColor('subtitle'),
+		fontSize: 11
 	}
 });
 
