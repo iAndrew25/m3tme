@@ -1,15 +1,10 @@
-import React, {Fragment} from 'react';
-import {ScrollView, Text, Image, View, StyleSheet} from 'react-native';
+import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
 import {Icon} from '@ui-kitten/components';
 
-import ProfileContent from '../../../commons/components/profile-content/profile-content';
-import Header from '../../../commons/components/headers/header/header';
 import Button from '../../../commons/components/button/button';
 import Avatar from '../../../commons/components/avatar/avatar';
 import StatsBox from '../stats-box/stats-box';
-
-import Section from '../../../commons/components/section/section'
-import SafeText from '../../../commons/components/safe-text/safe-text';
 
 import {OUTER_MARGIN} from '../../../commons/utils/sizes';
 import getColor from '../../../commons/utils/colors';
@@ -30,13 +25,9 @@ function UserProfile({
 			<Avatar size="XXL" avatarUrl={avatarUrl} />
 
 			<View style={style.text}>
-				<Text style={style.fullName}>
-					{fullName} 
-				</Text>
+				<Text style={style.fullName}>{fullName}</Text>
 
-				<Text style={style.username}>
-					@{username}
-				</Text>
+				<Text style={style.username}>@{username}</Text>
 			</View>
 			<View style={style.locationGroup}>
 				<Icon
@@ -46,9 +37,7 @@ function UserProfile({
 					width={20}
 					height={20}
 				/>
-				<Text category="s1">
-					{location}
-				</Text>
+				<Text category="s1">{location}</Text>
 			</View>
 
 			<View style={style.buttonGroup}>
@@ -58,13 +47,15 @@ function UserProfile({
 					text="FOLLOW"
 					size="L"
 					style={style.followBtn}
-					iconName="person-add" />
+					iconName="person-add"
+				/>
 				<Button
 					theme="light"
 					type="icon-left"
 					text="MESSAGE"
 					size="L"
-					iconName="message-circle" />
+					iconName="message-circle"
+				/>
 			</View>
 
 			<View style={style.stats}>
@@ -86,42 +77,42 @@ const style = StyleSheet.create({
 	},
 	content: {
 		flex: 1,
-		flexDirection: 'column'
+		flexDirection: 'column',
 	},
 	fullName: {
 		textAlign: 'center',
 		color: getColor('primary'),
 		fontWeight: 'bold',
-		fontSize: 20
+		fontSize: 20,
 	},
 	username: {
 		textAlign: 'center',
 		color: getColor('primary'),
 		fontStyle: 'italic',
-		fontSize: 14
+		fontSize: 14,
 	},
 	text: {
-		marginVertical: OUTER_MARGIN
+		marginVertical: OUTER_MARGIN,
 	},
 	locationGroup: {
 		flexDirection: 'row',
 		justifyContent: 'center',
 		backgroundColor: 'transparent',
-		marginBottom: OUTER_MARGIN
+		marginBottom: OUTER_MARGIN,
 	},
 	buttonGroup: {
 		flexDirection: 'row',
 		marginBottom: OUTER_MARGIN,
 	},
 	followBtn: {
-		marginRight: OUTER_MARGIN
+		marginRight: OUTER_MARGIN,
 	},
 	stats: {
 		width: '100%',
 		flexDirection: 'row',
 		marginVertical: OUTER_MARGIN,
 		justifyContent: 'space-around',
-	}
+	},
 });
 
 UserProfile.defaultProps = {

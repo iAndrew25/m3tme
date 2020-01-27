@@ -9,29 +9,24 @@ import getColor from '../../commons/utils/colors';
 function ProfileSettings({profilePicture, name}) {
 	return (
 		<ScrollView style={style.wrapper}>
-			<View style={{flexGrow: 1}}>
-				<TopNavigation title="Profile Settings" alignment="center" />
+			<TopNavigation title="Profile Settings" alignment="center" />
 
-				<View style={style.avatarWrapper}>
-					<Image
-						style={style.avatar}
-						source={{uri: profilePicture}}
-					/>
-					<Button
-						icon={styles => (
-							<Icon {...styles} name="camera" fill="white" />
-						)}
-						style={style.button}
-						appearance="ghost"
-					/>
-				</View>
-
-				<Text category="h5" style={style.name}>
-					{name}
-				</Text>
-
-				<ProfileContent isEditMode />
+			<View style={style.avatarWrapper}>
+				<Image style={style.avatar} source={{uri: profilePicture}} />
+				<Button
+					icon={styles => (
+						<Icon {...styles} name="camera" fill="white" />
+					)}
+					style={style.button}
+					appearance="ghost"
+				/>
 			</View>
+
+			<Text category="h5" style={style.name}>
+				{name}
+			</Text>
+
+			<ProfileContent isEditMode />
 		</ScrollView>
 	);
 }

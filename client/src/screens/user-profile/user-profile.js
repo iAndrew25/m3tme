@@ -1,12 +1,8 @@
 import React, {Fragment} from 'react';
-import {ScrollView, Text, Image, View, StyleSheet} from 'react-native';
-import {Icon} from '@ui-kitten/components';
+import {ScrollView, Text, StyleSheet} from 'react-native';
 
-import ProfileContent from '../../commons/components/profile-content/profile-content';
 import Header from '../../commons/components/headers/header/header';
 import Button from '../../commons/components/button/button';
-import Avatar from '../../commons/components/avatar/avatar';
-import StatsBox from './stats-box/stats-box';
 import ProfileData from './profile-data/profile-data';
 import SafeText from '../../commons/components/safe-text/safe-text';
 import Section from '../../commons/components/section/section';
@@ -54,21 +50,21 @@ function UserProfile({
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexGrow: 1
+		flexGrow: 1,
 	},
 	content: {
-		padding: OUTER_MARGIN
+		padding: OUTER_MARGIN,
 	},
 	title: {
 		flex: 1,
 		color: getColor('white'),
-		marginLeft: OUTER_MARGIN
+		marginLeft: OUTER_MARGIN,
 	},
 	edit: {
 		width: 50,
 		height: 50,
 		flexGrow: 0,
-		flexShrink: 1
+		flexShrink: 1,
 	},
 	name: {
 		textAlign: 'center',
