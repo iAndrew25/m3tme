@@ -6,7 +6,12 @@ import {useLoadingEffect} from '../skeleton-loader-hooks';
 
 import skeletonLoaderTextStyle from './skeleton-loader-text-style';
 
-const {lastLine, loadingText, lastLineVisible, lastLineInvisible} = skeletonLoaderTextStyle;
+const {
+	lastLine,
+	loadingText,
+	lastLineVisible,
+	lastLineInvisible,
+} = skeletonLoaderTextStyle;
 
 function SkeletonLoaderText({style, numberOfLines}) {
 	const {getInterpolatedValue} = useLoadingEffect();
@@ -14,7 +19,7 @@ function SkeletonLoaderText({style, numberOfLines}) {
 	const textStyles = {
 		marginVertical: fontSize / 8,
 		height: fontSize,
-		borderRadius: fontSize / 2
+		borderRadius: fontSize / 2,
 	};
 
 	const renderLines = (item, key) => {
@@ -25,8 +30,7 @@ function SkeletonLoaderText({style, numberOfLines}) {
 				<Animated.View
 					testID={`SkeletonLoaderText_${key}`}
 					style={[lastLine, {opacity: getInterpolatedValue()}]}
-					key={key}
-				>
+					key={key}>
 					<View style={[loadingText, textStyles, lastLineVisible]} />
 					<View style={lastLineInvisible} />
 				</Animated.View>
@@ -36,23 +40,29 @@ function SkeletonLoaderText({style, numberOfLines}) {
 				<Animated.View
 					testID={`SkeletonLoaderText_${key}`}
 					key={key}
-					style={[loadingText, textStyles, {opacity: getInterpolatedValue()}]}
+					style={[
+						loadingText,
+						textStyles,
+						{opacity: getInterpolatedValue()},
+					]}
 				/>
 			);
 		}
 	};
 
-	return <Fragment>{new Array(numberOfLines).fill().map(renderLines)}</Fragment>;
+	return (
+		<Fragment>{new Array(numberOfLines).fill().map(renderLines)}</Fragment>
+	);
 }
 
 SkeletonLoaderText.propTypes = {
 	style: PropTypes.object,
-	numberOfLines: PropTypes.number
+	numberOfLines: PropTypes.number,
 };
 
 SkeletonLoaderText.defaultProps = {
 	numberOfLines: 1,
-	style: {}
+	style: {},
 };
 
 export default SkeletonLoaderText;

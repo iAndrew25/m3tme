@@ -19,7 +19,12 @@ function SkeletonLoader({isLoading, style, children}) {
 						case View:
 							return <SkeletonLoader.View style={childStyle} />;
 						case Text:
-							return <SkeletonLoader.Text style={childStyle} numberOfLines={numberOfLines} />;
+							return (
+								<SkeletonLoader.Text
+									style={childStyle}
+									numberOfLines={numberOfLines}
+								/>
+							);
 						default:
 							return child;
 					}
@@ -27,7 +32,11 @@ function SkeletonLoader({isLoading, style, children}) {
 			</View>
 		);
 	} else {
-		return <Animated.View style={[style, {opacity: opacityValue}]}>{children}</Animated.View>;
+		return (
+			<Animated.View style={[style, {opacity: opacityValue}]}>
+				{children}
+			</Animated.View>
+		);
 	}
 }
 
@@ -36,13 +45,13 @@ SkeletonLoader.View = SkeletonLoaderView;
 
 SkeletonLoader.defaultProps = {
 	isLoading: true,
-	style: {}
+	style: {},
 };
 
 SkeletonLoader.propTypes = {
 	style: PropTypes.object,
 	isLoading: PropTypes.bool,
-	children: PropTypes.array
+	children: PropTypes.array,
 };
 
 export default SkeletonLoader;

@@ -1,44 +1,79 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import {Avatar, Text, Layout, TopNavigation, Icon, List, Card } from '@ui-kitten/components';
+import {TouchableOpacity, View, FlatList, StyleSheet} from 'react-native';
+import {
+	Avatar,
+	Text,
+	Layout,
+	TopNavigation,
+	Icon,
+	List,
+	Card,
+} from '@ui-kitten/components';
 
 import patternMock from 'pattern-mock';
 
+import Button from '../../commons/components/button/button';
+import Header from '../../commons/components/headers/header/header';
+
+import MessageCard from '../../commons/components/message-card/message-card';
+
+import getColor from '../../commons/utils/colors';
+import {OUTER_MARGIN} from '../../commons/utils/sizes';
+
 const data = patternMock({
-	messages: [{
-	  name: 'FULL_NAME',
-	  message: 'PARAGRAPH',
-	  picture: 'https://i.picsum.photos/id/534/200/200.jpg'
-	}, [30, 40]]
+	messages: [
+		{
+			time: 'WORD',
+			lastMessage: 'PARAGRAPH',
+			person: {
+				id: 'COUNTER',
+				avatarUrl: 'https://i.picsum.photos/id/534/200/200.jpg',
+				fullName: 'FULL_NAME',
+				username: 'WORD',
+			}
+		},
+		[30, 40],
+	]
 });
 
-const ListItem = ({name, message, picture}) => (
-	<TouchableOpacity onPress={() => console.log('click')} activeOpacity={0.6}>
-		<View style={{flexDirection: 'row', padding: 16, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#eee'}}>
-			<Avatar shape='round' source={{uri: picture}} />
-			<View style={{flexDirection: 'column', flex: 1, marginLeft: 16, justifyContent: 'center'}}>
-				<Text category="p1" numberOfLines={1} ellipsizeMode="tail">{name}</Text>
-				<Text category="c2" numberOfLines={1} ellipsizeMode="tail" style={{opacity: 0.6, marginTop: 5}}>{message}</Text>			
-			</View>
-		</View>
-	</TouchableOpacity>
-);
-
 function Messages() {
-  const renderItem = ({item}) => <ListItem {...item} />;
-
 	return (
 		<View style={{flex: 1}}>
-			<TopNavigation
-				title='Messages'
-				alignment='center'
+			<Header
+				leftComponent={<Text style={style.title}>Messages</Text>}
+				rightComponent={
+					<Button
+						style={style.more}
+						theme="dark"
+						iconName="more-vertical-outline"
+						type="icon-only"
+					/>
+				}
 			/>
-			<List
+			<FlatList
 				data={data.messages}
-				renderItem={renderItem}
-			/>
+				renderItem={({item}) => (
+					<MessageCard {...item} />
+				)}
+				keyExtractor={item => item.person.id.toString()}
+				//ListFooterComponent={<View style={style.footerComponent} />}
+			/>			
 		</View>
 	);
-};
+}
+
+const style = StyleSheet.create({
+	more: {
+		width: 50,
+		height: 50,
+		flexGrow: 0,
+		flexShrink: 1,
+	},
+	title: {
+		flex: 1,
+		paddingLeft: OUTER_MARGIN,
+		color: getColor('white'),
+	},
+});
 
 export default Messages;

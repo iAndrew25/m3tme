@@ -6,7 +6,7 @@ const useLoadingEffect = () => {
 	const getInterpolatedValue = () =>
 		value.interpolate({
 			inputRange: [0, 25, 50, 75, 100],
-			outputRange: [0.5, 0.65, 0.75, 0.65, 0.5]
+			outputRange: [0.5, 0.65, 0.75, 0.65, 0.5],
 		});
 
 	useEffect(() => {
@@ -14,14 +14,14 @@ const useLoadingEffect = () => {
 			Animated.timing(value, {
 				toValue: 100,
 				duration: 1300,
-				delay: 300
-			})
+				delay: 300,
+			}),
 		).start();
-	}, []);
+	}, [value]);
 
 	return {
 		value,
-		getInterpolatedValue
+		getInterpolatedValue,
 	};
 };
 
@@ -32,9 +32,9 @@ const useFadeInEffect = watcher => {
 		Animated.timing(value, {
 			toValue: 1.0,
 			duration: 350,
-			delay: 50
+			delay: 50,
 		}).start();
-	}, watcher);
+	}, [value]);
 
 	return value;
 };

@@ -3,6 +3,6 @@ import {getColor} from '@colors';
 
 export default StyleSheet.create({
 	loadingView: {
-		backgroundColor: getColor('silver-gray')
-	}
+		backgroundColor: getColor('silver-gray'),
+	},
 });

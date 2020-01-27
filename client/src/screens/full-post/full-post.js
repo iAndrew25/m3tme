@@ -1,7 +1,7 @@
 import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import { Layout, TopNavigation } from '@ui-kitten/components';
+import {Layout, TopNavigation} from '@ui-kitten/components';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 import Post from '../../commons/components/post/post';
@@ -17,22 +17,27 @@ const post = patternMock({
 		content: 'PARAGRAPH',
 		author: {
 			id: 'COUNTER',
-			avatarUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+			avatarUrl:
+				'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
 			fullName: 'FULL_NAME',
-			username: 'WORD'
+			username: 'WORD',
 		},
-		comments: [{
-			id: 'COUNTER',
-			author: {
+		comments: [
+			{
 				id: 'COUNTER',
-				avatarUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
-				fullName: 'FULL_NAME',
-				username: 'WORD'
+				author: {
+					id: 'COUNTER',
+					avatarUrl:
+						'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+					fullName: 'FULL_NAME',
+					username: 'WORD',
+				},
+				time: 'WORD',
+				content: 'PARAGRAPH',
 			},
-			time: 'WORD',
-			content: 'PARAGRAPH',
-		}, [10, 12]]
-	}
+			[10, 12],
+		],
+	},
 });
 
 function FullPost({navigation}) {
@@ -45,6 +50,6 @@ function FullPost({navigation}) {
 			<Reply />
 		</Fragment>
 	);
-};
+}
 
 export default FullPost;
