@@ -1,0 +1,21 @@
+type Profile { 
+  	id: String, 
+  	username: String, 
+  	fullName: String, 
+  	location: String, 
+  	avatar: String, 
+  	followersCount: Int, 
+  	followingCount: Int, 
+  	postsCount: Int, 
+  	likesCount: Int 
+}
+
+type UserData {
+	id: String, 
+	username: String
+}
+
+type Query { 
+	profile: Profile, 
+	userData(username: String): UserData 
+}
