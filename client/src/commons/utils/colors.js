@@ -5,8 +5,8 @@ const themes = {
 		subtitle: '#939393',
 		border: '#D7CABD',
 		background: '#ECEDEA',
-		white: '#FFFFFF'
-	}
-}
+		white: '#FFFFFF',
+	},
+};
 
 export default color => themes.white[color];

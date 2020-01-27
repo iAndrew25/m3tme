@@ -3,16 +3,16 @@ import {getColor} from '@colors';
 
 export default StyleSheet.create({
 	loadingText: {
-		backgroundColor: getColor('silver-gray')
+		backgroundColor: getColor('silver-gray'),
 	},
 	lastLine: {
 		flexDirection: 'row',
-		flexWrap: 'wrap'
+		flexWrap: 'wrap',
 	},
 	lastLineVisible: {
-		flexGrow: 3
+		flexGrow: 3,
 	},
 	lastLineInvisible: {
-		flexGrow: 1
-	}
+		flexGrow: 1,
+	},
 });

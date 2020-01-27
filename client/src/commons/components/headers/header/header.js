@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 
 import getColor from '../../../utils/colors';
 
-function Header({style: componentStyle, leftComponent, centerComponent, rightComponent}) {
+function Header({
+	style: componentStyle,
+	leftComponent,
+	centerComponent,
+	rightComponent,
+}) {
 	return (
 		<View style={[style.container, componentStyle]}>
 			{leftComponent}
@@ -20,15 +25,15 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'flex-start',
-		backgroundColor: getColor('primary')
-	}
+		backgroundColor: getColor('primary'),
+	},
 });
 
 Header.propTypes = {
 	style: PropTypes.object,
 	leftComponent: PropTypes.element,
 	centerComponent: PropTypes.element,
-	rightComponent: PropTypes.element
+	rightComponent: PropTypes.element,
 };
 
 export default memo(Header);

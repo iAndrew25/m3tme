@@ -9,20 +9,25 @@ import {OUTER_MARGIN} from '../../../utils/sizes';
 
 function BackHeader({title, onPress, children}) {
 	const renderChildren = () => {
-		if (children) return children;
-		if (title) return <Text style={style.titleStyle}>{title}</Text>;
+		if (children) {
+			return children;
+		}
+		if (title) {
+			return <Text style={style.titleStyle}>{title}</Text>;
+		}
 	};
 
 	return (
 		<Header
 			style={style.header}
 			leftComponent={
-				<Button 
-					onPress={onPress} 
-					style={style.backIcon} 
-					theme="dark" 
-					iconName="arrow-back-outline" 
-					type="icon-only" />
+				<Button
+					onPress={onPress}
+					style={style.backIcon}
+					theme="dark"
+					iconName="arrow-back-outline"
+					type="icon-only"
+				/>
 			}
 			centerComponent={renderChildren()}
 		/>
@@ -31,13 +36,13 @@ function BackHeader({title, onPress, children}) {
 
 const style = StyleSheet.create({
 	header: {
-		paddingRight: OUTER_MARGIN
+		paddingRight: OUTER_MARGIN,
 	},
 	backIcon: {
 		width: 50,
 		height: 50,
 		flexGrow: 0,
-		flexShrink: 1
+		flexShrink: 1,
 	},
 	titleStyle: {
 		color: getColor('white'),
@@ -48,8 +53,8 @@ const style = StyleSheet.create({
 		textAlign: 'left',
 		fontSize: 16,
 		lineHeight: 24,
-		paddingRight: 30
-	}
+		paddingRight: 30,
+	},
 });
 
 export default memo(BackHeader);

@@ -8,11 +8,27 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 	return (
 		<View style={style.wrapper}>
 			<View style={style.fluidContainer}>
-				<Text category="c1" numberOfLines={1} ellipsizeMode='tail' style={style.text}>{fluidText}  &#183; </Text>
+				<Text
+					category="c1"
+					numberOfLines={1}
+					ellipsizeMode="tail"
+					style={style.text}>
+					{fluidText} &#183;{' '}
+				</Text>
 			</View>
 			<View style={style.fixedContainer}>
-				<Text category="c1" numberOfLines={1} style={style.fixedText}>@{fixedText}</Text>
-				{leftText && <Text category="c1" numberOfLines={1} style={style.leftText}> &#183; {leftText}</Text>}
+				<Text category="c1" numberOfLines={1} style={style.fixedText}>
+					@{fixedText}
+				</Text>
+				{leftText && (
+					<Text
+						category="c1"
+						numberOfLines={1}
+						style={style.leftText}>
+						{' '}
+						&#183; {leftText}
+					</Text>
+				)}
 			</View>
 		</View>
 	);
@@ -20,26 +36,26 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexDirection: 'row'
+		flexDirection: 'row',
 	},
 	fluidContainer: {
-		flexShrink: 1
+		flexShrink: 1,
 	},
 	text: {
 		color: getColor('primary'),
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	},
 	fixedText: {
 		fontStyle: 'italic',
 		color: getColor('primary'),
 	},
 	leftText: {
-		color: getColor('subtitle')
+		color: getColor('subtitle'),
 	},
 	fixedContainer: {
 		flexDirection: 'row',
-		flexGrow: 1
-	}
+		flexGrow: 1,
+	},
 });
 
 export default HeaderNames;

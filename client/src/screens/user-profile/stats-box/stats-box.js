@@ -7,20 +7,20 @@ function StatsBox({value, name}) {
 		<View style={style.wraper}>
 			<Text style={style.text}>{value}</Text>
 			<Text style={style.text}>{name}</Text>
-		</View>	
+		</View>
 	);
-};
+}
 
 const style = StyleSheet.create({
 	wraper: {
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: 'transparent'
+		backgroundColor: 'transparent',
 	},
 	text: {
-		color: 'white'
-	}
+		color: 'white',
+	},
 });
 
 export default StatsBox;

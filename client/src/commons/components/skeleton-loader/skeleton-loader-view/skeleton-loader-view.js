@@ -12,17 +12,21 @@ function SkeletonLoaderView({style}) {
 	return (
 		<Animated.View
 			testID="SkeletonLoaderView"
-			style={[style, skeletonLoaderViewStyle.loadingView, {opacity: getInterpolatedValue()}]}
+			style={[
+				style,
+				skeletonLoaderViewStyle.loadingView,
+				{opacity: getInterpolatedValue()},
+			]}
 		/>
 	);
 }
 
 SkeletonLoaderView.defaultProps = {
-	style: {}
+	style: {},
 };
 
 SkeletonLoaderView.propTypes = {
-	style: PropTypes.object
+	style: PropTypes.object,
 };
 
 export default SkeletonLoaderView;
