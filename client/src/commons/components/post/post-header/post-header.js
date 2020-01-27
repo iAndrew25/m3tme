@@ -1,7 +1,6 @@
 import React from 'react';
 import {ScrollView, View, Image, StyleSheet} from 'react-native';
 import {
-	Avatar,
 	Text,
 	Layout,
 	Button,
@@ -13,6 +12,7 @@ import {
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
 
+import Avatar from '../../avatar/avatar';
 import HeaderNames from '../../header-names/header-names';
 
 import getColor from '../../../utils/colors';
@@ -22,7 +22,7 @@ function PostHeader({author, time}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar shape="round" size="small" source={{uri: avatarUrl}} />
+			<Avatar size="L" avatarUrl={avatarUrl} />
 			<View style={style.text}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
 				<Text category="c2" style={style.time}>

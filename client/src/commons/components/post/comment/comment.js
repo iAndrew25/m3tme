@@ -8,7 +8,6 @@ import {
 	StyleSheet,
 } from 'react-native';
 import {
-	Avatar,
 	Text,
 	Layout,
 	Button,
@@ -22,6 +21,7 @@ import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
 
 import HeaderNames from '../../header-names/header-names';
 import SafeText from '../../safe-text/safe-text';
+import Avatar from '../../avatar/avatar';
 
 function Comment({author, content, time, handleOnLongPress}) {
 	const {avatarUrl, fullName, username} = author;
@@ -31,7 +31,7 @@ function Comment({author, content, time, handleOnLongPress}) {
 			style={style.wrapper}
 			onLongPress={handleOnLongPress}
 			activeOpacity={0.7}>
-			<Avatar shape="round" size="tiny" source={{uri: avatarUrl}} />
+			<Avatar size="M" avatarUrl={avatarUrl} />
 			<View style={style.header}>
 				<HeaderNames
 					fluidText={fullName}

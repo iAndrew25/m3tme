@@ -26,19 +26,27 @@ export const DEVICE_WIDTH = width;
 export const DEVICE_HEIGHT = height;
 
 export const AVATAR_SIZES = {
-	S: {
+	XS: {
 		width: 16,
-		height: 16
+		height: 16		
+	},
+	S: {
+		width: 20,
+		height: 20
 	},
 	M: {
 		width: 32,
 		height: 32
 	},
 	L: {
+		width: 40,
+		height: 40
+	},
+	XL: {
 		width: 64,
 		height: 64
 	},
-	XL: {
+	XXL: {
 		width: 128,
 		height: 128
 	}

@@ -8,7 +8,6 @@ import {
 	TextInput,
 } from 'react-native';
 import {
-	Avatar,
 	Text,
 	Layout,
 	Button,

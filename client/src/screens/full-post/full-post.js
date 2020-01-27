@@ -18,7 +18,7 @@ const post = patternMock({
 		author: {
 			id: 'COUNTER',
 			avatarUrl:
-				'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+				'https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/red-panda_thumb.ngsversion.1485895956258.adapt.1900.1.JPG',
 			fullName: 'FULL_NAME',
 			username: 'WORD',
 		},
@@ -28,7 +28,7 @@ const post = patternMock({
 				author: {
 					id: 'COUNTER',
 					avatarUrl:
-						'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+						'http://www.haircolorsideas.com/wp-content/uploads/2015/02/hair-in-red-pillarbox.jpg',
 					fullName: 'FULL_NAME',
 					username: 'WORD',
 				},

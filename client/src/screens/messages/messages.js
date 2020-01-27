@@ -1,7 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, View, FlatList, StyleSheet} from 'react-native';
 import {
-	Avatar,
 	Text,
 	Layout,
 	TopNavigation,
@@ -20,6 +19,8 @@ import MessageCard from '../../commons/components/message-card/message-card';
 import getColor from '../../commons/utils/colors';
 import {OUTER_MARGIN} from '../../commons/utils/sizes';
 
+import Avatar from '../../commons/components/avatar/avatar';
+
 const data = patternMock({
 	messages: [
 		{
@@ -36,6 +37,11 @@ const data = patternMock({
 	]
 });
 
+//<Avatar avatarUrl="https://i.picsum.photos/id/534/200/200.jpg" size="S" />
+//<Avatar avatarUrl="https://i.picsum.photos/id/534/200/200.jpg" size="M" />
+//<Avatar avatarUrl="https://i.picsum.photos/id/534/200/200.jpg" size="L" />
+//<Avatar avatarUrl="https://i.picsum.photos/id/534/200/200.jpg" size="XL" />
+
 function Messages() {
 	return (
 		<View style={{flex: 1}}>
@@ -50,6 +56,8 @@ function Messages() {
 					/>
 				}
 			/>
+
+
 			<FlatList
 				data={data.messages}
 				renderItem={({item}) => (

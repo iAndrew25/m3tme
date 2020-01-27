@@ -1,7 +1,6 @@
 import React from 'react';
 import {ScrollView, Image, View, StyleSheet} from 'react-native';
 import {
-	Avatar,
 	Text,
 	Layout,
 	Button,
@@ -11,13 +10,14 @@ import {
 	Card,
 } from '@ui-kitten/components';
 
+import Avatar from '../../commons/components/avatar/avatar';
 import StatsBox from './stats-box/stats-box';
 
 import ProfileContent from '../../commons/components/profile-content/profile-content';
 
 function UserProfile({
 	name,
-	profilePicture,
+	avatarUrl,
 	location,
 	followers,
 	following,
@@ -40,9 +40,8 @@ function UserProfile({
 					/>
 
 					<Avatar
-						shape="round"
-						style={style.avatar}
-						source={{uri: profilePicture}}
+						size="XXL"
+						avatarUrl={avatarUrl}
 					/>
 
 					<Text category="h5" style={style.name}>
@@ -95,12 +94,6 @@ function UserProfile({
 }
 
 const style = StyleSheet.create({
-	avatar: {
-		width: 160,
-		height: 160,
-		margin: 16,
-		alignSelf: 'center',
-	},
 	name: {
 		textAlign: 'center',
 		color: 'white',
@@ -138,7 +131,7 @@ const style = StyleSheet.create({
 
 UserProfile.defaultProps = {
 	name: 'Donald Trump',
-	profilePicture: 'https://images.wsj.net/im-119693?width=620&size=1.5',
+	avatarUrl: 'https://images.wsj.net/im-119693?width=620&size=1.5',
 	location: 'Bratislava',
 	followers: 200,
 	following: 121,

@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {
-	Avatar,
 	Layout,
 	Button,
 	TopNavigation,
@@ -10,6 +9,8 @@ import {
 	Card,
 } from '@ui-kitten/components';
 
+import Avatar from '../avatar/avatar';
+
 import {TWO_COLUMNS_SIZE, INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
@@ -17,10 +18,8 @@ function UserCard({avatarUrl, fullName, username, location, description}) {
 	return (
 		<View style={style.wrapper}>
 			<Avatar
-				style={style.avatar}
-				shape="round"
-				size="tiny"
-				source={{uri: avatarUrl}}
+				size="XL"
+				avatarUrl={avatarUrl}
 			/>
 			<View style={style.text}>
 				<Text style={style.fullName}>{fullName}</Text>
@@ -63,10 +62,6 @@ const style = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	avatar: {
-		width: 75,
-		height: 75,
 	},
 	text: {
 		marginTop: INNER_MARGIN,

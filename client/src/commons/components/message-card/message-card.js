@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text, Layout, Avatar} from '@ui-kitten/components';
+import {Text, Layout} from '@ui-kitten/components';
 
+import Avatar from '../avatar/avatar';
 import HeaderNames from '../header-names/header-names';
 import getColor from '../../utils/colors';
 
@@ -11,9 +12,8 @@ function MessageCard({person, lastMessage, time}) {
 	return (
 		<View style={style.wrapper}>
 			<Avatar
-				shape="round"
-				style={style.avatar}
-				source={{uri: avatarUrl}}
+				size="M"
+				avatarUrl={avatarUrl}
 			/>
 			<View style={style.middle}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
@@ -29,14 +29,14 @@ function MessageCard({person, lastMessage, time}) {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		alignItems: 'center',
 		flexDirection: 'row',
 		marginHorizontal: 8,
-		padding: 8,
 		borderBottomWidth: 1,
 		borderBottomColor: '#ddd',
+		padding: 8,
 	},
 	middle: {
-		// backgroundColor: 'pink',
 		alignItems: 'center',
 		justifyContent: 'center',
 		flexDirection: 'column',
@@ -50,7 +50,7 @@ const style = StyleSheet.create({
 	},
 	timeText: {
 		color: getColor('subtitle'),
-		fontSize: 10
+		fontSize: 10,
 	},
 	message: {
 		flexGrow: 1,

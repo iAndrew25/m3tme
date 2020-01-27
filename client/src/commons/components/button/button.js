@@ -5,18 +5,13 @@ import {
 	Image,
 	View,
 	StyleSheet,
+	Text
 } from 'react-native';
 import {
-	Avatar,
-	Text,
-	Layout,
-	TopNavigation,
 	Icon,
-	List,
-	Card,
 } from '@ui-kitten/components';
 
-import {OUTER_MARGIN, INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
+import {INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
 
 import getColor from '../../utils/colors';
 

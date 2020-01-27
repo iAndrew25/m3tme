@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
-import {Avatar} from '@ui-kitten/components';
 
+import Avatar from '../../avatar/avatar';
 import Button from '../../button/button';
 
 import getColor from '../../../utils/colors';
@@ -36,7 +36,7 @@ function Reply({avatarUrl, canReply = false}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar shape="round" size="tiny" source={{uri: avatarUrl}} />
+			<Avatar size="S" avatarUrl={avatarUrl} />
 			<View style={style.textInputWrapper}>{renderTextInput()}</View>
 		</View>
 	);
