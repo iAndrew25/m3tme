@@ -24,3 +24,37 @@ export const HEIGHT_VIEWPORT = height - OUTER_MARGIN * 2;
 
 export const DEVICE_WIDTH = width;
 export const DEVICE_HEIGHT = height;
+
+export const AVATAR_SIZES = {
+	S: {
+		width: 16,
+		height: 16
+	},
+	M: {
+		width: 32,
+		height: 32
+	},
+	L: {
+		width: 64,
+		height: 64
+	},
+	XL: {
+		width: 128,
+		height: 128
+	}
+};
+
+export const BUTTON_SIZES = {
+	S: {
+		paddingVertical: 4,
+		paddingHorizontal: 4,
+	},
+	M: {
+		paddingVertical: 8,
+		paddingHorizontal: 8,
+	},
+	L: {
+		paddingVertical: 16,
+		paddingHorizontal: 16,
+	}
+};

@@ -16,7 +16,7 @@ import {
 	Card,
 } from '@ui-kitten/components';
 
-import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
+import {OUTER_MARGIN, INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
 
 import getColor from '../../utils/colors';
 
@@ -66,7 +66,7 @@ function Button({
 					onPress={onPress}
 					style={[
 						style.wrapper,
-						style[size],
+						BUTTON_SIZES[size],
 						buttonTheme.button,
 						style.iconOnly,
 						componentStyle,
@@ -87,7 +87,7 @@ function Button({
 					onPress={onPress}
 					style={[
 						style.wrapper,
-						style[size],
+						BUTTON_SIZES[size],
 						style.wraperWithIcon,
 						buttonTheme.button,
 						componentStyle,
@@ -112,7 +112,7 @@ function Button({
 					onPress={onPress}
 					style={[
 						style.wrapper,
-						style[size],
+						BUTTON_SIZES[size],
 						style.wraperWithIcon,
 						buttonTheme.button,
 						componentStyle,
@@ -135,7 +135,7 @@ function Button({
 			return (
 				<TouchableOpacity
 					onPress={onPress}
-					style={[style.wrapper, style[size], componentStyle]}
+					style={[style.wrapper, BUTTON_SIZES[size], componentStyle]}
 					activeOpacity={0.7}>
 					{children}
 				</TouchableOpacity>
@@ -156,18 +156,6 @@ const style = StyleSheet.create({
 		borderRadius: 4,
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	L: {
-		paddingVertical: OUTER_MARGIN,
-		paddingHorizontal: OUTER_MARGIN,
-	},
-	M: {
-		paddingVertical: INNER_MARGIN,
-		paddingHorizontal: INNER_MARGIN,
-	},
-	S: {
-		paddingVertical: 4,
-		paddingHorizontal: 4,
 	},
 	wraperWithIcon: {
 		flexDirection: 'row',
