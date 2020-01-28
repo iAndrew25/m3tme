@@ -7,7 +7,9 @@ import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function Section({title, children}) {
-	if(!children) return null;
+	if (!children) {
+		return null;
+	}
 
 	return (
 		<View style={style.wrapper}>

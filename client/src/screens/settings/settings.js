@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {ScrollView, Text, StyleSheet, Switch, TouchableOpacity} from 'react-native';
+import {ScrollView, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 
@@ -17,13 +17,23 @@ function Settings({navigation}) {
 		<Fragment>
 			<BackHeader onPress={() => navigation.goBack()} title="Settings" />
 			<ScrollView contentContainerStyle={style.wrapper}>
-				<Section title="General settings">
-					
-				</Section>
+				<Section title="General settings" />
 				<Section title="Allow anons to">
-					<Toggle state={findInSearch} setState={setFindInSearch} text="Find you in search section"/>
-					<Toggle state={sendMessages} setState={setFindMessages} text="Send you messages"/>
-					<Toggle state={commentToPosts} setState={setCommentToPosts} text="Comment to your posts"/>
+					<Toggle
+						state={findInSearch}
+						setState={setFindInSearch}
+						text="Find you in search section"
+					/>
+					<Toggle
+						state={sendMessages}
+						setState={setFindMessages}
+						text="Send you messages"
+					/>
+					<Toggle
+						state={commentToPosts}
+						setState={setCommentToPosts}
+						text="Comment to your posts"
+					/>
 				</Section>
 
 				<Section title="Account settings">
@@ -39,7 +49,7 @@ function Settings({navigation}) {
 					<TouchableOpacity style={style.button}>
 						<Text>Log out</Text>
 					</TouchableOpacity>
-				</Section>				
+				</Section>
 			</ScrollView>
 		</Fragment>
 	);
@@ -47,15 +57,15 @@ function Settings({navigation}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		padding: OUTER_MARGIN
+		padding: OUTER_MARGIN,
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,
 		paddingVertical: OUTER_MARGIN,
 		flexGrow: 1,
 		borderBottomWidth: 1,
-		borderColor: '#ddd'
-	}
+		borderColor: '#ddd',
+	},
 });
 
 export default Settings;

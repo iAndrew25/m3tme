@@ -69,8 +69,8 @@ const style = StyleSheet.create({
 		color: getColor('white'),
 	},
 	headerComponent: {
-		marginTop: INNER_MARGIN
-	}
+		marginTop: INNER_MARGIN,
+	},
 });
 
 export default Messages;

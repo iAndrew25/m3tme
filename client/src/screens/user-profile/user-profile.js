@@ -19,7 +19,7 @@ function UserProfile({
 	posts,
 	likes,
 	about,
-	navigation
+	navigation,
 }) {
 	return (
 		<Fragment>

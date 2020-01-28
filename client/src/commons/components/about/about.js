@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import {Text} from '@ui-kitten/components';
 
-import Section from '../section/section';
-// import Feed from '../feed/feed';
 import {INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
@@ -37,8 +35,8 @@ const style = StyleSheet.create({
 		padding: INNER_MARGIN,
 	},
 	about: {
-		color: getColor('primary')
-	}
+		color: getColor('primary'),
+	},
 });
 
 export default About;
