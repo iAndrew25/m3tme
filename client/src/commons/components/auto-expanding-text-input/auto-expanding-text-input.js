@@ -3,7 +3,7 @@ import {TextInput} from 'react-native';
 
 function AutoExpandingTextInput({minHeight, maxHeight, style, ...restOfProps}) {
 	const [height, setHeight] = useState(minHeight);
-	console.log("height", height);
+	console.log('height', height);
 
 	const getTextInputHeight = (newHeight = minHeight) => {
 		const minSize = Math.max(minHeight, newHeight);

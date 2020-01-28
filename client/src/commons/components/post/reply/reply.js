@@ -52,7 +52,7 @@ const style = StyleSheet.create({
 		paddingHorizontal: OUTER_MARGIN,
 	},
 	textInput: {
-		flex: 1
+		flex: 1,
 	},
 	cannotReply: {
 		flex: 1,
