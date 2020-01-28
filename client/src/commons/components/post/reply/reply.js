@@ -1,19 +1,22 @@
 import React, {Fragment} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
+import AutoExpandingTextInput from '../../auto-expanding-text-input/auto-expanding-text-input';
 import Avatar from '../../avatar/avatar';
 import Button from '../../button/button';
 
 import getColor from '../../../utils/colors';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../../utils/sizes';
 
-function Reply({avatarUrl, canReply = false}) {
+function Reply({avatarUrl, canReply = true}) {
 	const renderTextInput = () => {
 		if (canReply) {
 			return (
 				<Fragment>
-					<TextInput
+					<AutoExpandingTextInput
 						multiline
+						minHeight={40}
+						maxHeight={73}
 						placeholder="Leave a comment..."
 						style={style.textInput}
 					/>
@@ -49,8 +52,7 @@ const style = StyleSheet.create({
 		paddingHorizontal: OUTER_MARGIN,
 	},
 	textInput: {
-		height: '100%',
-		flex: 1,
+		flex: 1
 	},
 	cannotReply: {
 		flex: 1,
@@ -59,7 +61,6 @@ const style = StyleSheet.create({
 	textInputWrapper: {
 		flexDirection: 'row',
 		marginLeft: INNER_MARGIN,
-		height: 40,
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',

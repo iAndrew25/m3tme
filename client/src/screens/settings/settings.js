@@ -2,7 +2,6 @@ import React, {Fragment, useState} from 'react';
 import {ScrollView, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
-
 import Section from '../../commons/components/section/section';
 import Toggle from '../../commons/components/toggle/toggle';
 
