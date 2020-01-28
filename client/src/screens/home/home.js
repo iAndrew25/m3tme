@@ -43,8 +43,9 @@ function Home({avatarUrl, navigation}) {
 					<Button
 						style={style.more}
 						theme="dark"
-						iconName="more-vertical-outline"
+						iconName="settings-2-outline"
 						type="icon-only"
+						onPress={() => navigation.navigate('Settings')}
 					/>
 				}
 			/>

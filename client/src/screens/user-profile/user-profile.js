@@ -19,6 +19,7 @@ function UserProfile({
 	posts,
 	likes,
 	about,
+	navigation
 }) {
 	return (
 		<Fragment>
@@ -30,6 +31,7 @@ function UserProfile({
 						theme="dark"
 						iconName="edit"
 						type="icon-only"
+						onPress={() => navigation.navigate('EditUserProfile')}
 					/>
 				}
 			/>
