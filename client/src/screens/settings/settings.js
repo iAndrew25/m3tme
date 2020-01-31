@@ -21,17 +21,17 @@ function Settings({navigation}) {
 					<Toggle
 						state={findInSearch}
 						setState={setFindInSearch}
-						text="Find you in search section"
+						label="Find you in search section"
 					/>
 					<Toggle
 						state={sendMessages}
 						setState={setFindMessages}
-						text="Send you messages"
+						label="Send you messages"
 					/>
 					<Toggle
 						state={commentToPosts}
 						setState={setCommentToPosts}
-						text="Comment to your posts"
+						label="Comment to your posts"
 					/>
 				</Section>
 

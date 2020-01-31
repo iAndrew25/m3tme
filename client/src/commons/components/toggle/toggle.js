@@ -3,10 +3,10 @@ import {StyleSheet, View, Switch, Text} from 'react-native';
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 
-function Toggle({text, state, setState}) {
+function Toggle({label, state, setState}) {
 	return (
 		<View style={style.wrapper}>
-			<Text style={style.text}>{text}</Text>
+			<Text style={style.label}>{label}</Text>
 			<Switch value={state} onValueChange={setState} />
 		</View>
 	);
@@ -21,7 +21,7 @@ const style = StyleSheet.create({
 		borderBottomWidth: 1,
 		borderColor: '#ddd',
 	},
-	text: {
+	label: {
 		flexGrow: 1,
 	},
 });
