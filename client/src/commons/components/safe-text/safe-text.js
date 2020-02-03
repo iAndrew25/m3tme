@@ -47,7 +47,7 @@ const style = StyleSheet.create({
 	loadMore: {
 		color: getColor('subtitle'),
 		textAlign: 'center',
-		marginTop: 8,
+		marginHorizontal: 8,
 	},
 	text: {
 		color: getColor('primary'),
