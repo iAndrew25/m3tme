@@ -3,9 +3,9 @@ import ReactNative from 'react-native';
 
 import getColor from '../../utils/colors';
 
-function Text({value, type, theme, style: componentStyle}) {
+function Text({value, type, theme, style: componentStyle, ...rest}) {
 	return (
-		<ReactNative.Text style={[style[theme], style[type], componentStyle]}>{value}</ReactNative.Text>
+		<ReactNative.Text {...rest} style={[style[theme], style[type], componentStyle]}>{value}</ReactNative.Text>
 	);
 }
 
