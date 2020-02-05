@@ -19,6 +19,7 @@ function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.
 	const [postsCount, setPostsCount] = useState(true);
 	const [heartsCount, setHeartsCount] = useState(true);
 	const [displayName, setDisplayName] = useState('Elon Musty');
+	const [location, setLocation] = useState('Bortești');
 
 	return (
 		<Fragment>
@@ -27,37 +28,42 @@ function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.
 				title="Edit profile"
 			/>
 			<ScrollView contentContainerStyle={style.wrapper}>
-				<View style={style.avatar}>
-					<View style={AVATAR_SIZES.XXL}>
-						<Avatar size="XXL" avatarUrl={avatarUrl} />
-						<Button style={style.changePicture} size="M" type="icon-only" theme="dark" iconName="camera" />
+				<View style={style.personalData}>
+					<View style={style.avatar}>
+						<View style={AVATAR_SIZES.XXL}>
+							<Avatar size="XXL" avatarUrl={avatarUrl} />
+							<Button style={style.changePicture} size="M" type="icon-only" theme="dark" iconName="camera" />
+						</View>
+					</View>
+					<View style={style.inputs}>
+						<TextInputEdit label="Username" state="@elon.musty" editable={false} />
+						<TextInputEdit label="Display name" state={displayName} setState={setDisplayName} />
+						<TextInputEdit label="Location" state={location} setState={setLocation} />
 					</View>
 				</View>
 				<Section title="About">
 					<About text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit cum debitis quo est explicabo maiores facere quae corporis rerum illo mollitia, sequi odit accusantium, sunt tempore doloribus voluptate at et." />
-					<TextInputEdit label="Display name" state={displayName} readOnly setState={setDisplayName} />
-					<TextInputEdit label="Display name" state={displayName} setState={setDisplayName} />
 				</Section>
 				<Section title="Display on profile">
 					<Toggle
 						state={followersCount}
 						setState={setFollowersCount}
-						label="Find you in search section"
+						label="Total followers"
 					/>
 					<Toggle
 						state={followingCount}
 						setState={setFollowingCount}
-						label="Send you messages"
+						label="Total following"
 					/>
 					<Toggle
 						state={postsCount}
 						setState={setPostsCount}
-						label="Comment to your posts"
+						label="Total posts"
 					/>
 					<Toggle
 						state={heartsCount}
 						setState={setHeartsCount}
-						label="Comment to your posts"
+						label="Total hearts"
 					/>
 				</Section>
 			</ScrollView>
@@ -67,8 +73,19 @@ function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.
 
 const style = StyleSheet.create({
 	wrapper: {
+		flex: 1,
 		padding: OUTER_MARGIN,
 		backgroundColor: getColor('background')
+	},
+	personalData: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems:'center',
+		marginBottom: OUTER_MARGIN
+	},
+	inputs: {
+		flex: 1,
+		paddingLeft: OUTER_MARGIN
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,

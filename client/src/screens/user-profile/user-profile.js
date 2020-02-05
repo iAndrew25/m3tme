@@ -37,7 +37,7 @@ function UserProfile({
 			/>
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData />
-
+				
 				<View style={style.wrapper}>
 					<Section title="About">
 						<SafeText text={about} numberOfLines={5} />

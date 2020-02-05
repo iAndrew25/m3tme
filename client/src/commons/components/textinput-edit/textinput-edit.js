@@ -16,8 +16,7 @@ function TextInputEdit({label, state, setState, ...rest}) {
 const style = StyleSheet.create({
 	wrapper: {
 		flexGrow: 1,
-		paddingHorizontal: INNER_MARGIN,
-		paddingVertical: OUTER_MARGIN,
+		padding: INNER_MARGIN,
 		flexDirection: 'row',
 		alignItems: 'center',
 		borderBottomWidth: 1,

@@ -45,7 +45,7 @@ const style = StyleSheet.create({
 		flexShrink: 1,
 	},
 	titleStyle: {
-		color: getColor('lightPrimary'),
+		color: getColor('white'),
 		flexGrow: 1,
 		flexShrink: 1,
 		flexDirection: 'row',

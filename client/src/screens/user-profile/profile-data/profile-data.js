@@ -112,7 +112,7 @@ const style = StyleSheet.create({
 	stats: {
 		width: '100%',
 		flexDirection: 'row',
-		marginVertical: OUTER_MARGIN,
+		marginTop: OUTER_MARGIN,
 		justifyContent: 'space-around',
 	},
 });
