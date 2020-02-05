@@ -11,13 +11,14 @@ const themes = {
 		darkPrimary: '#E64A19',
 		defaultPrimary: '#FF5722',
 		lightPrimary:'#FFCCBC',
-		textPrimary: '#FFFFFF',
+		iconPrimary: '#FFFFFF',
 		accent: '#536DFE',
 		primaryText: '#212121',
 		secondaryText: '#757575',
-		divider: '#BDBDBD',
-		background: '#FAFAFA'
+		divider: '#EEEEEE',
+		background: '#FAFAFA',
+		white: '#FFFFFF'
 	}
 };
 
-export default color => themes.white[color];
+export default color => themes.orange[color];

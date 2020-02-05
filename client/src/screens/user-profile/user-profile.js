@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {ScrollView, Text, StyleSheet} from 'react-native';
+import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
 import Header from '../../commons/components/headers/header/header';
 import Button from '../../commons/components/button/button';
@@ -38,13 +38,15 @@ function UserProfile({
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData />
 
-				<Section title="About">
-					<SafeText text={about} numberOfLines={5} />
-				</Section>
+				<View style={style.wrapper}>
+					<Section title="About">
+						<SafeText text={about} numberOfLines={5} />
+					</Section>
 
-				<Section title="Posts">
-					<SafeText text="SOON" />
-				</Section>
+					<Section title="Posts">
+						<SafeText text="SOON" />
+					</Section>
+				</View>
 			</ScrollView>
 		</Fragment>
 	);
@@ -52,10 +54,10 @@ function UserProfile({
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexGrow: 1,
+		padding: OUTER_MARGIN
 	},
 	content: {
-		padding: OUTER_MARGIN,
+		backgroundColor: getColor('background')
 	},
 	title: {
 		flex: 1,
@@ -67,40 +69,7 @@ const style = StyleSheet.create({
 		height: 50,
 		flexGrow: 0,
 		flexShrink: 1,
-	},
-	name: {
-		textAlign: 'center',
-		color: 'white',
-	},
-	locationGroup: {
-		flexDirection: 'row',
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
-	},
-	icon: {
-		marginTop: 4,
-		marginRight: 3,
-	},
-	location: {
-		color: 'white',
-	},
-	messageBtn: {
-		marginLeft: 16,
-		backgroundColor: 'white',
-		borderWidth: 0,
-	},
-	stats: {
-		marginVertical: 16,
-		flexDirection: 'row',
-		justifyContent: 'space-around',
-		backgroundColor: 'transparent',
-	},
-	buttonGroup: {
-		flexDirection: 'row',
-		marginVertical: 16,
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
-	},
+	}
 });
 
 UserProfile.defaultProps = {

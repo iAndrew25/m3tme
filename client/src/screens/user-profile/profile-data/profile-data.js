@@ -71,9 +71,11 @@ function UserProfile({
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		padding: OUTER_MARGIN,
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'column',
+		backgroundColor: getColor('lightPrimary')
 	},
 	content: {
 		flex: 1,
@@ -81,13 +83,13 @@ const style = StyleSheet.create({
 	},
 	fullName: {
 		textAlign: 'center',
-		color: getColor('primary'),
+		color: getColor('textPrimary'),
 		fontWeight: 'bold',
 		fontSize: 20,
 	},
 	username: {
 		textAlign: 'center',
-		color: getColor('primary'),
+		color: getColor('textPrimary'),
 		fontStyle: 'italic',
 		fontSize: 14,
 	},

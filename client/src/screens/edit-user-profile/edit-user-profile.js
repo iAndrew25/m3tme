@@ -11,6 +11,7 @@ import Toggle from '../../commons/components/toggle/toggle';
 import TextInputEdit from '../../commons/components/textinput-edit/textinput-edit';
 
 import {OUTER_MARGIN, INNER_MARGIN, AVATAR_SIZES} from '../../commons/utils/sizes';
+import getColor from '../../commons/utils/colors';
 
 function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.com/image/5314bf9269bedd6703de77f8/elon-musk-writes-a-blistering-takedown-of-chris-christie-and-new-jerseys-decision-to-ban-teslas-sales-model.jpg"}) {
 	const [followersCount, setFollowersCount] = useState(true);
@@ -67,13 +68,14 @@ function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.
 const style = StyleSheet.create({
 	wrapper: {
 		padding: OUTER_MARGIN,
+		backgroundColor: getColor('background')
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,
 		paddingVertical: OUTER_MARGIN,
 		flexGrow: 1,
 		borderBottomWidth: 1,
-		borderColor: '#ddd',
+		borderColor: getColor('divider'),
 	},
 	avatar: {
 		alignItems: 'center'

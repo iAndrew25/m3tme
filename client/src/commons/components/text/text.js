@@ -20,7 +20,7 @@ const style = ReactNative.StyleSheet.create({
 	},
 	subtitle: {
 		fontSize: 11,
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 	},
 	title: {
 		fontSize: 13
@@ -30,10 +30,10 @@ const style = ReactNative.StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	dark: {
-		color: getColor('primary')
+		color: getColor('defaultPrimary')
 	},
 	light: {
-		color: getColor('white')
+		color: getColor('lightPrimary')
 	}
 });
 

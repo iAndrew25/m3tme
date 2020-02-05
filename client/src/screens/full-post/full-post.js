@@ -1,10 +1,12 @@
 import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 import Post from '../../commons/components/post/post';
 import Reply from '../../commons/components/post/reply/reply';
+
+import getColor from '../../commons/utils/colors';
 
 const post = patternMock({
 	data: {
@@ -43,12 +45,18 @@ function FullPost({navigation}) {
 	return (
 		<Fragment>
 			<BackHeader onPress={() => navigation.goBack()} />
-			<ScrollView>
+			<ScrollView contentContainerStyle={style.wrapper}>
 				<Post {...post.data} />
 			</ScrollView>
 			<Reply />
 		</Fragment>
 	);
 }
+
+const style = StyleSheet.create({
+	wrapper: {
+		backgroundColor: getColor('background')
+	}
+});
 
 export default FullPost;

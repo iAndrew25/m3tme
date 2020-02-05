@@ -35,7 +35,7 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		marginHorizontal: 8,
 		borderBottomWidth: 1,
-		borderBottomColor: '#ddd',
+		borderBottomColor: getColor('divider'),
 		padding: 8,
 	},
 	middle: {
@@ -51,12 +51,12 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	timeText: {
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 		fontSize: 10,
 	},
 	message: {
 		flexGrow: 1,
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 		fontSize: 11,
 	},
 });

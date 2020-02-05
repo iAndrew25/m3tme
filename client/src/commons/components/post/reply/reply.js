@@ -56,7 +56,7 @@ const style = StyleSheet.create({
 	},
 	cannotReply: {
 		flex: 1,
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 	},
 	textInputWrapper: {
 		flexDirection: 'row',

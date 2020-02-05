@@ -4,6 +4,8 @@ import {View, StyleSheet} from 'react-native';
 import Avatar from '../avatar/avatar';
 import Button from '../button/button';
 
+import getColor from '../../utils/colors';
+
 function TabBar({navigation, tabs, children}) {
 	const onSelect = index => {
 		const selectedTabRoute = navigation.state.routes[index];
@@ -41,6 +43,9 @@ const style = StyleSheet.create({
 		height: 40,
 		flexDirection: 'row',
 		justifyContent: 'space-around',
+		backgroundColor: getColor('background'),
+		borderTopWidth: 1,
+		borderColor: getColor('divider')
 	},
 	tab: {
 		flex: 1,

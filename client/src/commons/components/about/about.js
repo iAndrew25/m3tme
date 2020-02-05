@@ -35,7 +35,7 @@ const style = StyleSheet.create({
 		padding: INNER_MARGIN,
 	},
 	about: {
-		color: getColor('primary'),
+		color: getColor('primaryText'),
 	},
 });
 

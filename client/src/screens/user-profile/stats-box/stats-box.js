@@ -17,8 +17,7 @@ const style = StyleSheet.create({
 	wraper: {
 		flexDirection: 'column',
 		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: 'transparent',
+		alignItems: 'center'
 	},
 	text: {
 		color: getColor('primary'),

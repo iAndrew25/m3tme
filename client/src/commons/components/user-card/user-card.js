@@ -20,7 +20,7 @@ function UserCard({avatarUrl, fullName, username, location, description}) {
 							name="pin-outline"
 							width={12}
 							height={12}
-							fill={getColor('primary')}
+							fill={getColor('defaultPrimary')}
 						/>
 						<Text style={style.location}>{location}</Text>
 					</View>
@@ -74,7 +74,7 @@ const style = StyleSheet.create({
 	description: {
 		marginTop: INNER_MARGIN,
 		fontSize: 10,
-		color: getColor('secondary'),
+		color: getColor('secondaryText'),
 	},
 	locationView: {
 		marginTop: INNER_MARGIN,

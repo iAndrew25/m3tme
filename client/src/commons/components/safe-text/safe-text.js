@@ -45,12 +45,12 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 
 const style = StyleSheet.create({
 	loadMore: {
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 		textAlign: 'center',
-		marginHorizontal: 8,
+		marginVertical: 8,
 	},
 	text: {
-		color: getColor('primary'),
+		color: getColor('primaryText'),
 	},
 });
 

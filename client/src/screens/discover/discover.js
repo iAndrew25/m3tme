@@ -41,7 +41,7 @@ function Discover() {
 				rightComponent={
 					<TextInput
 						placeholder="Search..."
-						placeholderTextColor={getColor('subtitle')}
+						placeholderTextColor={getColor('lightPrimary')}
 						style={style.textinput}
 					/>
 				}
@@ -58,6 +58,7 @@ function Discover() {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		backgroundColor: getColor('background')
 	},
 	scrollViewWrapper: {
 		flexGrow: 1,
@@ -73,7 +74,7 @@ const style = StyleSheet.create({
 		alignItems: 'center',
 	},
 	textinput: {
-		color: 'white',
+		color: getColor('white'),
 		height: '100%',
 		flex: 1,
 		paddingRight: OUTER_MARGIN,

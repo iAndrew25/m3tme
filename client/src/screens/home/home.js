@@ -36,7 +36,7 @@ function Home({avatarUrl, navigation}) {
 	const handleOnCommentPress = () => navigation.navigate('FullPost');
 
 	return (
-		<Fragment>
+		<View style={style.wrapper}>
 			<Header
 				leftComponent={<Text style={style.homeText}>M3tme logo</Text>}
 				rightComponent={
@@ -67,7 +67,7 @@ function Home({avatarUrl, navigation}) {
 				iconName="plus-outline"
 				style={style.addPost}
 			/>
-		</Fragment>
+		</View>
 	);
 }
 
@@ -76,6 +76,10 @@ Home.defaultProps = {
 };
 
 const style = StyleSheet.create({
+	wrapper: {
+		flex: 1,
+		backgroundColor: getColor('background')
+	},
 	more: {
 		width: 50,
 		height: 50,

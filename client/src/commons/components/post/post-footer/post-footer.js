@@ -16,8 +16,8 @@ function PostFooter({
 				onPress={onHeartPress}
 				size="M"
 				iconSize={14}
-				theme="light"
-				iconName="heart"
+				theme="flat"
+				iconName="heart-outline"
 				type="icon-right"
 				text={heartsCount || ''}
 			/>
@@ -26,7 +26,7 @@ function PostFooter({
 				onPress={onCommentPress}
 				size="M"
 				iconSize={14}
-				theme="light"
+				theme="flat"
 				iconName="message-square"
 				type="icon-right"
 				text={commentsCount || ''}

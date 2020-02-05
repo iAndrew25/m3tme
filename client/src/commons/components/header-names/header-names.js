@@ -42,15 +42,15 @@ const style = StyleSheet.create({
 		flexShrink: 1,
 	},
 	text: {
-		color: getColor('primary'),
+		color: getColor('primaryText'),
 		fontWeight: 'bold',
 	},
 	fixedText: {
 		fontStyle: 'italic',
-		color: getColor('primary'),
+		color: getColor('primaryText'),
 	},
 	leftText: {
-		color: getColor('subtitle'),
+		color: getColor('secondaryText'),
 	},
 	fixedContainer: {
 		flexDirection: 'row',

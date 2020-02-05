@@ -26,7 +26,7 @@ const style = StyleSheet.create({
 		paddingBottom: OUTER_MARGIN,
 	},
 	title: {
-		color: getColor('primary'),
+		color: getColor('primaryText'),
 		marginBottom: INNER_MARGIN,
 	},
 });

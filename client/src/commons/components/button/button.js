@@ -12,21 +12,21 @@ const getThemeStyle = theme => {
 			return {
 				button: style.dark,
 				text: style.lightText,
-				icon: getColor('white'),
+				icon: getColor('iconPrimary'),
 			};
 
 		case 'light':
 			return {
 				button: style.light,
 				text: style.darkText,
-				icon: getColor('primary'),
+				icon: getColor('defaultPrimary'),
 			};
 
 		case 'flat':
 			return {
 				button: {},
 				text: {},
-				icon: getColor('primary'),
+				icon: getColor('defaultPrimary'),
 			};
 	}
 };
@@ -39,6 +39,7 @@ function Button({
 	size,
 	onPress,
 	iconName,
+	iconColor,
 	iconSize,
 	textStyle,
 	style: componentStyle,
@@ -62,7 +63,7 @@ function Button({
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 					/>
 				</TouchableOpacity>
 			);
@@ -83,7 +84,7 @@ function Button({
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 						style={style.iconLeft}
 					/>
 					<Text style={[style.text, buttonTheme.text, textStyle]}>
@@ -111,7 +112,7 @@ function Button({
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 						style={style.iconRight}
 					/>
 				</TouchableOpacity>
@@ -159,16 +160,16 @@ const style = StyleSheet.create({
 		padding: INNER_MARGIN,
 	},
 	light: {
-		backgroundColor: getColor('white'),
+		backgroundColor: getColor('iconPrimary'),
 	},
 	dark: {
-		backgroundColor: getColor('primary'),
+		backgroundColor: getColor('defaultPrimary'),
 	},
 	lightText: {
-		color: getColor('white'),
+		color: getColor('iconPrimary'),
 	},
 	darkText: {
-		color: getColor('primary'),
+		color: getColor('defaultPrimary'),
 	},
 });
 

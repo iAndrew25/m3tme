@@ -6,6 +6,7 @@ import Section from '../../commons/components/section/section';
 import Toggle from '../../commons/components/toggle/toggle';
 
 import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
+import getColor from '../../commons/utils/colors';
 
 function Settings({navigation}) {
 	const [findInSearch, setFindInSearch] = useState(true);
@@ -57,13 +58,14 @@ function Settings({navigation}) {
 const style = StyleSheet.create({
 	wrapper: {
 		padding: OUTER_MARGIN,
+		backgroundColor: getColor('background')
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,
 		paddingVertical: OUTER_MARGIN,
 		flexGrow: 1,
 		borderBottomWidth: 1,
-		borderColor: '#ddd',
+		borderColor: getColor('divider'),
 	},
 });
 

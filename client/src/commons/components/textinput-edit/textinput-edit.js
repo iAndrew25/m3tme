@@ -1,20 +1,21 @@
 import React from 'react';
-import {StyleSheet, View, Switch, Text} from 'react-native';
+import {StyleSheet, View, TextInput, Text} from 'react-native';
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
-function Toggle({label, state, setState}) {
+function TextInputEdit({label, state, setState, ...rest}) {
 	return (
 		<View style={style.wrapper}>
-			<Text style={style.label}>{label}</Text>
-			<Switch value={state} onValueChange={setState} />
+			<Text>{label}</Text>
+			<TextInput value={state} style={style.textinput} {...rest} onChangeText={setState} />
 		</View>
 	);
 }
 
 const style = StyleSheet.create({
 	wrapper: {
+		flexGrow: 1,
 		paddingHorizontal: INNER_MARGIN,
 		paddingVertical: OUTER_MARGIN,
 		flexDirection: 'row',
@@ -22,9 +23,13 @@ const style = StyleSheet.create({
 		borderBottomWidth: 1,
 		borderColor: getColor('divider'),
 	},
-	label: {
+	textinput: {
+		flexShrink: 1,
 		flexGrow: 1,
-	},
+		padding: 0,
+		textAlign: 'right',
+		marginLeft: 16
+	}
 });
 
-export default Toggle;
+export default TextInputEdit;
