@@ -55,8 +55,8 @@ function FullPost({navigation}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		backgroundColor: getColor('background')
-	}
+		backgroundColor: getColor('background'),
+	},
 });
 
 export default FullPost;

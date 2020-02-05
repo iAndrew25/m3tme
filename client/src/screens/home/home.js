@@ -1,5 +1,5 @@
 import patternMock from 'pattern-mock';
-import React, {Fragment} from 'react';
+import React from 'react';
 import {View, FlatList, Text, StyleSheet} from 'react-native';
 
 import Button from '../../commons/components/button/button';
@@ -78,7 +78,7 @@ Home.defaultProps = {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	more: {
 		width: 50,

@@ -45,7 +45,7 @@ const style = StyleSheet.create({
 		justifyContent: 'space-around',
 		backgroundColor: getColor('background'),
 		borderTopWidth: 1,
-		borderColor: getColor('divider')
+		borderColor: getColor('divider'),
 	},
 	tab: {
 		flex: 1,

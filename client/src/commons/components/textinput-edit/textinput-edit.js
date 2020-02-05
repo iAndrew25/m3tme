@@ -1,14 +1,19 @@
 import React from 'react';
 import {StyleSheet, View, TextInput, Text} from 'react-native';
 
-import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
+import {INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function TextInputEdit({label, state, setState, ...rest}) {
 	return (
 		<View style={style.wrapper}>
 			<Text>{label}</Text>
-			<TextInput value={state} style={style.textinput} {...rest} onChangeText={setState} />
+			<TextInput
+				value={state}
+				style={style.textinput}
+				{...rest}
+				onChangeText={setState}
+			/>
 		</View>
 	);
 }
@@ -27,8 +32,8 @@ const style = StyleSheet.create({
 		flexGrow: 1,
 		padding: 0,
 		textAlign: 'right',
-		marginLeft: 16
-	}
+		marginLeft: 16,
+	},
 });
 
 export default TextInputEdit;

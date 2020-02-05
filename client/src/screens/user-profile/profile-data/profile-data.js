@@ -75,7 +75,7 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'column',
-		backgroundColor: getColor('lightPrimary')
+		backgroundColor: getColor('lightPrimary'),
 	},
 	content: {
 		flex: 1,

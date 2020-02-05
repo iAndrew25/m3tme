@@ -10,15 +10,15 @@ const themes = {
 	orange: {
 		darkPrimary: '#E64A19',
 		defaultPrimary: '#FF5722',
-		lightPrimary:'#FFCCBC',
+		lightPrimary: '#FFCCBC',
 		iconPrimary: '#FFFFFF',
 		accent: '#536DFE',
 		primaryText: '#212121',
 		secondaryText: '#757575',
 		divider: '#EEEEEE',
 		background: '#FAFAFA',
-		white: '#FFFFFF'
-	}
+		white: '#FFFFFF',
+	},
 };
 
 export default color => themes.orange[color];

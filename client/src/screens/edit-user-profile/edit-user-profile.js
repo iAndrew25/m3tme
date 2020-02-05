@@ -10,10 +10,17 @@ import Section from '../../commons/components/section/section';
 import Toggle from '../../commons/components/toggle/toggle';
 import TextInputEdit from '../../commons/components/textinput-edit/textinput-edit';
 
-import {OUTER_MARGIN, INNER_MARGIN, AVATAR_SIZES} from '../../commons/utils/sizes';
+import {
+	OUTER_MARGIN,
+	INNER_MARGIN,
+	AVATAR_SIZES,
+} from '../../commons/utils/sizes';
 import getColor from '../../commons/utils/colors';
 
-function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.com/image/5314bf9269bedd6703de77f8/elon-musk-writes-a-blistering-takedown-of-chris-christie-and-new-jerseys-decision-to-ban-teslas-sales-model.jpg"}) {
+function EditUserProfile({
+	navigation,
+	avatarUrl = 'http://static2.businessinsider.com/image/5314bf9269bedd6703de77f8/elon-musk-writes-a-blistering-takedown-of-chris-christie-and-new-jerseys-decision-to-ban-teslas-sales-model.jpg',
+}) {
 	const [followersCount, setFollowersCount] = useState(true);
 	const [followingCount, setFollowingCount] = useState(true);
 	const [postsCount, setPostsCount] = useState(true);
@@ -32,13 +39,31 @@ function EditUserProfile({navigation, avatarUrl="http://static2.businessinsider.
 					<View style={style.avatar}>
 						<View style={AVATAR_SIZES.XXL}>
 							<Avatar size="XXL" avatarUrl={avatarUrl} />
-							<Button style={style.changePicture} size="M" type="icon-only" theme="dark" iconName="camera" />
+							<Button
+								style={style.changePicture}
+								size="M"
+								type="icon-only"
+								theme="dark"
+								iconName="camera"
+							/>
 						</View>
 					</View>
 					<View style={style.inputs}>
-						<TextInputEdit label="Username" state="@elon.musty" editable={false} />
-						<TextInputEdit label="Display name" state={displayName} setState={setDisplayName} />
-						<TextInputEdit label="Location" state={location} setState={setLocation} />
+						<TextInputEdit
+							label="Username"
+							state="@elon.musty"
+							editable={false}
+						/>
+						<TextInputEdit
+							label="Display name"
+							state={displayName}
+							setState={setDisplayName}
+						/>
+						<TextInputEdit
+							label="Location"
+							state={location}
+							setState={setLocation}
+						/>
 					</View>
 				</View>
 				<Section title="About">
@@ -75,17 +100,17 @@ const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		padding: OUTER_MARGIN,
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	personalData: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		alignItems:'center',
-		marginBottom: OUTER_MARGIN
+		alignItems: 'center',
+		marginBottom: OUTER_MARGIN,
 	},
 	inputs: {
 		flex: 1,
-		paddingLeft: OUTER_MARGIN
+		paddingLeft: OUTER_MARGIN,
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,
@@ -95,14 +120,14 @@ const style = StyleSheet.create({
 		borderColor: getColor('divider'),
 	},
 	avatar: {
-		alignItems: 'center'
+		alignItems: 'center',
 	},
 	changePicture: {
 		position: 'absolute',
 		right: 0,
 		bottom: 0,
-		borderRadius: 20
-	}
+		borderRadius: 20,
+	},
 });
 
 export default EditUserProfile;

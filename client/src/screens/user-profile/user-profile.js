@@ -37,7 +37,7 @@ function UserProfile({
 			/>
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData />
-				
+
 				<View style={style.wrapper}>
 					<Section title="About">
 						<SafeText text={about} numberOfLines={5} />
@@ -54,10 +54,10 @@ function UserProfile({
 
 const style = StyleSheet.create({
 	wrapper: {
-		padding: OUTER_MARGIN
+		padding: OUTER_MARGIN,
 	},
 	content: {
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	title: {
 		flex: 1,
@@ -69,7 +69,7 @@ const style = StyleSheet.create({
 		height: 50,
 		flexGrow: 0,
 		flexShrink: 1,
-	}
+	},
 });
 
 UserProfile.defaultProps = {

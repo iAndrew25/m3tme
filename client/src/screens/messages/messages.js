@@ -56,7 +56,7 @@ function Messages() {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	more: {
 		width: 50,

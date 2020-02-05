@@ -59,7 +59,7 @@ const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		padding: OUTER_MARGIN,
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	button: {
 		paddingHorizontal: INNER_MARGIN,

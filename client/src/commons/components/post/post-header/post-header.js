@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Text, Icon} from '@ui-kitten/components';
+import {Text} from '@ui-kitten/components';
 
 import Button from '../../button/button';
 import Avatar from '../../avatar/avatar';

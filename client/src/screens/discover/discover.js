@@ -58,7 +58,7 @@ function Discover() {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		backgroundColor: getColor('background')
+		backgroundColor: getColor('background'),
 	},
 	scrollViewWrapper: {
 		flexGrow: 1,
