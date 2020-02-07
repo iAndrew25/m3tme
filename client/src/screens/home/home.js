@@ -1,15 +1,13 @@
 import patternMock from 'pattern-mock';
 import React from 'react';
-import {View, FlatList, Text, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 
+import Text from '../../commons/components/text/text';
 import Button from '../../commons/components/button/button';
-
-import Header from '../../commons/components/headers/header/header';
-
-import getColor from '../../commons/utils/colors';
-
+import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import Post from '../../commons/components/post/post';
 
+import getColor from '../../commons/utils/colors';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
 
 const posts = patternMock({
@@ -37,18 +35,7 @@ function Home({avatarUrl, navigation}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Header
-				leftComponent={<Text style={style.homeText}>M3tme logo</Text>}
-				rightComponent={
-					<Button
-						style={style.more}
-						theme="dark"
-						iconName="settings-2-outline"
-						type="icon-only"
-						onPress={() => navigation.navigate('Settings')}
-					/>
-				}
-			/>
+			<MenuHeader title="M3tme logo" onPress={() => navigation.navigate('Settings')} iconName="settings-2-outline" />
 			<FlatList
 				data={posts.data}
 				renderItem={({item}) => (
@@ -80,12 +67,6 @@ const style = StyleSheet.create({
 		flex: 1,
 		backgroundColor: getColor('background'),
 	},
-	more: {
-		width: 50,
-		height: 50,
-		flexGrow: 0,
-		flexShrink: 1,
-	},
 	addPost: {
 		width: 50,
 		height: 50,
@@ -99,8 +80,7 @@ const style = StyleSheet.create({
 	},
 	homeText: {
 		flex: 1,
-		paddingLeft: OUTER_MARGIN,
-		color: getColor('white'),
+		paddingLeft: OUTER_MARGIN
 	},
 });
 

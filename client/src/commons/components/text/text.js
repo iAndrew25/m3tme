@@ -23,7 +23,7 @@ const style = ReactNative.StyleSheet.create({
 		fontSize: 12,
 	},
 	subtitle: {
-		fontSize: 11,
+		fontSize: 10,
 		color: getColor('secondaryText'),
 	},
 	title: {
@@ -31,13 +31,19 @@ const style = ReactNative.StyleSheet.create({
 	},
 	h3: {
 		fontSize: 15,
-		fontWeight: 'bold',
+		letterSpacing: 0.5,
+		fontWeight: 'bold'
+	},
+	h4: {
+		fontSize: 16,
+		letterSpacing: 0.5,
+		fontWeight: 'bold'
 	},
 	dark: {
-		color: getColor('defaultPrimary'),
+		color: getColor('primaryText'),
 	},
 	light: {
-		color: getColor('lightPrimary'),
+		color: getColor('white'),
 	},
 });
 

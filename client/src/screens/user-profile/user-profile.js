@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
-import Header from '../../commons/components/headers/header/header';
+import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import Button from '../../commons/components/button/button';
 import ProfileData from './profile-data/profile-data';
 import SafeText from '../../commons/components/safe-text/safe-text';
@@ -23,18 +23,7 @@ function UserProfile({
 }) {
 	return (
 		<Fragment>
-			<Header
-				leftComponent={<Text style={style.title}>Profile</Text>}
-				rightComponent={
-					<Button
-						style={style.edit}
-						theme="dark"
-						iconName="edit"
-						type="icon-only"
-						onPress={() => navigation.navigate('EditUserProfile')}
-					/>
-				}
-			/>
+			<MenuHeader title="Profile" onPress={() => navigation.navigate('EditUserProfile')} iconName="edit" />
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData />
 
@@ -58,18 +47,7 @@ const style = StyleSheet.create({
 	},
 	content: {
 		backgroundColor: getColor('background'),
-	},
-	title: {
-		flex: 1,
-		color: getColor('white'),
-		marginLeft: OUTER_MARGIN,
-	},
-	edit: {
-		width: 50,
-		height: 50,
-		flexGrow: 0,
-		flexShrink: 1,
-	},
+	}
 });
 
 UserProfile.defaultProps = {
