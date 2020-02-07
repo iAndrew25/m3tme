@@ -17,6 +17,7 @@ const themes = {
 		secondaryText: '#757575',
 		divider: '#EEEEEE',
 		background: '#FAFAFA',
+		darkBackground: '#212121',
 		white: '#FFFFFF',
 	},
 };

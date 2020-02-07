@@ -31,13 +31,13 @@ function UserProfile({
 			</View>
 			<View style={style.locationGroup}>
 				<Icon
-					name="pin"
+					name="pin-outline"
 					style={style.icon}
-					fill={getColor('primary')}
+					fill={getColor('white')}
 					width={20}
 					height={20}
 				/>
-				<Text category="s1">{location}</Text>
+				<Text category="s1" style={{color: 'white'}}>{location}</Text>
 			</View>
 
 			<View style={style.buttonGroup}>
@@ -75,7 +75,7 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'column',
-		backgroundColor: getColor('lightPrimary'),
+		backgroundColor: getColor('darkBackground'),
 	},
 	content: {
 		flex: 1,
@@ -83,13 +83,13 @@ const style = StyleSheet.create({
 	},
 	fullName: {
 		textAlign: 'center',
-		color: getColor('textPrimary'),
+		color: getColor('white'),
 		fontWeight: 'bold',
 		fontSize: 20,
 	},
 	username: {
 		textAlign: 'center',
-		color: getColor('textPrimary'),
+		color: getColor('white'),
 		fontStyle: 'italic',
 		fontSize: 14,
 	},
