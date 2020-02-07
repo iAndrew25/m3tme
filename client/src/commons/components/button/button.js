@@ -1,9 +1,10 @@
 import React from 'react';
-import {TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Icon} from '@ui-kitten/components';
 
-import {INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
+import Text from '../text/text';
 
+import {INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 const getThemeStyle = theme => {
@@ -87,9 +88,7 @@ function Button({
 						fill={iconColor || buttonTheme.icon}
 						style={style.iconLeft}
 					/>
-					<Text style={[style.text, buttonTheme.text, textStyle]}>
-						{text}
-					</Text>
+					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
 				</TouchableOpacity>
 			);
 
@@ -105,9 +104,7 @@ function Button({
 						componentStyle,
 					]}
 					activeOpacity={0.7}>
-					<Text style={[style.text, buttonTheme.text, textStyle]}>
-						{text}
-					</Text>
+					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
 					<Icon
 						name={iconName}
 						width={iconSize}

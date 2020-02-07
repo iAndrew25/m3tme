@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {ScrollView, View, Text, StyleSheet} from 'react-native';
+import {ScrollView, View, StyleSheet} from 'react-native';
 
 import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import Button from '../../commons/components/button/button';

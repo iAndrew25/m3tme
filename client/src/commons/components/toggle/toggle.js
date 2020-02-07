@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Switch, Text} from 'react-native';
+import {StyleSheet, View, Switch} from 'react-native';
+
+import Text from '../text/text';
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
@@ -7,7 +9,7 @@ import getColor from '../../utils/colors';
 function Toggle({label, state, setState}) {
 	return (
 		<View style={style.wrapper}>
-			<Text style={style.label}>{label}</Text>
+			<Text style={style.label} value={label} />
 			<Switch value={state} onValueChange={setState} />
 		</View>
 	);

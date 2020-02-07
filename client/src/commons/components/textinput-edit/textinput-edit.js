@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, TextInput, Text} from 'react-native';
+import {StyleSheet, View, TextInput} from 'react-native';
+
+import Text from '../text/text';
 
 import {INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
@@ -7,7 +9,7 @@ import getColor from '../../utils/colors';
 function TextInputEdit({label, state, setState, ...rest}) {
 	return (
 		<View style={style.wrapper}>
-			<Text>{label}</Text>
+			<Text value={label} />
 			<TextInput
 				value={state}
 				style={style.textinput}

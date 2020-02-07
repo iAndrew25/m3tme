@@ -34,7 +34,7 @@ function Discover() {
 							name="search"
 							width={20}
 							height={20}
-							fill={getColor('white')}
+							fill={getColor('iconPrimary')}
 						/>
 					</View>
 				}

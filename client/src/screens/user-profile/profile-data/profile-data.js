@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Icon} from '@ui-kitten/components';
 
+import Text from '../../../commons/components/text/text';
 import Button from '../../../commons/components/button/button';
 import Avatar from '../../../commons/components/avatar/avatar';
 import StatsBox from '../stats-box/stats-box';
 
-import {OUTER_MARGIN} from '../../../commons/utils/sizes';
+import {OUTER_MARGIN, INNER_MARGIN} from '../../../commons/utils/sizes';
 import getColor from '../../../commons/utils/colors';
 
 function UserProfile({
@@ -25,19 +26,17 @@ function UserProfile({
 			<Avatar size="XXL" avatarUrl={avatarUrl} />
 
 			<View style={style.text}>
-				<Text style={style.fullName}>{fullName}</Text>
-
-				<Text style={style.username}>@{username}</Text>
+				<Text theme="light" type="h1" style={style.fullName} value={fullName} />
+				<Text theme="light" type="h3" style={style.username} value={`@${username}`} />
 			</View>
 			<View style={style.locationGroup}>
 				<Icon
 					name="pin-outline"
-					style={style.icon}
-					fill={getColor('white')}
-					width={20}
-					height={20}
+					fill={getColor('iconPrimary')}
+					width={16}
+					height={16}
 				/>
-				<Text category="s1" style={{color: 'white'}}>{location}</Text>
+				<Text theme="light" value={location} />
 			</View>
 
 			<View style={style.buttonGroup}>
@@ -83,23 +82,20 @@ const style = StyleSheet.create({
 	},
 	fullName: {
 		textAlign: 'center',
-		color: getColor('white'),
-		fontWeight: 'bold',
-		fontSize: 20,
 	},
 	username: {
 		textAlign: 'center',
-		color: getColor('white'),
 		fontStyle: 'italic',
-		fontSize: 14,
+		fontWeight: 'normal'
 	},
 	text: {
-		marginVertical: OUTER_MARGIN,
+		marginTop: OUTER_MARGIN,
+		marginBottom: INNER_MARGIN
 	},
 	locationGroup: {
 		flexDirection: 'row',
 		justifyContent: 'center',
-		backgroundColor: 'transparent',
+		alignItems: 'center',
 		marginBottom: OUTER_MARGIN,
 	},
 	buttonGroup: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Text} from '@ui-kitten/components';
 
+import Text from '../../text/text';
 import Button from '../../button/button';
 import Avatar from '../../avatar/avatar';
 import HeaderNames from '../../header-names/header-names';
@@ -17,9 +17,8 @@ function PostHeader({author, time}) {
 			<Avatar size="L" avatarUrl={avatarUrl} />
 			<View style={style.text}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
-				<Text category="c2" style={style.time}>
-					{time}
-				</Text>
+				<Text type="subtitle" value={time} />
+					
 			</View>
 			<View style={style.more}>
 				<Button
@@ -50,10 +49,7 @@ const style = StyleSheet.create({
 	},
 	more: {
 		flexGrow: 0,
-	},
-	time: {
-		color: getColor('secondaryText'),
-	},
+	}
 });
 
 export default PostHeader;

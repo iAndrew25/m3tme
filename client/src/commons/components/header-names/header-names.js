@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text} from '@ui-kitten/components';
+
+import Text from '../text/text';
 
 import getColor from '../../utils/colors';
 
@@ -9,25 +10,19 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 		<View style={style.wrapper}>
 			<View style={style.fluidContainer}>
 				<Text
-					category="c1"
+					type="title"
 					numberOfLines={1}
 					ellipsizeMode="tail"
-					style={style.text}>
-					{fluidText} &#183;{' '}
-				</Text>
+					value={fluidText}
+					style={style.text} />
 			</View>
 			<View style={style.fixedContainer}>
-				<Text category="c1" numberOfLines={1} style={style.fixedText}>
-					@{fixedText}
-				</Text>
+				<Text type="title" numberOfLines={1} style={style.fixedText} value={` · @${fixedText}`} />
 				{leftText && (
 					<Text
-						category="c1"
+						type="subtitle"
 						numberOfLines={1}
-						style={style.leftText}>
-						{' '}
-						&#183; {leftText}
-					</Text>
+						value={` · ${leftText}`} />
 				)}
 			</View>
 		</View>
@@ -36,25 +31,21 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexDirection: 'row',
+		flexDirection: 'row'
 	},
 	fluidContainer: {
-		flexShrink: 1,
+		flexShrink: 1
 	},
 	text: {
-		color: getColor('primaryText'),
-		fontWeight: 'bold',
+		fontWeight: 'bold'
 	},
 	fixedText: {
-		fontStyle: 'italic',
-		color: getColor('primaryText'),
-	},
-	leftText: {
-		color: getColor('secondaryText'),
+		fontStyle: 'italic'
 	},
 	fixedContainer: {
 		flexDirection: 'row',
-		flexGrow: 1,
+		alignItems: 'center',
+		flexGrow: 1
 	},
 });
 

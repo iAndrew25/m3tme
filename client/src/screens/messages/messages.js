@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import {Text} from '@ui-kitten/components';
 
 import patternMock from 'pattern-mock';
 

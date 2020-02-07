@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Text} from '@ui-kitten/components';
 
+import Text from '../text/text';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
 
 import getColor from '../../utils/colors';
@@ -13,9 +13,7 @@ function Section({title, children}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Text category="s1" style={style.title}>
-				{title}
-			</Text>
+			<Text type="h4" style={style.title} value={title} />
 			{children}
 		</View>
 	);
@@ -23,11 +21,10 @@ function Section({title, children}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		paddingBottom: OUTER_MARGIN,
+		paddingBottom: OUTER_MARGIN
 	},
 	title: {
-		color: getColor('primaryText'),
-		marginBottom: INNER_MARGIN,
+		marginBottom: INNER_MARGIN
 	},
 });
 

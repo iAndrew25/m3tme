@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import AutoExpandingTextInput from '../../auto-expanding-text-input/auto-expanding-text-input';
+import Text from '../../text/text';
 import Avatar from '../../avatar/avatar';
 import Button from '../../button/button';
 
@@ -30,9 +31,7 @@ function Reply({avatarUrl, canReply = true}) {
 			);
 		} else {
 			return (
-				<Text style={style.cannotReply}>
-					You can not reply to this post.
-				</Text>
+				<Text style={style.cannotReply} value="You can not reply to this post." />
 			);
 		}
 	};
@@ -50,13 +49,14 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		paddingHorizontal: OUTER_MARGIN,
+		height: 40
 	},
 	textInput: {
 		flex: 1,
 	},
 	cannotReply: {
 		flex: 1,
-		color: getColor('secondaryText'),
+		color: getColor('secondaryText')
 	},
 	textInputWrapper: {
 		flexDirection: 'row',

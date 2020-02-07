@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
-import {ScrollView, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 
+import Text from '../../commons/components/text/text';
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 import Section from '../../commons/components/section/section';
 import Toggle from '../../commons/components/toggle/toggle';
@@ -38,16 +39,16 @@ function Settings({navigation}) {
 
 				<Section title="Account settings">
 					<TouchableOpacity style={style.button}>
-						<Text>Block list</Text>
+						<Text value="Block list" />
 					</TouchableOpacity>
 					<TouchableOpacity style={style.button}>
-						<Text>Change password</Text>
+						<Text value="Change password" />
 					</TouchableOpacity>
 					<TouchableOpacity style={style.button}>
-						<Text>Remove account</Text>
+						<Text value="Remove account" />
 					</TouchableOpacity>
 					<TouchableOpacity style={style.button}>
-						<Text>Log out</Text>
+						<Text value="Log out" />
 					</TouchableOpacity>
 				</Section>
 			</ScrollView>

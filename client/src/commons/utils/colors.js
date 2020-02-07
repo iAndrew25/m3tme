@@ -11,13 +11,18 @@ const themes = {
 		darkPrimary: '#E64A19',
 		defaultPrimary: '#FF5722',
 		lightPrimary: '#FFCCBC',
-		iconPrimary: '#FFFFFF',
-		accent: '#536DFE',
+
 		primaryText: '#212121',
 		secondaryText: '#757575',
-		divider: '#EEEEEE',
+
 		background: '#FAFAFA',
 		darkBackground: '#212121',
+
+		iconPrimary: '#FFFFFF',
+		
+		accent: '#536DFE',
+		divider: '#EEEEEE',
+
 		white: '#FFFFFF',
 	},
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text} from '@ui-kitten/components';
 
+import Text from '../text/text';
 import Avatar from '../avatar/avatar';
 import HeaderNames from '../header-names/header-names';
 import getColor from '../../utils/colors';
@@ -17,9 +17,8 @@ function MessageCard({person, lastMessage, time}) {
 				<Text
 					numberOfLines={1}
 					ellipsisMode="tail"
-					style={style.message}>
-					{lastMessage}
-				</Text>
+					style={style.message}
+					value={lastMessage} />
 			</View>
 			<View style={style.time}>
 				<Text style={style.timeText}>{time}</Text>
@@ -55,9 +54,7 @@ const style = StyleSheet.create({
 		fontSize: 10,
 	},
 	message: {
-		flexGrow: 1,
-		color: getColor('secondaryText'),
-		fontSize: 11,
+		color: getColor('secondaryText')
 	},
 });
 

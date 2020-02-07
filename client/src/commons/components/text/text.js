@@ -20,14 +20,24 @@ Text.defaultProps = {
 
 const style = ReactNative.StyleSheet.create({
 	paragraph: {
-		fontSize: 12,
+		fontSize: 13,
 	},
 	subtitle: {
 		fontSize: 10,
 		color: getColor('secondaryText'),
 	},
 	title: {
-		fontSize: 13,
+		fontSize: 14,
+	},
+	h1: {
+		fontSize: 20,
+		letterSpacing: 1,
+		fontWeight: 'bold'
+	},
+	h2: {
+		fontSize: 16,
+		letterSpacing: 0.5,
+		fontWeight: 'bold'
 	},
 	h3: {
 		fontSize: 15,
@@ -35,9 +45,8 @@ const style = ReactNative.StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	h4: {
-		fontSize: 16,
-		letterSpacing: 0.5,
-		fontWeight: 'bold'
+		fontSize: 14,
+		letterSpacing: 0.5
 	},
 	dark: {
 		color: getColor('primaryText'),

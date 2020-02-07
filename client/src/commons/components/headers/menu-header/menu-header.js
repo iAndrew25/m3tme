@@ -14,7 +14,7 @@ function MenuHeader({title, onPress, iconName, children}) {
 			return children;
 		}
 		if (title) {
-			return <Text type="h4" style={style.text} theme="light" value={title} />;
+			return <Text type="h2" style={style.text} theme="light" value={title} />;
 		}
 	};
 

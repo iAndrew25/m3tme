@@ -3,12 +3,11 @@ import {View, StyleSheet} from 'react-native';
 
 import FullWidthImage from 'react-native-fullwidth-image';
 import SafeText from '../safe-text/safe-text';
-import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import PostHeader from './post-header/post-header';
 import PostFooter from './post-footer/post-footer';
-
 import Comment from './comment/comment';
 
+import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function Post({

@@ -14,7 +14,7 @@ function BackHeader({title, onPress, children}) {
 			return children;
 		}
 		if (title) {
-			return <Text type="h4" theme="light" value={title} />;
+			return <Text type="h2" theme="light" value={title} />;
 		}
 	};
 

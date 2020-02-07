@@ -1,14 +1,15 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text} from '@ui-kitten/components';
+
+import Text from '../../../commons/components/text/text';
 
 import getColor from '../../../commons/utils/colors';
 
 function StatsBox({value, name}) {
 	return (
 		<View style={style.wraper}>
-			<Text style={style.number}>{value}</Text>
-			<Text style={style.text}>{name}</Text>
+			<Text theme="light" value={value} />
+			<Text type="subtitle" value={name} />
 		</View>
 	);
 }
@@ -18,14 +19,6 @@ const style = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	number: {
-		color: getColor('white'),
-		fontSize: 13
-	},
-	text: {
-		color: getColor('secondaryText'),
-		fontSize: 10
 	}
 });
 
