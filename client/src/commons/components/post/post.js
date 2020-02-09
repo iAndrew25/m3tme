@@ -77,12 +77,10 @@ Post.defaultProps = {
 
 const style = StyleSheet.create({
 	wrapper: {
-		elevation: 3,
 		flexGrow: 1,
-		borderRadius: 8,
+		elevation: 1,
 		backgroundColor: getColor('white'),
-		margin: OUTER_MARGIN,
-		padding: INNER_MARGIN,
+		padding: OUTER_MARGIN,
 		paddingBottom: 0,
 		marginBottom: INNER_MARGIN,
 	},

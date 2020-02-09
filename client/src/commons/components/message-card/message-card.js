@@ -4,6 +4,8 @@ import {StyleSheet, View} from 'react-native';
 import Text from '../text/text';
 import Avatar from '../avatar/avatar';
 import HeaderNames from '../header-names/header-names';
+
+import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function MessageCard({person, lastMessage, time}) {
@@ -11,7 +13,7 @@ function MessageCard({person, lastMessage, time}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar size="M" avatarUrl={avatarUrl} />
+			<Avatar size="L" avatarUrl={avatarUrl} />
 			<View style={style.middle}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
 				<Text
@@ -21,7 +23,7 @@ function MessageCard({person, lastMessage, time}) {
 					value={lastMessage} />
 			</View>
 			<View style={style.time}>
-				<Text style={style.timeText}>{time}</Text>
+				<Text style={style.timeText} value={time} />
 			</View>
 		</View>
 	);
@@ -30,19 +32,19 @@ function MessageCard({person, lastMessage, time}) {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		backgroundColor: getColor('white'),
+		marginBottom: INNER_MARGIN,
 		alignItems: 'center',
 		flexDirection: 'row',
-		marginHorizontal: 8,
-		borderBottomWidth: 1,
-		borderBottomColor: getColor('divider'),
-		padding: 8,
+		padding: OUTER_MARGIN,
+		elevation: 1,
 	},
 	middle: {
 		alignItems: 'center',
 		justifyContent: 'center',
 		flexDirection: 'column',
 		flexShrink: 1,
-		marginHorizontal: 16,
+		marginHorizontal: OUTER_MARGIN
 	},
 	time: {
 		flexShrink: 0,
