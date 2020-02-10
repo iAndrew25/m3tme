@@ -1,18 +1,5 @@
 import React from 'react';
-import {ScrollView, View, Image, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
-
-import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
-
-import getColor from '../../../utils/colors';
+import {View, StyleSheet} from 'react-native';
 
 import Button from '../../button/button';
 
@@ -29,8 +16,8 @@ function PostFooter({
 				onPress={onHeartPress}
 				size="M"
 				iconSize={14}
-				theme="light"
-				iconName="heart"
+				theme="flat"
+				iconName="heart-outline"
 				type="icon-right"
 				text={heartsCount || ''}
 			/>
@@ -39,7 +26,7 @@ function PostFooter({
 				onPress={onCommentPress}
 				size="M"
 				iconSize={14}
-				theme="light"
+				theme="flat"
 				iconName="message-square"
 				type="icon-right"
 				text={commentsCount || ''}

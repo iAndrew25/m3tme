@@ -25,7 +25,7 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'flex-start',
-		backgroundColor: getColor('primary'),
+		backgroundColor: getColor('defaultPrimary'),
 	},
 });
 

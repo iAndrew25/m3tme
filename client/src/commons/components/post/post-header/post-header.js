@@ -1,20 +1,12 @@
 import React from 'react';
-import {ScrollView, View, Image, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {View, StyleSheet} from 'react-native';
 
-import {INNER_MARGIN, OUTER_MARGIN} from '../../../utils/sizes';
-
+import Text from '../../text/text';
+import Button from '../../button/button';
+import Avatar from '../../avatar/avatar';
 import HeaderNames from '../../header-names/header-names';
 
+import {INNER_MARGIN} from '../../../utils/sizes';
 import getColor from '../../../utils/colors';
 
 function PostHeader({author, time}) {
@@ -22,19 +14,21 @@ function PostHeader({author, time}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar shape="round" size="small" source={{uri: avatarUrl}} />
+			<Avatar size="L" avatarUrl={avatarUrl} />
 			<View style={style.text}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
-				<Text category="c2" style={style.time}>
-					{time}
-				</Text>
+				<Text type="subtitle" value={time} />
+					
 			</View>
 			<View style={style.more}>
-				<Icon
-					name="more-vertical-outline"
-					width={16}
-					height={16}
-					fill={getColor('primary')}
+				<Button
+					// onPress={onCommentPress}
+					size="M"
+					iconSize={16}
+					iconColor={getColor('secondaryText')}
+					theme="flat"
+					iconName="more-vertical-outline"
+					type="icon-only"
 				/>
 			</View>
 		</View>
@@ -55,10 +49,7 @@ const style = StyleSheet.create({
 	},
 	more: {
 		flexGrow: 0,
-	},
-	time: {
-		color: getColor('subtitle'),
-	},
+	}
 });
 
 export default PostHeader;

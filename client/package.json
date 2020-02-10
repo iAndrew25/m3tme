@@ -3,11 +3,13 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"android": "react-native run-android",
+		"clean": "cd android && gradlew clean && cd ..",
+		"android": "npm run clean && react-native run-android --deviceId=emulator-5556",
 		"ios": "react-native run-ios",
 		"start": "react-native start",
 		"test": "jest",
-		"lint": "eslint . --fix",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"postinstall": "jetifier -r"
 	},
 	"dependencies": {

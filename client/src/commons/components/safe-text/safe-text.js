@@ -1,16 +1,7 @@
-import React, {Fragment, useState, useRef} from 'react';
-import {ScrollView, Image, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import React, {Fragment, useState} from 'react';
+import {StyleSheet} from 'react-native';
 
+import Text from '../text/text';
 import getColor from '../../utils/colors';
 
 function SafeText({text, numberOfLines, style: componentStyle}) {
@@ -27,11 +18,10 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 		if (maxNumberOfLines > numberOfLinesDisplayed) {
 			return (
 				<Text
-					category="c2"
+					value="Load more"
+					type="subtitle"
 					style={style.loadMore}
-					onPress={handleLoadMore}>
-					Load more
-				</Text>
+					onPress={handleLoadMore} />
 			);
 		} else {
 			return null;
@@ -41,12 +31,11 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 	return (
 		<Fragment>
 			<Text
+				type="paragraph"
 				numberOfLines={numberOfLinesDisplayed}
-				category="c2"
-				style={[style.text, componentStyle]}
-				onTextLayout={handleOnTextLayout}>
-				{text}
-			</Text>
+				style={componentStyle}
+				onTextLayout={handleOnTextLayout}
+				value={text} />
 			{renderLoadMore()}
 		</Fragment>
 	);
@@ -54,13 +43,10 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 
 const style = StyleSheet.create({
 	loadMore: {
-		color: getColor('subtitle'),
-		textAlign: 'center',
-		marginTop: 8,
-	},
-	text: {
-		color: getColor('primary'),
-	},
+		fontSize: 11,
+		marginVertical: 8,
+		textAlign: 'center'
+	}
 });
 
 SafeText.defaultProps = {

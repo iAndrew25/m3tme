@@ -1,20 +1,17 @@
 import React from 'react';
-import {SafeAreaView, Platform, StatusBar, StyleSheet} from 'react-native';
-import {
-	ApplicationProvider,
-	IconRegistry,
-	Layout,
-	Text,
-} from '@ui-kitten/components';
+import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
-import {mapping, light, dark} from '@eva-design/eva';
+import {mapping, dark} from '@eva-design/eva';
 import 'react-native-gesture-handler';
 
 import AppNavigation from './src/config/app-navigation';
+import getColor from './src/commons/utils/colors';
 
 const App = () => (
 	<SafeAreaView style={style.wrapper}>
 		<ApplicationProvider mapping={mapping} theme={dark}>
+			<StatusBar backgroundColor={getColor('darkPrimary')} />
 			<IconRegistry icons={EvaIconsPack} />
 			<AppNavigation />
 		</ApplicationProvider>

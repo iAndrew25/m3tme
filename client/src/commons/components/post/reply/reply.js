@@ -1,19 +1,23 @@
 import React, {Fragment} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
-import {Avatar} from '@ui-kitten/components';
+import {View, StyleSheet} from 'react-native';
 
+import AutoExpandingTextInput from '../../auto-expanding-text-input/auto-expanding-text-input';
+import Text from '../../text/text';
+import Avatar from '../../avatar/avatar';
 import Button from '../../button/button';
 
 import getColor from '../../../utils/colors';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../../utils/sizes';
 
-function Reply({avatarUrl, canReply = false}) {
+function Reply({avatarUrl, canReply = true}) {
 	const renderTextInput = () => {
 		if (canReply) {
 			return (
 				<Fragment>
-					<TextInput
+					<AutoExpandingTextInput
 						multiline
+						minHeight={40}
+						maxHeight={73}
 						placeholder="Leave a comment..."
 						style={style.textInput}
 					/>
@@ -27,16 +31,14 @@ function Reply({avatarUrl, canReply = false}) {
 			);
 		} else {
 			return (
-				<Text style={style.cannotReply}>
-					You can not reply to this post.
-				</Text>
+				<Text style={style.cannotReply} value="You can not reply to this post." />
 			);
 		}
 	};
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar shape="round" size="tiny" source={{uri: avatarUrl}} />
+			<Avatar size="S" avatarUrl={avatarUrl} />
 			<View style={style.textInputWrapper}>{renderTextInput()}</View>
 		</View>
 	);
@@ -47,19 +49,18 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		paddingHorizontal: OUTER_MARGIN,
+		height: 40
 	},
 	textInput: {
-		height: '100%',
 		flex: 1,
 	},
 	cannotReply: {
 		flex: 1,
-		color: getColor('subtitle'),
+		color: getColor('secondaryText')
 	},
 	textInputWrapper: {
 		flexDirection: 'row',
 		marginLeft: INNER_MARGIN,
-		height: 40,
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',

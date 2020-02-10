@@ -1,47 +1,37 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import {View, StyleSheet} from 'react-native';
+import {Icon} from '@ui-kitten/components';
 
-import {TWO_COLUMNS_SIZE, INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
+import Text from '../text/text';
+import Avatar from '../avatar/avatar';
+
+import {TWO_COLUMNS_SIZE, INNER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function UserCard({avatarUrl, fullName, username, location, description}) {
 	return (
 		<View style={style.wrapper}>
-			<Avatar
-				style={style.avatar}
-				shape="round"
-				size="tiny"
-				source={{uri: avatarUrl}}
-			/>
+			<Avatar size="XL" avatarUrl={avatarUrl} />
 			<View style={style.text}>
-				<Text style={style.fullName}>{fullName}</Text>
-				<Text style={style.username}>@{username}</Text>
+				<Text style={style.fullName} value={fullName} />
+				<Text style={style.username} value={`@${username}`} />
 				{location && (
 					<View style={style.locationView}>
 						<Icon
 							name="pin-outline"
 							width={12}
 							height={12}
-							fill={getColor('primary')}
+							fill={getColor('primaryText')}
 						/>
-						<Text style={style.location}>{location}</Text>
+						<Text value={location} />
 					</View>
 				)}
 				<Text
 					style={style.description}
 					numberOfLines={5}
-					ellipsisMode="tail">
-					{description}
-				</Text>
+					type="subtitle"
+					ellipsisMode="tail" 
+					value={description} />
 			</View>
 		</View>
 	);
@@ -64,10 +54,6 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	avatar: {
-		width: 75,
-		height: 75,
-	},
 	text: {
 		marginTop: INNER_MARGIN,
 		flexDirection: 'column',
@@ -75,30 +61,21 @@ const style = StyleSheet.create({
 		alignItems: 'center',
 	},
 	fullName: {
-		fontSize: 12,
 		fontWeight: 'bold',
-		color: 'black',
-		textAlign: 'center',
+		textAlign: 'center'
 	},
 	username: {
-		fontSize: 12,
 		fontStyle: 'italic',
-		color: 'black',
-		textAlign: 'center',
+		textAlign: 'center'
 	},
 	description: {
-		marginTop: INNER_MARGIN,
-		fontSize: 10,
-		color: getColor('secondary'),
+		marginTop: INNER_MARGIN
 	},
 	locationView: {
 		marginTop: INNER_MARGIN,
 		flexDirection: 'row',
 		alignItems: 'center',
-	},
-	location: {
-		fontSize: 12,
-	},
+	}
 });
 
 export default UserCard;

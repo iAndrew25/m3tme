@@ -3,12 +3,11 @@ import {View, StyleSheet} from 'react-native';
 
 import FullWidthImage from 'react-native-fullwidth-image';
 import SafeText from '../safe-text/safe-text';
-import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import PostHeader from './post-header/post-header';
 import PostFooter from './post-footer/post-footer';
-
 import Comment from './comment/comment';
 
+import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function Post({
@@ -78,12 +77,10 @@ Post.defaultProps = {
 
 const style = StyleSheet.create({
 	wrapper: {
-		elevation: 3,
 		flexGrow: 1,
-		borderRadius: 8,
+		elevation: 1,
 		backgroundColor: getColor('white'),
-		margin: OUTER_MARGIN,
-		padding: INNER_MARGIN,
+		padding: OUTER_MARGIN,
 		paddingBottom: 0,
 		marginBottom: INNER_MARGIN,
 	},

@@ -1,23 +1,10 @@
-import React, {Fragment} from 'react';
-import {
-	ScrollView,
-	TouchableOpacity,
-	Image,
-	View,
-	StyleSheet,
-} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import React from 'react';
+import {TouchableOpacity, StyleSheet} from 'react-native';
+import {Icon} from '@ui-kitten/components';
 
-import {OUTER_MARGIN, INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
+import Text from '../text/text';
 
+import {INNER_MARGIN, BUTTON_SIZES} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 const getThemeStyle = theme => {
@@ -26,21 +13,21 @@ const getThemeStyle = theme => {
 			return {
 				button: style.dark,
 				text: style.lightText,
-				icon: getColor('white'),
+				icon: getColor('iconPrimary'),
 			};
 
 		case 'light':
 			return {
 				button: style.light,
 				text: style.darkText,
-				icon: getColor('primary'),
+				icon: getColor('defaultPrimary'),
 			};
 
 		case 'flat':
 			return {
 				button: {},
 				text: {},
-				icon: getColor('primary'),
+				icon: getColor('defaultPrimary'),
 			};
 	}
 };
@@ -53,6 +40,7 @@ function Button({
 	size,
 	onPress,
 	iconName,
+	iconColor,
 	iconSize,
 	textStyle,
 	style: componentStyle,
@@ -76,7 +64,7 @@ function Button({
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 					/>
 				</TouchableOpacity>
 			);
@@ -97,12 +85,10 @@ function Button({
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 						style={style.iconLeft}
 					/>
-					<Text style={[style.text, buttonTheme.text, textStyle]}>
-						{text}
-					</Text>
+					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
 				</TouchableOpacity>
 			);
 
@@ -118,14 +104,12 @@ function Button({
 						componentStyle,
 					]}
 					activeOpacity={0.7}>
-					<Text style={[style.text, buttonTheme.text, textStyle]}>
-						{text}
-					</Text>
+					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
 					<Icon
 						name={iconName}
 						width={iconSize}
 						height={iconSize}
-						fill={buttonTheme.icon}
+						fill={iconColor || buttonTheme.icon}
 						style={style.iconRight}
 					/>
 				</TouchableOpacity>
@@ -173,16 +157,16 @@ const style = StyleSheet.create({
 		padding: INNER_MARGIN,
 	},
 	light: {
-		backgroundColor: getColor('white'),
+		backgroundColor: getColor('iconPrimary'),
 	},
 	dark: {
-		backgroundColor: getColor('primary'),
+		backgroundColor: getColor('defaultPrimary'),
 	},
 	lightText: {
-		color: getColor('white'),
+		color: getColor('iconPrimary'),
 	},
 	darkText: {
-		color: getColor('primary'),
+		color: getColor('defaultPrimary'),
 	},
 });
 

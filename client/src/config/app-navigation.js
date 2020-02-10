@@ -9,7 +9,9 @@ import Home from '../screens/home/home';
 import Messages from '../screens/messages/messages';
 import Discover from '../screens/discover/discover';
 import UserProfile from '../screens/user-profile/user-profile';
-import ProfileSettings from '../screens/profile-settings/profile-settings';
+import Settings from '../screens/settings/settings';
+import EditUserProfile from '../screens/edit-user-profile/edit-user-profile';
+// import ProfileSettings from '../screens/profile-settings/profile-settings';
 
 import FullPost from '../screens/full-post/full-post';
 
@@ -32,12 +34,14 @@ export default createAppContainer(
 	createStackNavigator(
 		{
 			FullPost,
+			Settings,
+			EditUserProfile,
 			MainNavigation: createBottomTabNavigator(
 				{
 					Home,
 					Messages,
 					Discover,
-					UserProfile
+					UserProfile,
 				},
 				{
 					tabBarComponent: props => <TabBar {...props} tabs={tabs} />,

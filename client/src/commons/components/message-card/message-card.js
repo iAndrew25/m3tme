@@ -1,8 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Text, Layout, Avatar} from '@ui-kitten/components';
 
+import Text from '../text/text';
+import Avatar from '../avatar/avatar';
 import HeaderNames from '../header-names/header-names';
+
+import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
 
 function MessageCard({person, lastMessage, time}) {
@@ -10,17 +13,17 @@ function MessageCard({person, lastMessage, time}) {
 
 	return (
 		<View style={style.wrapper}>
-			<Avatar
-				shape="round"
-				style={style.avatar}
-				source={{uri: avatarUrl}}
-			/>
+			<Avatar size="L" avatarUrl={avatarUrl} />
 			<View style={style.middle}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
-				<Text numberOfLines={1} ellipsisMode="tail" style={style.message}>{lastMessage}</Text>
+				<Text
+					numberOfLines={1}
+					ellipsisMode="tail"
+					style={style.message}
+					value={lastMessage} />
 			</View>
 			<View style={style.time}>
-				<Text style={style.timeText}>{time}</Text>
+				<Text style={style.timeText} value={time} />
 			</View>
 		</View>
 	);
@@ -29,19 +32,19 @@ function MessageCard({person, lastMessage, time}) {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		backgroundColor: getColor('white'),
+		marginBottom: INNER_MARGIN,
+		alignItems: 'center',
 		flexDirection: 'row',
-		marginHorizontal: 8,
-		padding: 8,
-		borderBottomWidth: 1,
-		borderBottomColor: '#ddd',
+		padding: OUTER_MARGIN,
+		elevation: 1,
 	},
 	middle: {
-		// backgroundColor: 'pink',
 		alignItems: 'center',
 		justifyContent: 'center',
 		flexDirection: 'column',
 		flexShrink: 1,
-		marginHorizontal: 16
+		marginHorizontal: OUTER_MARGIN
 	},
 	time: {
 		flexShrink: 0,
@@ -49,14 +52,12 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	timeText: {
-		color: getColor('subtitle'),
-		fontSize: 10
+		color: getColor('secondaryText'),
+		fontSize: 10,
 	},
 	message: {
-		flexGrow: 1,
-		color: getColor('subtitle'),
-		fontSize: 11
-	}
+		color: getColor('secondaryText')
+	},
 });
 
 export default MessageCard;

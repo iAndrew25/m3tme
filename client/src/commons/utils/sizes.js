@@ -1,10 +1,4 @@
-import {
-	ScrollView,
-	Image,
-	TouchableOpacity,
-	StyleSheet,
-	Dimensions,
-} from 'react-native';
+import {Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -26,22 +20,30 @@ export const DEVICE_WIDTH = width;
 export const DEVICE_HEIGHT = height;
 
 export const AVATAR_SIZES = {
-	S: {
+	XS: {
 		width: 16,
-		height: 16
+		height: 16,
+	},
+	S: {
+		width: 20,
+		height: 20,
 	},
 	M: {
 		width: 32,
-		height: 32
+		height: 32,
 	},
 	L: {
-		width: 64,
-		height: 64
+		width: 40,
+		height: 40,
 	},
 	XL: {
+		width: 64,
+		height: 64,
+	},
+	XXL: {
 		width: 128,
-		height: 128
-	}
+		height: 128,
+	},
 };
 
 export const BUTTON_SIZES = {
@@ -56,5 +58,5 @@ export const BUTTON_SIZES = {
 	L: {
 		paddingVertical: 16,
 		paddingHorizontal: 16,
-	}
+	},
 };

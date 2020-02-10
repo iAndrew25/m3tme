@@ -1,144 +1,58 @@
-import React from 'react';
-import {ScrollView, Image, View, StyleSheet} from 'react-native';
-import {
-	Avatar,
-	Text,
-	Layout,
-	Button,
-	TopNavigation,
-	Icon,
-	List,
-	Card,
-} from '@ui-kitten/components';
+import React, {Fragment} from 'react';
+import {ScrollView, View, StyleSheet} from 'react-native';
 
-import StatsBox from './stats-box/stats-box';
+import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
+import Button from '../../commons/components/button/button';
+import ProfileData from './profile-data/profile-data';
+import SafeText from '../../commons/components/safe-text/safe-text';
+import Section from '../../commons/components/section/section';
 
-import ProfileContent from '../../commons/components/profile-content/profile-content';
+import {OUTER_MARGIN} from '../../commons/utils/sizes';
+import getColor from '../../commons/utils/colors';
 
 function UserProfile({
 	name,
-	profilePicture,
+	avatarUrl,
 	location,
 	followers,
 	following,
 	posts,
 	likes,
 	about,
+	navigation,
 }) {
 	return (
-		<ScrollView style={{flexGrow: 1}}>
-			<View style={{flexGrow: 1}}>
-				<TopNavigation title="User Profile" alignment="center" />
+		<Fragment>
+			<MenuHeader title="Profile" onPress={() => navigation.navigate('EditUserProfile')} iconName="edit" />
+			<ScrollView contentContainerStyle={style.content}>
+				<ProfileData />
 
-				<View>
-					<Image
-						source={{
-							uri:
-								'https://www.xda-developers.com/files/2019/11/default_wallpaper.jpg',
-						}}
-						style={[StyleSheet.absoluteFill]}
-					/>
+				<View style={style.wrapper}>
+					<Section title="About">
+						<SafeText text={about} numberOfLines={5} />
+					</Section>
 
-					<Avatar
-						shape="round"
-						style={style.avatar}
-						source={{uri: profilePicture}}
-					/>
-
-					<Text category="h5" style={style.name}>
-						{name}
-					</Text>
-
-					<View style={style.locationGroup}>
-						<Icon
-							name="pin-outline"
-							style={style.icon}
-							fill="white"
-							width={16}
-							height={16}
-						/>
-						<Text category="s1" style={style.location}>
-							{location}
-						</Text>
-					</View>
-
-					<View style={style.buttonGroup}>
-						<Button
-							appearance="filled"
-							icon={style => (
-								<Icon {...style} name="person-add" />
-							)}>
-							FOLLOW
-						</Button>
-						<Button
-							appearance="outline"
-							icon={style => (
-								<Icon {...style} name="message-circle" />
-							)}
-							style={style.messageBtn}>
-							MESSAGE
-						</Button>
-					</View>
-
-					<View style={style.stats}>
-						<StatsBox name="Followers" value={followers} />
-						<StatsBox name="Following" value={following} />
-						<StatsBox name="Posts" value={posts} />
-						<StatsBox name="Likes" value={likes} />
-					</View>
+					<Section title="Posts">
+						<SafeText text="SOON" />
+					</Section>
 				</View>
-
-				<ProfileContent />
-			</View>
-		</ScrollView>
+			</ScrollView>
+		</Fragment>
 	);
 }
 
 const style = StyleSheet.create({
-	avatar: {
-		width: 160,
-		height: 160,
-		margin: 16,
-		alignSelf: 'center',
+	wrapper: {
+		padding: OUTER_MARGIN,
 	},
-	name: {
-		textAlign: 'center',
-		color: 'white',
-	},
-	locationGroup: {
-		flexDirection: 'row',
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
-	},
-	icon: {
-		marginTop: 4,
-		marginRight: 3,
-	},
-	location: {
-		color: 'white',
-	},
-	messageBtn: {
-		marginLeft: 16,
-		backgroundColor: 'white',
-		borderWidth: 0,
-	},
-	stats: {
-		marginVertical: 16,
-		flexDirection: 'row',
-		justifyContent: 'space-around',
-		backgroundColor: 'transparent',
-	},
-	buttonGroup: {
-		flexDirection: 'row',
-		marginVertical: 16,
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
-	},
+	content: {
+		backgroundColor: getColor('background'),
+	}
 });
 
 UserProfile.defaultProps = {
 	name: 'Donald Trump',
-	profilePicture: 'https://images.wsj.net/im-119693?width=620&size=1.5',
+	avatarUrl: 'https://images.wsj.net/im-119693?width=620&size=1.5',
 	location: 'Bratislava',
 	followers: 200,
 	following: 121,

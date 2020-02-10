@@ -8,38 +8,41 @@ import Button from '../../button/button';
 import getColor from '../../../utils/colors';
 import {OUTER_MARGIN} from '../../../utils/sizes';
 
-function BackHeader({title, onPress, children}) {
+function MenuHeader({title, onPress, iconName, children}) {
 	const renderChildren = () => {
 		if (children) {
 			return children;
 		}
 		if (title) {
-			return <Text type="h2" theme="light" value={title} />;
+			return <Text type="h2" style={style.text} theme="light" value={title} />;
 		}
 	};
 
 	return (
 		<Header
 			style={style.header}
-			leftComponent={
+			leftComponent={renderChildren()}
+			rightComponent={
 				<Button
-					onPress={onPress}
-					style={style.backIcon}
+					style={style.icon}
 					theme="dark"
-					iconName="arrow-back-outline"
+					iconName={iconName}
 					type="icon-only"
+					onPress={onPress}
 				/>
 			}
-			centerComponent={renderChildren()}
 		/>
 	);
 }
 
 const style = StyleSheet.create({
 	header: {
-		paddingRight: OUTER_MARGIN,
+		paddingLeft: OUTER_MARGIN,
 	},
-	backIcon: {
+	text: {
+		flex: 1
+	},
+	icon: {
 		width: 50,
 		height: 50,
 		flexGrow: 0,
@@ -47,4 +50,4 @@ const style = StyleSheet.create({
 	}
 });
 
-export default memo(BackHeader);
+export default memo(MenuHeader);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
+import {View, StyleSheet, ScrollView, TextInput} from 'react-native';
 
 import {Icon} from '@ui-kitten/components';
 
@@ -34,14 +34,14 @@ function Discover() {
 							name="search"
 							width={20}
 							height={20}
-							fill={getColor('white')}
+							fill={getColor('iconPrimary')}
 						/>
 					</View>
 				}
 				rightComponent={
 					<TextInput
 						placeholder="Search..."
-						placeholderTextColor={getColor('subtitle')}
+						placeholderTextColor={getColor('lightPrimary')}
 						style={style.textinput}
 					/>
 				}
@@ -58,6 +58,7 @@ function Discover() {
 const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
+		backgroundColor: getColor('background'),
 	},
 	scrollViewWrapper: {
 		flexGrow: 1,
@@ -73,7 +74,7 @@ const style = StyleSheet.create({
 		alignItems: 'center',
 	},
 	textinput: {
-		color: 'white',
+		color: getColor('white'),
 		height: '100%',
 		flex: 1,
 		paddingRight: OUTER_MARGIN,

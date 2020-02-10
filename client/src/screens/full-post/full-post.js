@@ -1,11 +1,12 @@
 import patternMock from 'pattern-mock';
 import React, {Fragment} from 'react';
-import {View, Text, ScrollView} from 'react-native';
-import {Layout, TopNavigation} from '@ui-kitten/components';
+import {ScrollView, StyleSheet} from 'react-native';
 
 import BackHeader from '../../commons/components/headers/back-header/back-header';
 import Post from '../../commons/components/post/post';
 import Reply from '../../commons/components/post/reply/reply';
+
+import getColor from '../../commons/utils/colors';
 
 const post = patternMock({
 	data: {
@@ -18,7 +19,7 @@ const post = patternMock({
 		author: {
 			id: 'COUNTER',
 			avatarUrl:
-				'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+				'https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/red-panda_thumb.ngsversion.1485895956258.adapt.1900.1.JPG',
 			fullName: 'FULL_NAME',
 			username: 'WORD',
 		},
@@ -28,7 +29,7 @@ const post = patternMock({
 				author: {
 					id: 'COUNTER',
 					avatarUrl:
-						'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.takeflyte.com%2Fwp-content%2Fuploads%2F2010%2F10%2Fapple.png',
+						'http://www.haircolorsideas.com/wp-content/uploads/2015/02/hair-in-red-pillarbox.jpg',
 					fullName: 'FULL_NAME',
 					username: 'WORD',
 				},
@@ -44,12 +45,18 @@ function FullPost({navigation}) {
 	return (
 		<Fragment>
 			<BackHeader onPress={() => navigation.goBack()} />
-			<ScrollView>
+			<ScrollView contentContainerStyle={style.wrapper}>
 				<Post {...post.data} />
 			</ScrollView>
 			<Reply />
 		</Fragment>
 	);
 }
+
+const style = StyleSheet.create({
+	wrapper: {
+		backgroundColor: getColor('background'),
+	},
+});
 
 export default FullPost;
