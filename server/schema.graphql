@@ -15,7 +15,14 @@ type UserData {
 	username: String
 }
 
+type Tokens {
+  accessToken: String
+  refreshToken: String
+}
+
 type Query { 
-	profile: Profile, 
-	userData(username: String): UserData 
+  profile: Profile, 
+  userData(username: String): UserData,
+  loggedInUser: UserData,  
+  login(username: String, password: String): Tokens
 }
