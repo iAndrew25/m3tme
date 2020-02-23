@@ -1,5 +1,15 @@
+const { sign } = require("jsonwebtoken");
+const { verify } = require("jsonwebtoken");
+const { AuthenticationError } = require("apollo-server-express");
+const isEmpty = require("lodash/isEmpty");
+const { setTokens } = require("./set-tokens");
+
 module.exports = {
-	getUserData: function (username) {
+	getUserData: function (username, root, context, info) {
+		console.log(root);
+		console.log(context);
+		console.log(info);
+
 		if(!username){
 			return {
 			id: "1",
@@ -10,5 +20,33 @@ module.exports = {
 			id: "1",
 			username: username
 		};
+	},
+
+	login: async function(_, __, { req }){
+		const {username, password} = req.body.variables;
+		console.log(username);
+		console.log(password);
+  		const user = {
+  			id: "123",
+  			token: "abc",
+  			tokenCount: "1"
+  		};
+  		if (!user) return null;
+
+  		const passwordValid = true;
+
+  		if (!passwordValid) return null;
+
+  		return setTokens(user);
+	},
+
+	loggedInUser: async function(_, __, { req }) {
+	  if (isEmpty(req.user)) throw new AuthenticationError("Must authenticate");
+	  const user = {
+  			id: "123",
+  			token: "abc",
+  			tokenCount: "1"
+  		};
+	  return user;
 	}
 };
