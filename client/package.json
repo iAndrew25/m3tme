@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"clean": "cd android && gradlew clean && cd ..",
-		"android": "npm run clean && react-native run-android --deviceId=emulator-5556",
+		"android": "npm run clean && react-native run-android",
 		"ios": "react-native run-ios",
 		"start": "react-native start",
 		"test": "jest",
