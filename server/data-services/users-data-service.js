@@ -3,9 +3,10 @@ const { verify } = require("jsonwebtoken");
 const { AuthenticationError } = require("apollo-server-express");
 const isEmpty = require("lodash/isEmpty");
 const { setTokens } = require("./set-tokens");
+const mongo = require('mongodb').MongoClient
 
 module.exports = {
-	getUserData: function (username, root, context, info) {
+	getUserData: function (_, __, { req }) {
 		if(!username){
 			return {
 			id: "1",
@@ -19,8 +20,13 @@ module.exports = {
 	},
 
 	login: async function(_, __, { req }){
+		const db = req.app.locals.db;
+		const collection = db.collection('Test');
+		collection.find().toArray((err, items) => {
+  			console.log(items)
+		});
+
 		const {username, password} = req.body.variables;
-		console.log("ajunge inlogin")
   		const user = {
   			id: "123",
   			token: "abc",
