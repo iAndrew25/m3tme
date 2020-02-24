@@ -6,10 +6,6 @@ const { setTokens } = require("./set-tokens");
 
 module.exports = {
 	getUserData: function (username, root, context, info) {
-		console.log(root);
-		console.log(context);
-		console.log(info);
-
 		if(!username){
 			return {
 			id: "1",
@@ -24,8 +20,7 @@ module.exports = {
 
 	login: async function(_, __, { req }){
 		const {username, password} = req.body.variables;
-		console.log(username);
-		console.log(password);
+		console.log("ajunge inlogin")
   		const user = {
   			id: "123",
   			token: "abc",
