@@ -20,6 +20,7 @@ function UserProfile({
 	postsCount,
 	likesCount,
 	about,
+	hideButtons
 }) {
 	return (
 		<View style={style.wrapper}>
@@ -39,7 +40,7 @@ function UserProfile({
 				<Text theme="light" value={location} />
 			</View>
 
-			<View style={style.buttonGroup}>
+			{!hideButtons && <View style={style.buttonGroup}>
 				<Button
 					theme="dark"
 					type="icon-left"
@@ -55,7 +56,7 @@ function UserProfile({
 					size="L"
 					iconName="message-circle"
 				/>
-			</View>
+			</View>}
 
 			<View style={style.stats}>
 				<StatsBox name="Followers" value={followersCount} />
@@ -108,12 +109,14 @@ const style = StyleSheet.create({
 	stats: {
 		width: '100%',
 		flexDirection: 'row',
-		marginTop: OUTER_MARGIN,
+		// marginTop: OUTER_MARGIN,
 		justifyContent: 'space-around',
+		// backgroundColor: 'red'
 	},
 });
 
 UserProfile.defaultProps = {
+	hideButtons: false,
 	fullName: 'Donald Trump',
 	username: 'realDonaldTrump',
 	avatarUrl: 'https://images.wsj.net/im-119693?width=620&size=1.5',

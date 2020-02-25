@@ -13,6 +13,8 @@ import Settings from '../screens/settings/settings';
 import EditUserProfile from '../screens/edit-user-profile/edit-user-profile';
 // import ProfileSettings from '../screens/profile-settings/profile-settings';
 
+import MyProfile from '../screens/my-profile/my-profile';
+
 import FullPost from '../screens/full-post/full-post';
 
 const tabs = [
@@ -30,8 +32,9 @@ const tabs = [
 	},
 ];
 
-const MyProfile = createMaterialTopTabNavigator({
-	UserProfile
+export const MyProfileTabs = createMaterialTopTabNavigator({
+	UserProfile,
+	Discover
 });
 
 export default createAppContainer(
