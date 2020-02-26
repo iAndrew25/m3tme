@@ -15,15 +15,15 @@ function TabBar({state, navigation, tabs}) {
 				const handleOnSelect = () => {
 					const event = navigation.emit({
 						type: 'tabPress',
-						target: route.key
+						target: route.key,
 					});
 
 					if (!isFocused && !event.defaultPrevented) {
 						navigation.navigate(route.name);
 					}
-				}
+				};
 
-				if(state.routes.length -1 === index) {
+				if (state.routes.length - 1 === index) {
 					return (
 						<Button style={style.tab} onPress={handleOnSelect}>
 							<Avatar

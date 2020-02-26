@@ -17,7 +17,7 @@ const data = patternMock({
 			senderId: 1,
 			contentType: 'TEXT',
 			content: 'PARAGRAPH',
-			timestamp: 'WORD'
+			timestamp: 'WORD',
 		},
 		[20, 21],
 	],

@@ -20,15 +20,25 @@ function UserProfile({
 	postsCount,
 	likesCount,
 	about,
-	hideButtons
+	hideButtons,
 }) {
 	return (
 		<View style={style.wrapper}>
 			<Avatar size="XXL" avatarUrl={avatarUrl} />
 
 			<View style={style.text}>
-				<Text theme="light" type="h1" style={style.fullName} value={fullName} />
-				<Text theme="light" type="h3" style={style.username} value={`@${username}`} />
+				<Text
+					theme="light"
+					type="h1"
+					style={style.fullName}
+					value={fullName}
+				/>
+				<Text
+					theme="light"
+					type="h3"
+					style={style.username}
+					value={`@${username}`}
+				/>
 			</View>
 			<View style={style.locationGroup}>
 				<Icon
@@ -40,23 +50,25 @@ function UserProfile({
 				<Text theme="light" value={location} />
 			</View>
 
-			{!hideButtons && <View style={style.buttonGroup}>
-				<Button
-					theme="dark"
-					type="icon-left"
-					text="FOLLOW"
-					size="L"
-					style={style.followBtn}
-					iconName="person-add"
-				/>
-				<Button
-					theme="light"
-					type="icon-left"
-					text="MESSAGE"
-					size="L"
-					iconName="message-circle"
-				/>
-			</View>}
+			{!hideButtons && (
+				<View style={style.buttonGroup}>
+					<Button
+						theme="dark"
+						type="icon-left"
+						text="FOLLOW"
+						size="L"
+						style={style.followBtn}
+						iconName="person-add"
+					/>
+					<Button
+						theme="light"
+						type="icon-left"
+						text="MESSAGE"
+						size="L"
+						iconName="message-circle"
+					/>
+				</View>
+			)}
 
 			<View style={style.stats}>
 				<StatsBox name="Followers" value={followersCount} />
@@ -87,11 +99,11 @@ const style = StyleSheet.create({
 	username: {
 		textAlign: 'center',
 		fontStyle: 'italic',
-		fontWeight: 'normal'
+		fontWeight: 'normal',
 	},
 	text: {
 		marginTop: OUTER_MARGIN,
-		marginBottom: INNER_MARGIN
+		marginBottom: INNER_MARGIN,
 	},
 	locationGroup: {
 		flexDirection: 'row',

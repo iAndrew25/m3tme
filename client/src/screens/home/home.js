@@ -2,7 +2,6 @@ import patternMock from 'pattern-mock';
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 
-import Text from '../../commons/components/text/text';
 import Button from '../../commons/components/button/button';
 import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import Post from '../../commons/components/post/post';
@@ -35,7 +34,11 @@ function Home({avatarUrl, navigation}) {
 
 	return (
 		<View style={style.wrapper}>
-			<MenuHeader title="M3tme logo" onPress={() => navigation.navigate('Settings')} iconName="settings-2-outline" />
+			<MenuHeader
+				title="M3tme logo"
+				onPress={() => navigation.navigate('Settings')}
+				iconName="settings-2-outline"
+			/>
 			<FlatList
 				data={posts.data}
 				renderItem={({item}) => (
@@ -80,7 +83,7 @@ const style = StyleSheet.create({
 	},
 	homeText: {
 		flex: 1,
-		paddingLeft: OUTER_MARGIN
+		paddingLeft: OUTER_MARGIN,
 	},
 });
 

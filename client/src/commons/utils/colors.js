@@ -19,7 +19,7 @@ const themes = {
 		darkBackground: '#212121',
 
 		iconPrimary: '#FFFFFF',
-		
+
 		accent: '#536DFE',
 		divider: '#EEEEEE',
 

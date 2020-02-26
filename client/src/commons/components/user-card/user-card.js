@@ -30,8 +30,9 @@ function UserCard({avatarUrl, fullName, username, location, description}) {
 					style={style.description}
 					numberOfLines={5}
 					type="subtitle"
-					ellipsisMode="tail" 
-					value={description} />
+					ellipsisMode="tail"
+					value={description}
+				/>
 			</View>
 		</View>
 	);
@@ -62,20 +63,20 @@ const style = StyleSheet.create({
 	},
 	fullName: {
 		fontWeight: 'bold',
-		textAlign: 'center'
+		textAlign: 'center',
 	},
 	username: {
 		fontStyle: 'italic',
-		textAlign: 'center'
+		textAlign: 'center',
 	},
 	description: {
-		marginTop: INNER_MARGIN
+		marginTop: INNER_MARGIN,
 	},
 	locationView: {
 		marginTop: INNER_MARGIN,
 		flexDirection: 'row',
 		alignItems: 'center',
-	}
+	},
 });
 
 export default UserCard;

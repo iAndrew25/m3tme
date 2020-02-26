@@ -3,8 +3,6 @@ import {StyleSheet, View} from 'react-native';
 
 import Text from '../../../commons/components/text/text';
 
-import getColor from '../../../commons/utils/colors';
-
 function StatsBox({value, name}) {
 	return (
 		<View style={style.wraper}>
@@ -19,7 +17,7 @@ const style = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-	}
+	},
 });
 
 export default StatsBox;

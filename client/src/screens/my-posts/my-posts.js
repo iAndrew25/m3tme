@@ -2,13 +2,9 @@ import patternMock from 'pattern-mock';
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 
-import Text from '../../commons/components/text/text';
-import Button from '../../commons/components/button/button';
-import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import Post from '../../commons/components/post/post';
 
 import getColor from '../../commons/utils/colors';
-import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
 
 const posts = patternMock({
 	data: [
@@ -58,7 +54,7 @@ const style = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		backgroundColor: getColor('background'),
-	}
+	},
 });
 
 export default MyPosts;

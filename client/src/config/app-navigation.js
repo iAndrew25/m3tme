@@ -1,7 +1,10 @@
 import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import {createBottomTabNavigator, createMaterialTopTabNavigator} from 'react-navigation-tabs';
+import {
+	createBottomTabNavigator,
+	createMaterialTopTabNavigator,
+} from 'react-navigation-tabs';
 
 import TabBar from '../commons/components/tab-bar/tab-bar';
 
@@ -34,7 +37,7 @@ const tabs = [
 
 export const MyProfileTabs = createMaterialTopTabNavigator({
 	UserProfile,
-	Discover
+	Discover,
 });
 
 export default createAppContainer(

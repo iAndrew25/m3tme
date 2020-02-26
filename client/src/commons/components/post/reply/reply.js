@@ -31,7 +31,10 @@ function Reply({avatarUrl, canReply = true}) {
 			);
 		} else {
 			return (
-				<Text style={style.cannotReply} value="You can not reply to this post." />
+				<Text
+					style={style.cannotReply}
+					value="You can not reply to this post."
+				/>
 			);
 		}
 	};
@@ -49,14 +52,14 @@ const style = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		paddingHorizontal: OUTER_MARGIN,
-		height: 40
+		height: 40,
 	},
 	textInput: {
 		flex: 1,
 	},
 	cannotReply: {
 		flex: 1,
-		color: getColor('secondaryText')
+		color: getColor('secondaryText'),
 	},
 	textInputWrapper: {
 		flexDirection: 'row',

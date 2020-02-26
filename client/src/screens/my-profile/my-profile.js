@@ -1,16 +1,13 @@
 import React, {Fragment} from 'react';
-import {ScrollView, View, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 
 import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
-import Button from '../../commons/components/button/button';
 import ProfileData from '../user-profile/profile-data/profile-data';
-import SafeText from '../../commons/components/safe-text/safe-text';
-import Section from '../../commons/components/section/section';
 
 import {OUTER_MARGIN} from '../../commons/utils/sizes';
 import getColor from '../../commons/utils/colors';
 
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import MyPosts from '../my-posts/my-posts';
 import MyAppreciations from '../my-appreciations/my-appreciations';
@@ -30,12 +27,19 @@ function MyProfile({
 }) {
 	return (
 		<Fragment>
-			<MenuHeader title="Profile" onPress={() => navigation.navigate('EditMyProfile')} iconName="edit" />
+			<MenuHeader
+				title="Profile"
+				onPress={() => navigation.navigate('EditUserProfile')}
+				iconName="edit"
+			/>
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData hideButtons />
 				<TopTab.Navigator tabBarOptions={tabBarOptions}>
 					<TopTab.Screen name="My posts" component={MyPosts} />
-					<TopTab.Screen name="My appreciations" component={MyAppreciations} />
+					<TopTab.Screen
+						name="My appreciations"
+						component={MyAppreciations}
+					/>
 				</TopTab.Navigator>
 			</ScrollView>
 		</Fragment>
@@ -46,13 +50,13 @@ const tabBarOptions = {
 	labelStyle: {
 		fontSize: 12,
 		fontWeight: 'bold',
-		textTransform: 'capitalize'
+		textTransform: 'capitalize',
 	},
 	indicatorStyle: {
-		backgroundColor: getColor('defaultPrimary')
+		backgroundColor: getColor('defaultPrimary'),
 	},
 	activeTintColor: getColor('primaryText'),
-	inactiveTintColor: getColor('secondaryText')
+	inactiveTintColor: getColor('secondaryText'),
 };
 
 const style = StyleSheet.create({
@@ -61,7 +65,7 @@ const style = StyleSheet.create({
 	},
 	content: {
 		backgroundColor: getColor('background'),
-	}
+	},
 });
 
 MyProfile.defaultProps = {

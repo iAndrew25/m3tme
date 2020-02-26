@@ -3,12 +3,11 @@ import {View, FlatList, StyleSheet} from 'react-native';
 
 import patternMock from 'pattern-mock';
 
-import Button from '../../commons/components/button/button';
 import MenuHeader from '../../commons/components/headers/menu-header/menu-header';
 import MessageCard from '../../commons/components/message-card/message-card';
 
 import getColor from '../../commons/utils/colors';
-import {OUTER_MARGIN, INNER_MARGIN} from '../../commons/utils/sizes';
+import {INNER_MARGIN} from '../../commons/utils/sizes';
 
 const data = patternMock({
 	messages: [
@@ -29,7 +28,11 @@ const data = patternMock({
 function Messages() {
 	return (
 		<View style={style.wrapper}>
-			<MenuHeader title="Messages" onPress={() => {}} iconName="more-vertical-outline" />
+			<MenuHeader
+				title="Messages"
+				onPress={() => {}}
+				iconName="more-vertical-outline"
+			/>
 
 			<FlatList
 				data={data.messages}

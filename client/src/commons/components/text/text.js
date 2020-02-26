@@ -32,21 +32,21 @@ const style = ReactNative.StyleSheet.create({
 	h1: {
 		fontSize: 20,
 		letterSpacing: 1,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	},
 	h2: {
 		fontSize: 16,
 		letterSpacing: 0.5,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	},
 	h3: {
 		fontSize: 15,
 		letterSpacing: 0.5,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	},
 	h4: {
 		fontSize: 14,
-		letterSpacing: 0.5
+		letterSpacing: 0.5,
 	},
 	dark: {
 		color: getColor('primaryText'),
