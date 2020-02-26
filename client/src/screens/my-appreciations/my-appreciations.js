@@ -30,7 +30,7 @@ const posts = patternMock({
 	],
 });
 
-function ApreciatedPosts({avatarUrl, navigation}) {
+function MyAppreciations({avatarUrl, navigation}) {
 	const handleOnCommentPress = () => navigation.navigate('FullPost');
 
 	return (
@@ -50,7 +50,7 @@ function ApreciatedPosts({avatarUrl, navigation}) {
 	);
 }
 
-ApreciatedPosts.defaultProps = {
+MyAppreciations.defaultProps = {
 	avatarUrl: 'https://images.wsj.net/im-119693?width=620&size=1.5',
 };
 
@@ -61,4 +61,4 @@ const style = StyleSheet.create({
 	}
 });
 
-export default ApreciatedPosts;
+export default MyAppreciations;

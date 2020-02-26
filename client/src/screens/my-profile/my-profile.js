@@ -13,7 +13,7 @@ import getColor from '../../commons/utils/colors';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import MyPosts from '../my-posts/my-posts';
-import ApreciatedPosts from '../apreciated-posts/apreciated-posts';
+import MyAppreciations from '../my-appreciations/my-appreciations';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -33,14 +33,27 @@ function MyProfile({
 			<MenuHeader title="Profile" onPress={() => navigation.navigate('EditMyProfile')} iconName="edit" />
 			<ScrollView contentContainerStyle={style.content}>
 				<ProfileData hideButtons />
-				<TopTab.Navigator>
-					<TopTab.Screen name="MyPosts" component={MyPosts} />
-					<TopTab.Screen name="ApreciatedPosts" component={ApreciatedPosts} />
+				<TopTab.Navigator tabBarOptions={tabBarOptions}>
+					<TopTab.Screen name="My posts" component={MyPosts} />
+					<TopTab.Screen name="My appreciations" component={MyAppreciations} />
 				</TopTab.Navigator>
 			</ScrollView>
 		</Fragment>
 	);
 }
+
+const tabBarOptions = {
+	labelStyle: {
+		fontSize: 12,
+		fontWeight: 'bold',
+		textTransform: 'capitalize'
+	},
+	indicatorStyle: {
+		backgroundColor: getColor('defaultPrimary')
+	},
+	activeTintColor: getColor('primaryText'),
+	inactiveTintColor: getColor('secondaryText')
+};
 
 const style = StyleSheet.create({
 	wrapper: {
