@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import FullWidthImage from 'react-native-fullwidth-image';
 import SafeText from '../safe-text/safe-text';
 import PostHeader from './post-header/post-header';
 import PostFooter from './post-footer/post-footer';
 import Comment from './comment/comment';
+import ZoomableImage from '../zoomable-image/zoomable-image';
 
 import {INNER_MARGIN, OUTER_MARGIN} from '../../utils/sizes';
 import getColor from '../../utils/colors';
@@ -23,12 +23,7 @@ function Post({
 }) {
 	const getContent = () => {
 		if (contentType === 'IMAGE') {
-			return (
-				<FullWidthImage
-					style={style.imageStyle}
-					source={{uri: content}}
-				/>
-			);
+			return <ZoomableImage style={style.imageStyle} content={content} />;
 		}
 
 		if (contentType === 'TEXT') {

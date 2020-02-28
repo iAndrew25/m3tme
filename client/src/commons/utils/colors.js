@@ -24,6 +24,7 @@ const themes = {
 		divider: '#EEEEEE',
 
 		white: '#FFFFFF',
+		modalBackground: '#00000080',
 	},
 };
 

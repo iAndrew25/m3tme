@@ -16,8 +16,9 @@ const posts = patternMock({
 			time: 'WORD',
 			heartsCount: 'CUSTOM_NUMBER_23-167',
 			commentsCount: 'CUSTOM_NUMBER_23-167',
-			contentType: 'TEXT',
-			content: 'PARAGRAPH',
+			contentType: 'IMAGE',
+			content:
+				'https://www.wired.com/wp-content/uploads/images_blogs/wiredscience/2012/04/elon-musk-portrait.jpg',
 			author: {
 				id: 'COUNTER',
 				avatarUrl:
