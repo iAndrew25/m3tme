@@ -27,7 +27,7 @@ function ZoomableImage({content, style: customStyle}) {
 				/>
 			</Modal>
 
-			<TouchableOpacity onPress={showModal}>
+			<TouchableOpacity onPress={showModal} activeOpacity={0.9}>
 				<FullWidthImage style={customStyle} source={{uri: content}} />
 			</TouchableOpacity>
 		</Fragment>
