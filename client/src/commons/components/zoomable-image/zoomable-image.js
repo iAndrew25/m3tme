@@ -13,6 +13,7 @@ function ZoomableImage({content, style: customStyle}) {
 		<Fragment>
 			<Modal
 				onBackdropPress={hideModal}
+				backdropOpacity={0.95}
 				useNativeDriver
 				onBackButtonPress={hideModal}
 				isVisible={isModalVisible}
@@ -37,7 +38,7 @@ function ZoomableImage({content, style: customStyle}) {
 const style = StyleSheet.create({
 	modal: {
 		margin: 0,
-	},
+	}
 });
 
 export default ZoomableImage;

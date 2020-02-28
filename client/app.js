@@ -5,7 +5,6 @@ import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import {mapping, dark} from '@eva-design/eva';
 import 'react-native-gesture-handler';
 
-// import AppNavigation from './src/config/app-navigation';
 import getColor from './src/commons/utils/colors';
 
 import TabBar from './src/commons/components/tab-bar/tab-bar';

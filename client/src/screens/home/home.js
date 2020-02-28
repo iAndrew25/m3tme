@@ -22,7 +22,7 @@ const posts = patternMock({
 			author: {
 				id: 'COUNTER',
 				avatarUrl:
-					'http://www.haircolorsideas.com/wp-content/uploads/2015/02/hair-in-red-pillarbox.jpg',
+					'https://www.biography.com/.image/t_share/MTI3NDQxOTk4NTk5Njk0OTc5/seth-mcfarlandjpg.jpg',
 				fullName: 'FULL_NAME',
 				username: 'WORD',
 			},
