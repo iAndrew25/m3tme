@@ -17,6 +17,7 @@ import Home from './src/screens/home/home';
 import Messages from './src/screens/messages/messages';
 import Discover from './src/screens/discover/discover';
 import MyProfile from './src/screens/my-profile/my-profile';
+import Chat from './src/screens/chat/chat';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -59,7 +60,7 @@ const App = () => (
 			<IconRegistry icons={EvaIconsPack} />
 			<NavigationContainer>
 				<Stack.Navigator
-					initialRouteName="MainNavigation"
+					initialRouteName="Chat"
 					headerMode="none">
 					<Stack.Screen
 						name="MainNavigation"
@@ -67,6 +68,7 @@ const App = () => (
 					/>
 					<Stack.Screen name="FullPost" component={FullPost} />
 					<Stack.Screen name="Settings" component={Settings} />
+					<Stack.Screen name="Chat" component={Chat} />
 					<Stack.Screen
 						name="EditUserProfile"
 						component={EditUserProfile}

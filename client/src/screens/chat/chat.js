@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {View, StyleSheet, ScrollView, TextInput} from 'react-native';
 
-import {Icon} from '@ui-kitten/components';
+import Avatar from '../../commons/components/avatar/avatar';
+import HeaderDetails from '../../commons/components/header-details/header-details';
 
 import UserCard from '../../commons/components/user-card/user-card';
-import Header from '../../commons/components/headers/header/header';
+import Header, {HeaderButton} from '../../commons/components/headers/header/header';
 
 import getColor from '../../commons/utils/colors';
 import {OUTER_MARGIN} from '../../commons/utils/sizes';
@@ -28,28 +29,18 @@ function Chat() {
 		<View style={style.wrapper}>
 			<Header
 				leftComponent={
-					<View style={style.searchIcon}>
-						<Icon
-							name="search"
-							width={20}
-							height={20}
-							fill={getColor('iconPrimary')}
-						/>
+					<View style={style.leftComponent}>
+						<HeaderButton iconName="arrow-back-outline" />
+						<HeaderDetails displayName="Doru Octavian Dumitru Lorem" username="dodLorem" avatarUrl="https://i.ytimg.com/vi/GW_LZGFUUqc/maxresdefault.jpg"/>
 					</View>
 				}
 				rightComponent={
-					<TextInput
-						placeholder="Search..."
-						placeholderTextColor={getColor('lightPrimary')}
-						style={style.textinput}
-					/>
+					<View style={style.rightComponent}>
+						<HeaderButton iconName="eye" />
+						<HeaderButton iconName="more-vertical" />
+					</View>
 				}
 			/>
-			<ScrollView contentContainerStyle={style.scrollViewWrapper}>
-				{data.users.map(user => (
-					<UserCard {...user} />
-				))}
-			</ScrollView>
 		</View>
 	);
 }
@@ -66,18 +57,17 @@ const style = StyleSheet.create({
 		justifyContent: 'space-around',
 		padding: 16,
 	},
-	searchIcon: {
-		width: 50,
-		height: 50,
-		justifyContent: 'center',
+	leftComponent: {
+		flexShrink: 1,
+		flexDirection: 'row',
 		alignItems: 'center',
 	},
-	textinput: {
-		color: getColor('white'),
-		height: '100%',
-		flex: 1,
-		paddingRight: OUTER_MARGIN,
-	},
+	rightComponent: {
+		flexGrow: 1,
+		justifyContent: 'flex-end',
+		flexDirection: 'row',
+		alignItems: 'center',		
+	}
 });
 
 export default Chat;
