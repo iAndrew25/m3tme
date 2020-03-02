@@ -5,7 +5,8 @@ const isEmpty = require("lodash/isEmpty");
 const { setTokens } = require("./set-tokens");
 const mongo = require('mongodb').MongoClient
 
-let PostModel = require('../models/post')
+let PostModel = require('../models/post');
+const UserModel = require('../models/user');
 let mongoose = require('mongoose');
 
 module.exports = {
@@ -21,6 +22,24 @@ module.exports = {
 			username: username
 		};
 	},
+
+	getUser: function (_, __, { req }) {
+		let userId = req.user.id;
+		UserModel.findById(userId, function(err, user) {
+			console.log(user);
+		  });
+		return{
+			username: "Test",
+			fullName: "Test",
+			location: "Test",
+			avatar: "Test",
+			followersCount: 1,
+			followingCount: 1,
+			postsCount: 1,
+			likesCount: 1
+		}
+	},
+
 saveUser: function(){
 	let post = new PostModel({
 		username: 'CAMILULU'

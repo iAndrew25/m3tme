@@ -17,7 +17,7 @@ type UserData {
 
 type Query { 
   profile: Profile, 
-  userData(username: String): UserData,
+  userData(username: String): Profile,
   loggedInUser: UserData,  
   login(username: String, password: String): String
 }
