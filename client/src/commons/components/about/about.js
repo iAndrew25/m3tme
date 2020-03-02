@@ -4,7 +4,6 @@ import {StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import Text from '../text/text';
 
 import {INNER_MARGIN} from '../../utils/sizes';
-import getColor from '../../utils/colors';
 
 function About({text}) {
 	const [about, setAbout] = useState(text);
@@ -23,7 +22,7 @@ function About({text}) {
 		/>
 	) : (
 		<TouchableOpacity onPress={toggleTextInputVisibility}>
-			<Text value={about ? about : 'Add your description'} />				
+			<Text value={about ? about : 'Add your description'} />
 		</TouchableOpacity>
 	);
 }
@@ -32,7 +31,7 @@ const style = StyleSheet.create({
 	wrapper: {
 		flexGrow: 1,
 		padding: INNER_MARGIN,
-	}
+	},
 });
 
 export default About;

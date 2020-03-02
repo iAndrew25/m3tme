@@ -2,7 +2,6 @@ import React, {Fragment, useState} from 'react';
 import {StyleSheet} from 'react-native';
 
 import Text from '../text/text';
-import getColor from '../../utils/colors';
 
 function SafeText({text, numberOfLines, style: componentStyle}) {
 	const [numberOfLinesDisplayed, setNumberOfLinesDisplayed] = useState(
@@ -21,7 +20,8 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 					value="Load more"
 					type="subtitle"
 					style={style.loadMore}
-					onPress={handleLoadMore} />
+					onPress={handleLoadMore}
+				/>
 			);
 		} else {
 			return null;
@@ -35,7 +35,8 @@ function SafeText({text, numberOfLines, style: componentStyle}) {
 				numberOfLines={numberOfLinesDisplayed}
 				style={componentStyle}
 				onTextLayout={handleOnTextLayout}
-				value={text} />
+				value={text}
+			/>
 			{renderLoadMore()}
 		</Fragment>
 	);
@@ -45,8 +46,8 @@ const style = StyleSheet.create({
 	loadMore: {
 		fontSize: 11,
 		marginVertical: 8,
-		textAlign: 'center'
-	}
+		textAlign: 'center',
+	},
 });
 
 SafeText.defaultProps = {

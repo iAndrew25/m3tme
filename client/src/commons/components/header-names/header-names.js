@@ -3,8 +3,6 @@ import {StyleSheet, View} from 'react-native';
 
 import Text from '../text/text';
 
-import getColor from '../../utils/colors';
-
 function HeaderNames({fluidText, fixedText, leftText}) {
 	return (
 		<View style={style.wrapper}>
@@ -14,15 +12,22 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 					numberOfLines={1}
 					ellipsizeMode="tail"
 					value={fluidText}
-					style={style.text} />
+					style={style.text}
+				/>
 			</View>
 			<View style={style.fixedContainer}>
-				<Text type="title" numberOfLines={1} style={style.fixedText} value={` · @${fixedText}`} />
+				<Text
+					type="title"
+					numberOfLines={1}
+					style={style.fixedText}
+					value={` · @${fixedText}`}
+				/>
 				{leftText && (
 					<Text
 						type="subtitle"
 						numberOfLines={1}
-						value={` · ${leftText}`} />
+						value={` · ${leftText}`}
+					/>
 				)}
 			</View>
 		</View>
@@ -31,21 +36,21 @@ function HeaderNames({fluidText, fixedText, leftText}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		flexDirection: 'row'
+		flexDirection: 'row',
 	},
 	fluidContainer: {
-		flexShrink: 1
+		flexShrink: 1,
 	},
 	text: {
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	},
 	fixedText: {
-		fontStyle: 'italic'
+		fontStyle: 'italic',
 	},
 	fixedContainer: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		flexGrow: 1
+		flexGrow: 1,
 	},
 });
 

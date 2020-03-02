@@ -20,7 +20,8 @@ function MessageCard({person, lastMessage, time}) {
 					numberOfLines={1}
 					ellipsisMode="tail"
 					style={style.message}
-					value={lastMessage} />
+					value={lastMessage}
+				/>
 			</View>
 			<View style={style.time}>
 				<Text style={style.timeText} value={time} />
@@ -44,7 +45,7 @@ const style = StyleSheet.create({
 		justifyContent: 'center',
 		flexDirection: 'column',
 		flexShrink: 1,
-		marginHorizontal: OUTER_MARGIN
+		marginHorizontal: OUTER_MARGIN,
 	},
 	time: {
 		flexShrink: 0,
@@ -56,7 +57,7 @@ const style = StyleSheet.create({
 		fontSize: 10,
 	},
 	message: {
-		color: getColor('secondaryText')
+		color: getColor('secondaryText'),
 	},
 });
 

@@ -88,7 +88,10 @@ function Button({
 						fill={iconColor || buttonTheme.icon}
 						style={style.iconLeft}
 					/>
-					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
+					<Text
+						value={text}
+						style={[style.text, buttonTheme.text, textStyle]}
+					/>
 				</TouchableOpacity>
 			);
 
@@ -104,7 +107,10 @@ function Button({
 						componentStyle,
 					]}
 					activeOpacity={0.7}>
-					<Text value={text} style={[style.text, buttonTheme.text, textStyle]} />
+					<Text
+						value={text}
+						style={[style.text, buttonTheme.text, textStyle]}
+					/>
 					<Icon
 						name={iconName}
 						width={iconSize}

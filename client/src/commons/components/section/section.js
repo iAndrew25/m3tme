@@ -4,8 +4,6 @@ import {View, StyleSheet} from 'react-native';
 import Text from '../text/text';
 import {OUTER_MARGIN, INNER_MARGIN} from '../../utils/sizes';
 
-import getColor from '../../utils/colors';
-
 function Section({title, children}) {
 	if (!children) {
 		return null;
@@ -21,10 +19,10 @@ function Section({title, children}) {
 
 const style = StyleSheet.create({
 	wrapper: {
-		paddingBottom: OUTER_MARGIN
+		paddingBottom: OUTER_MARGIN,
 	},
 	title: {
-		marginBottom: INNER_MARGIN
+		marginBottom: INNER_MARGIN,
 	},
 });
 

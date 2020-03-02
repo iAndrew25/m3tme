@@ -5,7 +5,6 @@ import Text from '../../text/text';
 import Header from '../header/header';
 import Button from '../../button/button';
 
-import getColor from '../../../utils/colors';
 import {OUTER_MARGIN} from '../../../utils/sizes';
 
 function BackHeader({title, onPress, children}) {
@@ -44,7 +43,7 @@ const style = StyleSheet.create({
 		height: 50,
 		flexGrow: 0,
 		flexShrink: 1,
-	}
+	},
 });
 
 export default memo(BackHeader);

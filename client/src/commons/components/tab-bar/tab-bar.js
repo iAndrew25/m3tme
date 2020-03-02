@@ -6,34 +6,45 @@ import Button from '../button/button';
 
 import getColor from '../../utils/colors';
 
-function TabBar({navigation, tabs, children}) {
-	const onSelect = index => {
-		const selectedTabRoute = navigation.state.routes[index];
-		navigation.navigate(selectedTabRoute.routeName);
-	};
-
+function TabBar({state, navigation, tabs}) {
 	return (
 		<View style={style.wrapper}>
-			{tabs.map(({iconName, selectedIconName}, index) => (
-				<Button
-					key={iconName}
-					theme="flat"
-					style={style.tab}
-					onPress={() => onSelect(index)}
-					iconName={
-						navigation.state.index === index
-							? selectedIconName
-							: iconName
+			{state.routes.map((route, index) => {
+				const isFocused = state.index === index;
+				const {iconName, selectedIconName} = tabs[index] || {};
+				const handleOnSelect = () => {
+					const event = navigation.emit({
+						type: 'tabPress',
+						target: route.key,
+					});
+
+					if (!isFocused && !event.defaultPrevented) {
+						navigation.navigate(route.name);
 					}
-					type="icon-only"
-				/>
-			))}
-			<Button style={style.tab} onPress={() => onSelect(3)}>
-				<Avatar
-					size="S"
-					avatarUrl="https://images.wsj.net/im-119693?width=620&size=1.5"
-				/>
-			</Button>
+				};
+
+				if (state.routes.length - 1 === index) {
+					return (
+						<Button style={style.tab} onPress={handleOnSelect}>
+							<Avatar
+								size="S"
+								avatarUrl="https://images.wsj.net/im-119693?width=620&size=1.5"
+							/>
+						</Button>
+					);
+				} else {
+					return (
+						<Button
+							key={iconName}
+							theme="flat"
+							style={style.tab}
+							onPress={handleOnSelect}
+							iconName={isFocused ? selectedIconName : iconName}
+							type="icon-only"
+						/>
+					);
+				}
+			})}
 		</View>
 	);
 }

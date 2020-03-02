@@ -18,7 +18,6 @@ function PostHeader({author, time}) {
 			<View style={style.text}>
 				<HeaderNames fluidText={fullName} fixedText={username} />
 				<Text type="subtitle" value={time} />
-					
 			</View>
 			<View style={style.more}>
 				<Button
@@ -49,7 +48,7 @@ const style = StyleSheet.create({
 	},
 	more: {
 		flexGrow: 0,
-	}
+	},
 });
 
 export default PostHeader;
