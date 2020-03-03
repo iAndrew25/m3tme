@@ -11,23 +11,11 @@ const { gql } = require("apollo-server-express");
 const mongo = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017'
 
-app.use(validateTokensMiddleware); // middleware to be built
+app.use(validateTokensMiddleware);
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers,
 });
-
-mongo.connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }, (err, client) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  const db = client.db('admin')
-  app.locals.db = db;
-})
 
 const apolloServer = new ApolloServer({
   schema,

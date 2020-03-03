@@ -6,6 +6,7 @@ const { setTokens } = require("./set-tokens");
 module.exports = {
  validateTokensMiddleware: async function(req, res, next) {
   const accessToken = req.headers["x-access-token"];
+  console.log("test" + accessToken)
   if (!accessToken) 
     {
       return next();
