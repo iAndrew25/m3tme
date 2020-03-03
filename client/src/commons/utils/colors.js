@@ -23,8 +23,7 @@ const themes = {
 		accent: '#536DFE',
 		divider: '#EEEEEE',
 
-		white: '#FFFFFF',
-		modalBackground: '#00000080',
+		white: '#FFFFFF'
 	},
 };
 
