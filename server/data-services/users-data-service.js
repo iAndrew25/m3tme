@@ -3,8 +3,8 @@ const { verify } = require("jsonwebtoken");
 const { AuthenticationError } = require("apollo-server-express");
 const isEmpty = require("lodash/isEmpty");
 const { setTokens } = require("./set-tokens");
-const mongo = require('mongodb').MongoClient
 
+const mongo = require('mongodb').MongoClient
 let PostModel = require('../models/post');
 const UserModel = require('../models/user');
 let mongoose = require('mongoose');
@@ -67,11 +67,13 @@ getPosts: function(){
 
 },
 	login: async function(_, __, { req }){	  
-		const {username, password} = req.body.variables;
+		const {username, password} = req.body.variables;		
+		var result = await UserModel.find({username: username})
+  		.exec()
+  		.then(users => users);
+
   		const user = {
-  			id: "123",
-  			token: "abc",
-  			tokenCount: "1"
+  			id: result[0].id
   		};
   		if (!user) return null;
 
