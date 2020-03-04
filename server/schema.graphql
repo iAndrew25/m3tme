@@ -1,5 +1,4 @@
 type Profile { 
-  	id: String, 
   	username: String, 
   	fullName: String, 
   	location: String, 
@@ -18,7 +17,6 @@ type UserData {
 type Query { 
   profile: Profile, 
   initialSetup: Boolean,
-  userData(username: String): Profile,
   loggedInUser: UserData,  
   login(username: String, password: String): String
 }

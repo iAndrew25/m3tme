@@ -10,33 +10,21 @@ const UserModel = require('../models/user');
 let mongoose = require('mongoose');
 
 module.exports = {
-	getUserData: function (_, __, { req }) {
-		if(!username){
-			return {
-			id: "1",
-			username: "userData",
-		};
-		}
-	   return {
-			id: "1",
-			username: username
-		};
-	},
-
-	getUser: function (_, __, { req }) {
+	getUser: async function (_, __, { req }) {
 		let userId = req.user.id;
-		UserModel.findById(userId, function(err, user) {
-			console.log(user);
-		  });
+		var result = await UserModel.find({_id: userId})
+  		.exec()
+		.then(users => users);
+		var user = result[0];
 		return{
-			username: "Test",
-			fullName: "Test",
-			location: "Test",
-			avatar: "Test",
-			followersCount: 1,
-			followingCount: 1,
-			postsCount: 1,
-			likesCount: 1
+			username: user.username,
+			fullName: user.fullName,
+			location: user.location,
+			avatar: user.avatar,
+			followersCount: user.followersCount,
+			followingCount: user.followingCount,
+			postsCount: user.postsCount,
+			likesCount: user.likesCount
 		}
 	},
 
