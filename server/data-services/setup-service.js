@@ -11,10 +11,17 @@ module.exports = {
             displayName: "First user",
             location: "Location",
             avatarUrl: "path",
-            followersCount: 3,
-            followingCount: 4,
-            postsCount: 5,
-            likesCount: 6
+            followers: [{
+                id: new mongoose.Types.ObjectId().toHexString(),
+                isRevealed: true
+            }],
+            following: [{
+                id: new mongoose.Types.ObjectId().toHexString(),
+                isRevealed: true
+            }],
+            posts: [{
+                id: new mongoose.Types.ObjectId().toHexString(),
+            }]
         };
         UserModel.find({username: 'firstUser'}, function(err, users) {
             if(users.length == 0){

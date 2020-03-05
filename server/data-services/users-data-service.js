@@ -21,57 +21,35 @@ module.exports = {
 			displayName: user.displayName,
 			location: user.location,
 			avatarUrl: user.avatarUrl,
-			followersCount: user.followersCount,
-			followingCount: user.followingCount,
-			postsCount: user.postsCount,
-			likesCount: user.likesCount
+			followersCount: user.followers.length,
+			followingCount: user.following.length,
+			postsCount: user.posts.length
 		}
 	},
 
-saveUser: function(){
-	let post = new PostModel({
-		username: 'CAMILULU'
-  })
-			  post.save(function() {
-				PostModel.findById(post._id, function(err, user) {
-				  console.log(user);
-				})
-			  });
+	getPosts: function(){
+		PostModel.find({}, function(err, posts) {
+			console.log(posts)
+			});
 
-
-			  PostModel.create({
-				username: "Joe"
-			  },function(err,result){
-				PostModel.findById(result._id, function(err, post) {
-					console.log(post);
-				  })
-			  });
-},
-
-getPosts: function(){
-	PostModel.find({}, function(err, posts) {
-		console.log(posts)
-		  });
-
-},
+	},
 	login: async function(_, __, { req }){	  
 		const {username, password} = req.body.variables;		
 		var result = await UserModel.find({username: username})
-  		.exec()
-  		.then(users => users);
+		.exec()
+		.then(users => users);
 
-  		const user = {
-  			id: result[0].id
-  		};
-  		if (!user) return null;
+		const user = {
+			id: result[0].id
+		};
+		if (!user) return null;
 
-  		const passwordValid = true;
+		const passwordValid = true;
 
-  		if (!passwordValid) return null;
+		if (!passwordValid) return null;
 
-  		return setTokens(user);
+		return setTokens(user);
 	},
-
 	loggedInUser: async function(_, __, { req }) {
 	  if (isEmpty(req.user)) throw new AuthenticationError("Must authenticate");
 	  const user = {

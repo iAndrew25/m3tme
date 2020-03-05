@@ -7,10 +7,17 @@ var userSchema = new mongoose.Schema({
 	    displayName: String,
 	    location: String,
 	    avatarUrl: String,
-	    followersCount: Number,
-	    followingCount: Number,
-	    postsCount: Number,
-	    likesCount: Number
+	    followers: [{
+			id: mongoose.Types.ObjectId,
+			isRevealed: Boolean
+		}],
+	    following: [{
+			id: mongoose.Types.ObjectId,
+			isRevealed: Boolean
+		}],
+	    posts: [{
+			id: mongoose.Types.ObjectId,
+		}]
 	});
 
 module.exports = mongoose.model('userModel', userSchema);
