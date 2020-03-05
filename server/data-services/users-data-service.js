@@ -18,9 +18,9 @@ module.exports = {
 		var user = result[0];
 		return{
 			username: user.username,
-			fullName: user.fullName,
+			displayName: user.displayName,
 			location: user.location,
-			avatar: user.avatar,
+			avatarUrl: user.avatarUrl,
 			followersCount: user.followersCount,
 			followingCount: user.followingCount,
 			postsCount: user.postsCount,

@@ -4,9 +4,9 @@ const mongooseConn = require('../db-connection');
 var userSchema = new mongoose.Schema({
 		username: String,
 		password: String,
-	    fullName: String,
+	    displayName: String,
 	    location: String,
-	    avatar: String,
+	    avatarUrl: String,
 	    followersCount: Number,
 	    followingCount: Number,
 	    postsCount: Number,

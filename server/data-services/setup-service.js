@@ -8,15 +8,14 @@ module.exports = {
         var user = {
             username: "firstUser",
             password: "pass",
-            fullName: "First user",
+            displayName: "First user",
             location: "Location",
-            avatar: "path",
+            avatarUrl: "path",
             followersCount: 3,
             followingCount: 4,
             postsCount: 5,
             likesCount: 6
         };
-   
         UserModel.find({username: 'firstUser'}, function(err, users) {
             if(users.length == 0){
                 UserModel.create(user);

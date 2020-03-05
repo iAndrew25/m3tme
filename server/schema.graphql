@@ -1,8 +1,8 @@
 type Profile { 
   	username: String, 
-  	fullName: String, 
+  	displayName: String, 
   	location: String, 
-  	avatar: String, 
+  	avatarUrl: String, 
   	followersCount: Int, 
   	followingCount: Int, 
   	postsCount: Int, 
