@@ -17,6 +17,7 @@ type UserData {
 type Query { 
   profile: Profile, 
   initialSetup: Boolean,
+  deleteAllData: Boolean,
   loggedInUser: UserData,  
   login(username: String, password: String): String
 }

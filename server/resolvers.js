@@ -4,7 +4,8 @@ var setupService = require('./data-services/setup-service.js');
 
 const Query= { 
 	profile: (_, __, { req }) => userDataService.getUser(_, __, { req }),
-	initialSetup: () => setupService.setupFirstUser(),
+	initialSetup: () => setupService.setupData(),
+	deleteAllData: () => setupService.deleteAllData(),
   	login: (_, __, { req }) => userDataService.login(_, __, { req }),
   	loggedInUser: (_, __, { req }) => userDataService.loggedInUser(_, __, { req })
   };
