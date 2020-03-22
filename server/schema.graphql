@@ -14,10 +14,32 @@ type UserData {
 	username: String
 }
 
+type Post {
+	id: String,
+	content: String,
+	likes: Int,
+	comments: [Comment]
+}
+
+input PostInput {
+	content: String,
+}
+
+type Comment {
+	id: String,
+	content: String,
+	userId:String
+}
+
 type Query { 
   profile: Profile, 
   initialSetup: Boolean,
   deleteAllData: Boolean,
   loggedInUser: UserData,  
-  login(username: String, password: String): String
+  login(username: String, password: String): String,
+  getAllPosts: [Post]
+}
+
+type Mutation{
+	addPost(input: PostInput): Boolean
 }

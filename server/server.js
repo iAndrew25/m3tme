@@ -14,7 +14,7 @@ const url = 'mongodb://localhost:27017'
 app.use(validateTokensMiddleware);
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers,
+  resolvers
 });
 
 const apolloServer = new ApolloServer({
